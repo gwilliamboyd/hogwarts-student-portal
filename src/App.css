@@ -43,3 +43,55 @@ body {
   display: flex;
   gap: 10px;
 }
+
+/* HOUSE PANEL STYLES */
+
+.house-panel-master {  
+  padding: 7em 0;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.house-panel-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  justify-content: center;
+  align-content: center;
+  gap: 0.5em;
+}
+
+.house-panel {
+  padding: 3em 10em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(85%);
+  transition: filter 0.3s ease;
+}
+/* House panel hover effect */
+.house-panel:hover {
+  filter: brightness(110%);
+  cursor: pointer;
+}
+
+/* .house-panel img {
+  max-width: 50%;
+} */
+
+/* House background colors */
+#gryffindor-panel {
+  background-color: #6A1616;
+}
+#hufflepuff-panel {
+  background-color: #D8DA78;
+}
+#ravenclaw-panel {
+  background-color: #272E82;
+}
+#slytherin-panel {
+  background-color: #2A623D;
+}
