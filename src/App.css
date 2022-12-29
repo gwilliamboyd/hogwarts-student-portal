@@ -1,3 +1,8 @@
+/* 
+Imports Harry P font from fontsquirrel webkit
+License said freeware, so I'm fairly sure it's 
+okay to use on this site 
+*/
 @font-face {
   font-family: 'harry_pregular';
   src: url('./fonts/harryp__-webfont.woff2') format('woff2'),
@@ -23,22 +28,36 @@ body {
   background-color: #162D6A;
 }
 
+/* NAVBAR STYLES */
 .nav-master {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Logo */
 .nav-logo {
   font-size: 3rem;
+  transition: filter 0.3s ease;
+}
+.nav-logo:hover {
+  filter: brightness(120%);
+  cursor: pointer;
 }
 
+/* Link items */
 .nav-links {
   font-size: 2rem;
   display: flex;
   gap: 50px;
+  transition: filter 0.3s ease;
+}
+.nav-links:hover {
+  filter: brightness(120%);
+  cursor: pointer;
 }
 
+/* Space between text and icon of nav items */
 .nav-item {
   display: flex;
   gap: 10px;
@@ -77,10 +96,6 @@ body {
   filter: brightness(110%);
   cursor: pointer;
 }
-
-/* .house-panel img {
-  max-width: 50%;
-} */
 
 /* House background colors */
 #gryffindor-panel {

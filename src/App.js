@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './Navbar';
-import HousePanel from './HousePanel';
+import HousePanel from './HouseContainer';
 
 function App() {
   return (
