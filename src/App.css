@@ -110,3 +110,67 @@ body {
 #slytherin-panel {
   background-color: #2A623D;
 }
+
+/* HOUSE INFO MENU STYLES */
+.house-info-master {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.house-info-container-none,
+.house-info-container-flex {
+  width: 70%;
+  position: absolute;
+  top: 15%;
+  z-index: 1000;
+  padding: 2em 5em;
+}
+.house-info-container-none {
+  /* Changes to flex onClick */
+  display: none;
+}
+.house-info-container-flex {
+  display: flex;
+}
+
+.house-info-table {
+  font-size: 5rem;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/* Cell-specific font-sizing and padding */
+.house-info-table th {
+  font-weight: normal;
+  font-size: 7rem;
+}
+.house-info-table td {
+  vertical-align: top;
+  padding: 0.125em 0.5em 0.125em 0;
+}
+.house-info-table ul {
+  list-style: none;
+  font-size: 1.5rem;
+}
+/* Sets right-column table cells to sans serif
+and smaller font */
+.house-info-table td:nth-child(2n) {
+  font-size: 3rem;
+  font-family: sans-serif;
+}
+/* Sets left-align text on title cells */
+/* .house-info-table th,
+.house-info-table td {
+  text-align: left;
+} */
+
+/* House-specific table styling */
+#house-info-slytherin {
+  border: 3px solid #AAAAAA;
+  background-color: rgba(42, 98, 61, 0.85);
+  color: #ECECEC;
+}
