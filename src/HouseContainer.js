@@ -3,7 +3,11 @@ import HousePanel from "./HousePanel"
 import HouseInfoMenu from "./HouseInfoMenu"
 
 const HouseContainer = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+    // const [menuOpen, setMenuOpen] = useState(false);
+    const [gryffindorOpen, setGryffindorOpen] = useState(false)
+    const [hufflepuffOpen, setHufflepuffOpen] = useState(false)
+    const [ravenclawOpen, setRavenclawOpen] = useState(false)
+    const [slytherinOpen, setSlytherinOpen] = useState(false)
 
     let menuRef = useRef(null)
     let gryffindorRef = useRef(null)
@@ -23,7 +27,11 @@ const HouseContainer = () => {
     useEffect(() => {
       document.addEventListener("mousedown", (e) => {
         if(!menuRef.current.contains(e.target))
-        setMenuOpen(false)
+        // setMenuOpen(false)
+        setGryffindorOpen(false)
+        setHufflepuffOpen(false)
+        setRavenclawOpen(false)
+        setSlytherinOpen(false)
         // gryffindorSelected = false
         // hufflepuffSelected = false
         // ravenclawSelected = false
@@ -31,12 +39,36 @@ const HouseContainer = () => {
       });        
     }, []);
 
-    function openMenu() {
-      setHouseInfoId()
+    /* function openMenu() {
+      // setHouseInfoId()
       setMenuOpen(true)
+    } */
+
+    function openGryffindor() {
+      setGryffindorOpen(true)
+    }
+    function openHufflepuff() {
+      setHufflepuffOpen(true)
+    }
+    function openRavenclaw() {
+      setRavenclawOpen(true)
+    }
+    function openSlytherin() {
+      setSlytherinOpen(true)
     }
 
-    function setHouseInfoId(e) {
+    let component
+    function determineHouse() {
+      if (gryffindorRef) {
+        console.log('GRYFFINDOR')
+        component = <HouseInfoMenu id='house-info-gryffindor' ref={menuRef} />
+        } else if (hufflepuffRef) {
+        component = <HouseInfoMenu id='house-info-hufflepuff' ref={menuRef} />
+        console.log('HUFFLEPUFF')
+        } 
+      }
+
+    /* function setHouseInfoId(e) {
       // Gryffindor
       if(gryffindorRef.current.contains(e.target)) {
         return 'gryffindor'
@@ -56,7 +88,7 @@ const HouseContainer = () => {
       else {
         return null
       }
-    }
+    } */
 
   return (
     <>
@@ -66,34 +98,29 @@ const HouseContainer = () => {
               houseId='gryffindor-panel'
               src={require("./images/house-gryffindor.png")}
               ref={gryffindorRef}
-              onClick={openMenu}/>
+              onClick={openGryffindor} />
             <HousePanel 
               houseId='hufflepuff-panel'
               src={require("./images/house-hufflepuff.png")}
               ref={hufflepuffRef}
-              onClick={openMenu}/>
+              onClick={openHufflepuff} />
             <HousePanel 
               houseId='ravenclaw-panel'
               src={require("./images/house-ravenclaw.png")}
               ref={ravenclawRef}
-              onClick={openMenu}/>
+              onClick={openRavenclaw}/>
             <HousePanel 
               houseId='slytherin-panel'
               src={require("./images/house-slytherin.png")}
               ref={slytherinRef}
-              onClick={openMenu}/>
+              onClick={openSlytherin}/>
           </div>        
       </div>
         {/* Gryffindor */}
-        {menuOpen && <HouseInfoMenu 
-        id={
-          setHouseInfoId() === 'gryffindor' ? 'house-info-gryffindor':
-          setHouseInfoId() === 'hufflepuff' ? 'house-info-hufflepuff':
-          setHouseInfoId() === 'ravenclaw' ? 'house-info-ravenclaw':
-          setHouseInfoId() === 'slytherin' ? 'house-info-slytherin':
-          null
-        } 
-        ref={menuRef} />}
+        {gryffindorOpen && <HouseInfoMenu id='house-info-gryffindor' ref={menuRef} />}
+        {hufflepuffOpen && <HouseInfoMenu id='house-info-hufflepuff' ref={menuRef} />}
+        {ravenclawOpen && <HouseInfoMenu id='house-info-ravenclaw' ref={menuRef} />}
+        {slytherinOpen && <HouseInfoMenu id='house-info-slytherin' ref={menuRef} />}
         
         
     </>
@@ -101,3 +128,29 @@ const HouseContainer = () => {
 }
 
 export default HouseContainer
+
+/* 
+POSSIBLE SOLUTION FOR HOUSE INFO MENU
+
+On each house panel:
+onClick{determineHouse}
+
+Define this in the HouseContainer component:
+function determineHouse() {
+  switch (e) {
+    case (gryffindorRef.current.contains(e.target)):
+      component = <HouseInfoMenu id='house-info-gryffindor' />
+      break
+    case (hufflepuffRef.current.contains(e.target)):
+      component = <HouseInfoMenu id='house-info-hufflepuff' />
+      break
+    case (ravenclawRef.current.contains(e.target)):
+      component = <HouseInfoMenu id='house-info-ravenclaw' />
+      break
+    case (slytherinRef.current.contains(e.target)):
+      component = <HouseInfoMenu id='house-info-slytherin' />
+      break
+  }
+}
+
+*/
