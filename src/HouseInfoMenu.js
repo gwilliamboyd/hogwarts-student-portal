@@ -1,11 +1,11 @@
 import { forwardRef } from "react"
 
-const HouseInfoMenu = forwardRef((props, ref) => {
+const HouseInfoMenu = forwardRef(({ houseInfoId }, ref) => {
 
   return (
     <div className="house-info-master" ref={ref}>
         <div 
-        className="house-info-container-flex" id="house-info-slytherin">
+        className="house-info-container-flex" id={houseInfoId}>
             <table className="house-info-table">
                 <tbody>
                     <tr>
