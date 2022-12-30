@@ -11,12 +11,14 @@ const HouseContainer = () => {
     let ravenclawRef = useRef(null)
     let slytherinRef = useRef(null)
 
-    let houseInfoId;
+    // let houseInfoId;
 
     // let gryffindorSelected = false
     // let hufflepuffSelected = false
     // let ravenclawSelected = false
     // let slytherinSelected = false
+
+    // let houseSelected = ''
 
     useEffect(() => {
       document.addEventListener("mousedown", (e) => {
@@ -29,38 +31,32 @@ const HouseContainer = () => {
       });        
     }, []);
 
-    function openMenu(e) {
+    function openMenu() {
+      setHouseInfoId()
+      setMenuOpen(true)
+    }
+
+    function setHouseInfoId(e) {
       // Gryffindor
       if(gryffindorRef.current.contains(e.target)) {
-        // gryffindorSelected = true
-        houseInfoId = 'house-info-gryffindor'
-        console.log('gryffindorSelected')
+        return 'gryffindor'
       }
       // Hufflepuff
       else if(hufflepuffRef.current.contains(e.target)) {
-        // hufflepuffSelected = true
-        houseInfoId = 'house-info-hufflepuff'
-        console.log('hufflepuffSelected')
+        return 'hufflepuff'
       }
       // Ravenclaw
       else if(ravenclawRef.current.contains(e.target)) {
-        // ravenclawSelected = true
-        houseInfoId = 'house-info-ravenclaw'
-        console.log('ravenclawSelected')
+        return 'ravenclaw'
       }
       // Slytherin
       else if(slytherinRef.current.contains(e.target)) {
-        // slytherinSelected = true
-        houseInfoId = 'house-info-slytherin'
-        console.log('slytherinSelected')
-      } else {
-        console.log('NOTHING')
+        return 'slytherin'
+      } 
+      else {
+        return null
       }
-
-      setMenuOpen(true)
-      console.log(houseInfoId)
-      return houseInfoId
-    }   
+    }
 
   return (
     <>
@@ -89,10 +85,17 @@ const HouseContainer = () => {
           </div>        
       </div>
         {/* Gryffindor */}
-        {menuOpen && <HouseInfoMenu id={houseInfoId} ref={menuRef}/>}
-        {/* {(hufflepuffSelected && menuOpen) && <HouseInfoMenu id='house-info-hufflepuff' ref={menuRef}/>}
-        {(ravenclawSelected && menuOpen) && <HouseInfoMenu id='house-info-ravenclaw' ref={menuRef}/>}
-        {(slytherinSelected && menuOpen) && <HouseInfoMenu id='house-info-slytherin' ref={menuRef}/>} */}
+        {menuOpen && <HouseInfoMenu 
+        id={
+          setHouseInfoId() === 'gryffindor' ? 'house-info-gryffindor':
+          setHouseInfoId() === 'hufflepuff' ? 'house-info-hufflepuff':
+          setHouseInfoId() === 'ravenclaw' ? 'house-info-ravenclaw':
+          setHouseInfoId() === 'slytherin' ? 'house-info-slytherin':
+          null
+        } 
+        ref={menuRef} />}
+        
+        
     </>
   )
 }
