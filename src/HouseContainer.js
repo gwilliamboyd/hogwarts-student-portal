@@ -1,17 +1,26 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import HousePanel from "./HousePanel"
 import HouseInfoMenu from "./HouseInfoMenu"
 
 const HouseContainer = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    function toggleMenu() {
-        setMenuOpen(!menuOpen)
-        console.log(menuOpen)
-    }
+
+    let menuRef = useRef(null)
+
+    useEffect(() => {
+      document.addEventListener("mousedown", (e) => {
+        if(!menuRef.current.contains(e.target))
+        setMenuOpen(false)
+      });        
+    }, []);
+
+    function openMenu() {
+      setMenuOpen(true)
+    }   
 
   return (
     <>
-        <div className="house-panel-master" onClick={toggleMenu}>
+        <div className="house-panel-master">
             <div className="house-panel-container">
                 <HousePanel 
                 houseId='gryffindor-panel'
@@ -25,10 +34,10 @@ const HouseContainer = () => {
                 <HousePanel 
                 houseId='slytherin-panel'
                 src={require("./images/house-slytherin.png")}
-                onClick={toggleMenu}/>
+                onClick={openMenu}/>
             </div>        
         </div>
-        {menuOpen && <HouseInfoMenu />}
+        {menuOpen && <HouseInfoMenu ref={menuRef}/>}
     </>
   )
 }

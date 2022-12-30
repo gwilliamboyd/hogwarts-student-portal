@@ -1,7 +1,9 @@
-const HouseInfoMenu = () => {
+import { forwardRef } from "react"
+
+const HouseInfoMenu = forwardRef((props, ref) => {
 
   return (
-    <div className="house-info-master">
+    <div className="house-info-master" ref={ref}>
         <div 
         className="house-info-container-flex" id="house-info-slytherin">
             <table className="house-info-table">
@@ -40,6 +42,6 @@ const HouseInfoMenu = () => {
         </div>
     </div>
   )
-}
+})
 
 export default HouseInfoMenu

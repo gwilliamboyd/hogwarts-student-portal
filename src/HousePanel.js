@@ -1,9 +1,9 @@
-const HousePanel = ({ houseId, src, openMenu }) => {
+const HousePanel = ({ houseId, src, onClick }) => {
   return (
     <div 
     className="house-panel" 
     id={houseId}    
-    onClick={openMenu}>
+    onClick={onClick}>
         <img src={src} />
     </div>
   )
