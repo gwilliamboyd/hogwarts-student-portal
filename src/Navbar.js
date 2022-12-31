@@ -2,9 +2,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faHatWizard, faWandSparkles } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom' 
 
-const Navbar = () => {
+const Navbar = ({ navClass }) => {
   return (
-    <header className="header">
+    <header className={navClass}>
         <nav className="nav-master">
             <div className="nav-logo">
                 <Link to='/' className='nav-route'>

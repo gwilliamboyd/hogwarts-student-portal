@@ -3,6 +3,17 @@ Imports Harry P font from fontsquirrel webkit
 License said freeware, so I'm fairly sure it's 
 okay to use on this site 
 */
+
+:root {
+  --body-background-color: #0B1736;
+  /* Font colors */
+  --main-font-color: #CEB42E;
+  --slytherin-font-color: #DCDCDC;
+  /* Header/background colors */
+  --home-header-color: #162D6A;
+  --gryffindor-color: #6A1616;
+  --slytherin-color: #2A623D;
+}
 @font-face {
   font-family: 'harry_pregular';
   src: url('./fonts/harryp__-webfont.woff2') format('woff2'),
@@ -23,8 +34,8 @@ body {
   height: 100vh;
   overflow-y: clip;
   font-family: 'harry_pregular';  
-  background-color: #0B1736;
-  color: #CEB42E;
+  background-color: var(--body-background-color);
+  color: var(--main-font-color)
 }
 
 p {
@@ -46,9 +57,24 @@ to 100% of viewport */
   height: calc(100% - 118.667px);
 }
 
-.header {
+.header-home,
+.header-characters,
+.header-house,
+.header-spells {
   padding: 1.5em 5em;
-  background-color: #162D6A;
+}
+
+.header-home {
+  background-color: var(--home-header-color);
+  color: var(--main-font-color);
+}
+.header-characters {
+  background-color: var(--gryffindor-color);
+  color: var(--main-font-color);
+}
+.header-house {
+  background-color: var(--slytherin-color);
+  color: var(--slytherin-font-color);
 }
 
 /* NAVBAR STYLES */
@@ -172,13 +198,13 @@ to 100% of viewport */
 
 /* HOUSE PANEL STYLES */
 
-.house-panel-master {  
-  padding: 4.5rem 0 5rem;
+.house-panel-master {
   display: flex;
   width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
-  background-image: url(./images/hogwarts-exterior.png);
+  background-image: url(./images/hogwarts-exterior-slytherin.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -211,7 +237,7 @@ to 100% of viewport */
 
 /* House background colors */
 #gryffindor-panel {
-  background-color: #6A1616;
+  background-color: var(--gryffindor-color);
 }
 #hufflepuff-panel {
   background-color: #D8DA78;
@@ -220,7 +246,7 @@ to 100% of viewport */
   background-color: #272E82;
 }
 #slytherin-panel {
-  background-color: #2A623D;
+  background-color: var(--slytherin-color);
 }
 
 /* HOUSE INFO MENU STYLES */
