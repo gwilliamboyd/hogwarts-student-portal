@@ -10,6 +10,8 @@ okay to use on this site
   font-weight: normal;
   font-style: normal;
 }
+/* Nunito Sans font import */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -101,7 +103,11 @@ to 100% of viewport */
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  background-image: url(./images/hogwarts-exterior.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: border-box;}
 
 .home-container {
   width: 90%;
@@ -111,13 +117,16 @@ to 100% of viewport */
   align-items: center;
 }
 
+.page-container-link {
+  display: flex;
+}
+
 .page-container {
   width: 30%;
   position: relative;
 
 }
 .page-container img {
-  /* min-width: 300px; */
   width: 100%;
 }
 .page-container-text {
@@ -152,11 +161,13 @@ to 100% of viewport */
 }
 /* Set separate font sizes for title and paragraph */
 .page-container-title {
-  font-size: 4rem;
+  font-size: 5rem;
 }
 .page-container-paragraph {
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 2rem;
-  padding: 0 1rem;  
+  padding: 0 1rem; 
+  line-height: 2.5rem; 
 }
 
 /* HOUSE PANEL STYLES */
@@ -261,7 +272,7 @@ to 100% of viewport */
 and smaller font */
 .house-info-table td:nth-child(2n) {
   font-size: 3rem;
-  font-family: sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 /* Sets left-align text on title cells */
 /* .house-info-table th,
