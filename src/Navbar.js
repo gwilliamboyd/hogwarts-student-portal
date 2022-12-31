@@ -7,7 +7,7 @@ const Navbar = () => {
     <header className="header">
         <nav className="nav-master">
             <div className="nav-logo">
-                <Link to='/'>
+                <Link to='/' className='nav-route'>
                     <img 
                     src={require("./images/hogwarts-logo.png")} 
                     alt="Hogwarts Crest" />
@@ -16,19 +16,19 @@ const Navbar = () => {
             </div>
             <div className="nav-links"> 
                 <div className="nav-item">
-                    <Link to='/characterscontainer'>
+                    <Link to='/characterscontainer' className='nav-route'>
                         <div className="nav-icon"><FontAwesomeIcon icon={faUser} /></div>
                         <div className="nav-name">Characters</div>
                     </Link>
                 </div>
                 <div className="nav-item">
-                    <Link to='/housecontainer'>
+                    <Link to='/housecontainer' className='nav-route'>
                         <div className="nav-icon"><FontAwesomeIcon icon={faHatWizard} /></div>
                         <div className="nav-name">Houses</div>
                     </Link>
                 </div>
                 <div className="nav-item">
-                    <Link to='/spellscontainer'>
+                    <Link to='/spellscontainer' className='nav-route'>
                         <div className="nav-icon"><FontAwesomeIcon icon={faWandSparkles} /></div>
                         <div className="nav-name">Spells</div>
                     </Link>
