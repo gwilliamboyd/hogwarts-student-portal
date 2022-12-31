@@ -18,7 +18,7 @@ okay to use on this site
 body {
   margin: 0;
   padding: 0;
-  font-family: 'harry_pregular';
+  font-family: 'harry_pregular';  
   background-color: #0B1736;
   color: #CEB42E;
 }
@@ -37,19 +37,27 @@ body {
 
 /* Logo */
 .nav-logo {
-  font-size: 3rem;
+  font-size: 4rem;
   transition: filter 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 .nav-logo:hover {
   filter: brightness(120%);
   cursor: pointer;
 }
 
+.nav-logo img {
+  display: block;
+  width: 60px;
+}
+
 /* Link items */
 .nav-links {
-  font-size: 2rem;
+  font-size: 3rem;
   display: flex;
-  gap: 50px;
+  gap: 4rem;
   transition: filter 0.3s ease;
 }
 .nav-links:hover {
@@ -60,17 +68,22 @@ body {
 /* Space between text and icon of nav items */
 .nav-item {
   display: flex;
-  gap: 10px;
+  gap: 1.2rem;
 }
 
 /* HOUSE PANEL STYLES */
 
 .house-panel-master {  
-  padding: 7em 0;
+  padding: 6rem 0 5rem;
   display: flex;
-  width: 100vw;
+  width: 100%;
   justify-content: center;
   align-items: center;
+  background-image: url(./images/hogwarts-exterior.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-origin: border-box;
 }
 
 .house-panel-container {
@@ -172,20 +185,20 @@ and smaller font */
 #house-info-gryffindor {
   border: 3px solid #AAAAAA;
   background-color: rgba(106, 22, 22, 0.85);
-  color: #ECECEC;
+  color: #d0cb4c;
 }
 #house-info-hufflepuff {
   border: 3px solid #AAAAAA;
-  background-color: rgba(216, 218, 120, 0.85);
-  color: #ECECEC;
+  background-color: rgba(175, 177, 100, 0.85);
+  color: #3d4d59;
 }
 #house-info-ravenclaw {
   border: 3px solid #AAAAAA;
   background-color: rgba(39, 46, 130, 0.85);
-  color: #ECECEC;
+  color: #a58b7e;
 }
 #house-info-slytherin {
   border: 3px solid #AAAAAA;
   background-color: rgba(42, 98, 61, 0.85);
-  color: #ECECEC;
+  color: #DCDCDC;
 }

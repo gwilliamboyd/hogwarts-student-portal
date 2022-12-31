@@ -1,12 +1,12 @@
 import './App.css';
 import Navbar from './Navbar';
-import HousePanel from './HouseContainer';
+import HouseContainer from './HouseContainer';
 
 function App() {
   return (
     <>
       <Navbar />
-      <HousePanel />
+      <HouseContainer />
     </>
   );
 }

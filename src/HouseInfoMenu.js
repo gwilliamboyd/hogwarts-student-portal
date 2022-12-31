@@ -1,6 +1,6 @@
 import { forwardRef } from "react"
 
-const HouseInfoMenu = forwardRef(({ id }, ref) => {
+const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, headOfHouse, traits }, ref) => {
 
   return (
     <div className="house-info-master" ref={ref}>
@@ -9,20 +9,20 @@ const HouseInfoMenu = forwardRef(({ id }, ref) => {
             <table className="house-info-table">
                 <tbody>
                     <tr>
-                        <td>Slytherin</td>
-                        <td><img src={require("./images/house-slytherin.png")} alt="" /></td>
+                        <td>{houseName}</td>
+                        <td><img src={houseCrest} alt="" /></td>
                     </tr>
                     <tr>
                         <td>Founder</td>
-                        <td>Salazar Slytherin</td>
+                        <td>{founder}</td>
                     </tr>
                     <tr>
                         <td>Animal</td>
-                        <td>Serpent</td>
+                        <td>{animal}</td>
                     </tr>
                     <tr>
                         <td>Head of House</td>
-                        <td>Severus Snape</td>
+                        <td>{headOfHouse}</td>
                     </tr>
                     <tr>
                         <td>Traits</td>

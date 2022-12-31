@@ -15,35 +15,18 @@ const HouseContainer = () => {
     let ravenclawRef = useRef(null)
     let slytherinRef = useRef(null)
 
-    // let houseInfoId;
-
-    // let gryffindorSelected = false
-    // let hufflepuffSelected = false
-    // let ravenclawSelected = false
-    // let slytherinSelected = false
-
-    // let houseSelected = ''
 
     useEffect(() => {
       document.addEventListener("mousedown", (e) => {
         if(!menuRef.current.contains(e.target))
-        // setMenuOpen(false)
         setGryffindorOpen(false)
         setHufflepuffOpen(false)
         setRavenclawOpen(false)
         setSlytherinOpen(false)
-        // gryffindorSelected = false
-        // hufflepuffSelected = false
-        // ravenclawSelected = false
-        // slytherinSelected = false
       });        
     }, []);
 
-    /* function openMenu() {
-      // setHouseInfoId()
-      setMenuOpen(true)
-    } */
-
+    // OPEN HOUSE MENUS
     function openGryffindor() {
       setGryffindorOpen(true)
     }
@@ -57,58 +40,29 @@ const HouseContainer = () => {
       setSlytherinOpen(true)
     }
 
-    let component
-    function determineHouse() {
-      if (gryffindorRef) {
-        console.log('GRYFFINDOR')
-        component = <HouseInfoMenu id='house-info-gryffindor' ref={menuRef} />
-        } else if (hufflepuffRef) {
-        component = <HouseInfoMenu id='house-info-hufflepuff' ref={menuRef} />
-        console.log('HUFFLEPUFF')
-        } 
-      }
-
-    /* function setHouseInfoId(e) {
-      // Gryffindor
-      if(gryffindorRef.current.contains(e.target)) {
-        return 'gryffindor'
-      }
-      // Hufflepuff
-      else if(hufflepuffRef.current.contains(e.target)) {
-        return 'hufflepuff'
-      }
-      // Ravenclaw
-      else if(ravenclawRef.current.contains(e.target)) {
-        return 'ravenclaw'
-      }
-      // Slytherin
-      else if(slytherinRef.current.contains(e.target)) {
-        return 'slytherin'
-      } 
-      else {
-        return null
-      }
-    } */
-
   return (
     <>
       <div className="house-panel-master">
           <div className="house-panel-container">
+            {/* Gryffindor Panel */}
             <HousePanel 
               houseId='gryffindor-panel'
               src={require("./images/house-gryffindor.png")}
               ref={gryffindorRef}
               onClick={openGryffindor} />
+            {/* Hufflepuff Panel */}
             <HousePanel 
               houseId='hufflepuff-panel'
               src={require("./images/house-hufflepuff.png")}
               ref={hufflepuffRef}
               onClick={openHufflepuff} />
+            {/* Ravenclaw Panel */}
             <HousePanel 
               houseId='ravenclaw-panel'
               src={require("./images/house-ravenclaw.png")}
               ref={ravenclawRef}
               onClick={openRavenclaw}/>
+            {/* Slytherin Panel */}
             <HousePanel 
               houseId='slytherin-panel'
               src={require("./images/house-slytherin.png")}
@@ -116,11 +70,47 @@ const HouseContainer = () => {
               onClick={openSlytherin}/>
           </div>        
       </div>
-        {/* Gryffindor */}
-        {gryffindorOpen && <HouseInfoMenu id='house-info-gryffindor' ref={menuRef} />}
-        {hufflepuffOpen && <HouseInfoMenu id='house-info-hufflepuff' ref={menuRef} />}
-        {ravenclawOpen && <HouseInfoMenu id='house-info-ravenclaw' ref={menuRef} />}
-        {slytherinOpen && <HouseInfoMenu id='house-info-slytherin' ref={menuRef} />}
+      {/* HOUSE INFO MENUS */}
+
+        {/* Gryffindor Info Menu */}
+        {gryffindorOpen && <HouseInfoMenu 
+        id='house-info-gryffindor' 
+        houseName='Gryffindor' 
+        houseCrest={require("./images/house-gryffindor.png")}
+        founder='Godric Gryffindor' 
+        animal='Lion'
+        headOfHouse = 'Minerva McGonagall' 
+        ref={menuRef} />}
+
+        {/* Hufflepuff Info Menu */}
+        {hufflepuffOpen && <HouseInfoMenu 
+        id='house-info-hufflepuff' 
+        houseName='Hufflepuff' 
+        houseCrest={require("./images/house-hufflepuff.png")} 
+        founder='Helga Hufflepuff' 
+        animal='Badger'
+        headOfHouse = 'Pomona Sprout' 
+        ref={menuRef} />}
+        
+        {/* Ravenclaw Info Menu */}
+        {ravenclawOpen && <HouseInfoMenu 
+        id='house-info-ravenclaw' 
+        houseName='Ravenclaw' 
+        houseCrest={require("./images/house-ravenclaw.png")} 
+        founder='Rowena Ravenclaw' 
+        animal='Eagle'
+        headOfHouse = 'Filius Flitwick' 
+        ref={menuRef} />}
+        
+        {/* Slytherin Info Menu */}
+        {slytherinOpen && <HouseInfoMenu 
+        id='house-info-slytherin' 
+        houseName='Slytherin' 
+        houseCrest={require("./images/house-slytherin.png")} 
+        founder='Salazar Slytherin' 
+        animal='Snake'
+        headOfHouse = 'Horace Slughorn' 
+        ref={menuRef} />}
         
         
     </>
