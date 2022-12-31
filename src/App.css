@@ -74,7 +74,7 @@ body {
 /* HOUSE PANEL STYLES */
 
 .house-panel-master {  
-  padding: 6rem 0 5rem;
+  padding: 4.5rem 0 5rem;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -137,7 +137,7 @@ body {
 .house-info-container-flex {
   width: 70%;
   position: absolute;
-  top: 15%;
+  top: 3%;
   z-index: 1000;
   padding: 2em 5em;
 }
