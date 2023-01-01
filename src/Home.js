@@ -6,14 +6,14 @@ const Home = () => {
         <div className="home-master">
             <div className="home-container">
                 
-                    <PageContainer
-                    to={'/characterscontainer'} 
-                    imageSrc={require('./images/harry-homepage.webp')}
-                    title='Character Search'
-                    paragraph={<>
-                    Bio info on over <b>400</b> characters from the wizarding world!<br />
-                    <i>(no spells needed!)</i>
-                    </>}/>
+                <PageContainer
+                to={'/characterscontainer'} 
+                imageSrc={require('./images/harry-homepage.webp')}
+                title='Character Search'
+                paragraph={<>
+                Bio info on over <b>400</b> characters from the wizarding world!<br />
+                <i>(no spells needed!)</i>
+                </>}/>
 
                 <PageContainer
                 to={'/housecontainer'}  
@@ -30,7 +30,8 @@ const Home = () => {
                 paragraph={<>
                     Comprehensive spell reference for all subjects!<br />
                     <i>(Just don’t let Professor McGonagall catch you using this during class...)</i>
-                </>}/>                
+                </>}/>
+                                
             </div>
         </div>
     </>

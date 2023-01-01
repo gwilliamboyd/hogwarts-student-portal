@@ -9,8 +9,10 @@ const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, 
             <table className="house-info-table">
                 <tbody>
                     <tr>
-                        <td>{houseName}</td>
-                        <td><img src={houseCrest} alt="" /></td>
+                        <th>{houseName}</th>
+                        <td>
+                            <img src={houseCrest} alt="" />
+                        </td>
                     </tr>
                     <tr>
                         <td>Founder</td>
