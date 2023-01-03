@@ -1,4 +1,5 @@
 import './App.css';
+import axios from 'axios';
 import Navbar from './Navbar';
 import Home from './Home';
 import CharactersContainer from './CharactersContainer';
@@ -8,10 +9,6 @@ import { useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom'
 
 function App() {
-  let path = window.location.pathname
-  console.log(path)
-  console.log(window)
-
   // Change theme colors based on page
   const [homeActive, setHomeActive] = useState(false);
   const [charactersActive, setCharactersActive] = useState(false);
@@ -20,10 +17,10 @@ function App() {
 
   const location = useLocation()
 
-
+  // Location listener for color change
   useEffect(() => {
     if(location.pathname === '/') {
-      console.log('PATH: /')
+      // console.log('PATH: /')
       setHomeActive(true)
       setCharactersActive(false)
       setHouseActive(false)
@@ -50,8 +47,28 @@ function App() {
       setHouseActive(false)
       setSpellsActive(true)
     }
-
   })
+  
+  // Fetch character data from API
+  // URL's
+  const characterUrl = 'https://hp-api.onrender.com/api/characters'
+
+  const [characters, setCharacters] = useState([])
+
+  useEffect(() => {
+    axios.get(characterUrl)
+    .then(res => {
+      setCharacters(res.data)
+    })
+  }, [])
+  console.log(characters)
+
+  let bioInfo = {
+    name: characters.name,
+    house: characters.house,
+    patronus: characters.patronus
+  }
+
   return (
     <>
       <Navbar navClass={homeActive ? 'header-home' :
@@ -62,7 +79,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/characterscontainer' element={<CharactersContainer />} />
+          <Route path='/characterscontainer' element={<CharactersContainer characters={characters} />} />
           <Route path='/housecontainer' element={<HouseContainer />} />
           <Route path='/spellscontainer' element={<SpellsContainer />} />
         </Routes>
