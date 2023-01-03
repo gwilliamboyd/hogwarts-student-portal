@@ -164,16 +164,23 @@ to 100% of viewport */
 }
 .characters-search-input:focus {
   outline: 2px solid var(--main-font-color); 
+  background-color: #420d0d;
+}
+/* Changes placeholder text to gold */
+.characters-search-input::placeholder {
+  color: var(--main-font-color);
 }
 
 .characters-body {
   color: var(--main-font-color);
   width: 70%;
   height: 100vh;
+  margin-top: 1rem;
   padding: 1rem 0;
   overflow-y: scroll;
   scrollbar-width: none;  /* Firefox */
   border: 2px solid var(--main-font-color);
+  border-radius: 1rem;
 }
 /* Hides scrollbar in Chrome and Safari */
 ::-webkit-scrollbar {
