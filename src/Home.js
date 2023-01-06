@@ -8,7 +8,7 @@ const Home = () => {
                 
                 <PageContainer
                 to={'/characterscontainer'} 
-                imageSrc={require('./images/harry-homepage.webp')}
+                imageSrc={require('./images/characters-homepage.png')}
                 title='Character Search'
                 paragraph={<>
                 Bio info on over <b>400</b> characters from the wizarding world!<br />
@@ -17,7 +17,7 @@ const Home = () => {
 
                 <PageContainer
                 to={'/housecontainer'}  
-                imageSrc={require('./images/harry-homepage.webp')}
+                imageSrc={require('./images/houses-homepage.png')}
                 title='House Info'
                 paragraph={<>Find out which characters you'll be rooming with this year!<br />
                 <i>(Please not Slytherin...)</i>
@@ -25,7 +25,7 @@ const Home = () => {
 
                 <PageContainer
                 to={'/spellscontainer'}  
-                imageSrc={require('./images/harry-homepage.webp')}
+                imageSrc={require('./images/spells-homepage.png')}
                 title='Spell Index'
                 paragraph={<>
                     Comprehensive spell reference for all subjects!<br />
