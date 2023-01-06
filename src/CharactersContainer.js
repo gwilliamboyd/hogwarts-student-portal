@@ -1,11 +1,20 @@
+import { useState, useMemo } from "react"
 import CharacterBio from "./CharacterBio"
 
 const CharactersContainer = ({ characters }) => {
-  const character = () => {
-    let characterNames = characters.map(c => c.name)
-    let houseNames = characters.map(c => c.house)
-    let patronusNames = characters.map(c => c.patronus)
-  }
+ const [query, setQuery]  = useState('')
+ console.log(characters)
+//  const [searched, setSearched] = useState(false)
+
+ const filteredCharacters = useMemo(() => {
+  return characters.filter(c => (
+      c.name.toLowerCase().includes(query.toLowerCase()) ||
+      c.house.toLowerCase().includes(query.toLowerCase()) ||
+      c.patronus.toLowerCase().includes(query.toLowerCase())
+  ))
+ }, [characters, query])
+ console.log(filteredCharacters)
+ 
   return (
     <>
       <div className="characters-master">
@@ -17,25 +26,27 @@ const CharactersContainer = ({ characters }) => {
           <div className="characters-promise">
             <i>(But first, you must solemnly swear you are <b>not</b> up to no good...)</i>
           </div>
-          <input type="text" 
+          <input
+          value={query} 
+          onChange={e => setQuery(e.target.value)}
+          type="text" 
           className="characters-search-input" 
           placeholder="Make sure you're not using invisible ink!" />
         </div>
         <div className="characters-body">
           <ul>
-            { characters.map((c) => {
-              return (
-                <CharacterBio image={c.image} name={c.name} house={c.house} patronus={c.patronus} />
-              // <li className="characters-bio">
-              //     <div className="character-image"><img src={c.image} /></div>
-              //     <div className="character-name">{c.name}</div>
-              //     <div className="character-house">{c.house}</div>
-              //     <div className="character-patronus">{c.patronus}</div>
-              //   </li>
-              )
-            })
-            }
-              
+            { 
+              filteredCharacters.map((c) => {
+                return (
+                  <CharacterBio
+                  key={c.url} 
+                  image={c.image} 
+                  name={c.name} 
+                  house={c.house} 
+                  patronus={c.patronus} />
+                )
+              })
+            }              
           </ul>
         </div>
       </div>

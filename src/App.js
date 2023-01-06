@@ -27,21 +27,18 @@ function App() {
       setSpellsActive(false)
     } 
     else if(location.pathname === '/characterscontainer') {
-      console.log('PATH: characters')
       setHomeActive(false)
       setCharactersActive(true)
       setHouseActive(false)
       setSpellsActive(false)
     }
     else if(location.pathname === '/housecontainer') {
-      console.log('PATH: house')
       setHomeActive(false)
       setCharactersActive(false)
       setHouseActive(true)
       setSpellsActive(false)
     }
     else if(location.pathname === '/spellscontainer') {
-      console.log('PATH: spells')
       setHomeActive(false)
       setCharactersActive(false)
       setHouseActive(false)
@@ -55,20 +52,29 @@ function App() {
 
   const [characters, setCharacters] = useState([])
 
+  /* useEffect(() => {
+    axios.get(characterUrl)
+    .then(res => {
+      setCharacters(res.data.map(c => {
+        return (
+          {
+            image: c.image,
+            name: c.name,
+            house: c.house,
+            patronus: c.patronus
+          }
+        )
+      }))
+    })
+  }, []) */
   useEffect(() => {
     axios.get(characterUrl)
     .then(res => {
       setCharacters(res.data)
     })
   }, [])
-  console.log(characters)
-
-  let bioInfo = {
-    name: characters.name,
-    house: characters.house,
-    patronus: characters.patronus
-  }
-
+  // console.log(characters)
+  
   return (
     <>
       <Navbar navClass={homeActive ? 'header-home' :
@@ -79,7 +85,10 @@ function App() {
 
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/characterscontainer' element={<CharactersContainer characters={characters} />} />
+          <Route path='/characterscontainer' element={
+          <CharactersContainer 
+          characters={characters} />
+          } />
           <Route path='/housecontainer' element={<HouseContainer />} />
           <Route path='/spellscontainer' element={<SpellsContainer />} />
         </Routes>

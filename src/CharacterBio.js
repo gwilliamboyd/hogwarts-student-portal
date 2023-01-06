@@ -1,6 +1,6 @@
-const CharacterBio = ({ image, name, house, patronus }) => {
+const CharacterBio = ({ image, name, house, patronus, url }) => {
   return (
-    <li className="characters-bio">
+    <li className="characters-bio" key={url}>
         <table className="characters-table">
             <tbody>
                 <tr className="characters-table-row">
@@ -30,11 +30,7 @@ const CharacterBio = ({ image, name, house, patronus }) => {
                     </td>
                 </tr>
             </tbody>
-        </table>
-        {/* <div className="characters-image"><img src={c.image} /></div>
-        <div className="characters-name">{c.name}</div>
-        <div className="characters-house">{c.house}</div>
-        <div className="characters-patronus">{c.patronus}</div> */}
+        </table>        
     </li>
   )
 }
