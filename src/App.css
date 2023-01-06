@@ -237,15 +237,15 @@ to 100% of viewport */
 
 .home-master {
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 75px);
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(./images/hogwarts-exterior.png);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-origin: border-box;
+  /* padding: 3rem 0 3rem; */
+  padding-bottom: 3rem;
 }
 
 .home-container {
@@ -321,14 +321,12 @@ to 100% of viewport */
 .house-panel-master {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 75px);
   justify-content: center;
   align-items: center;
   background-image: url(./images/hogwarts-exterior-slytherin.png);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-origin: border-box;
 }
 
 .house-panel-container {
