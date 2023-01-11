@@ -1,6 +1,7 @@
-const CharacterBio = ({ image, name, house, patronus, url }) => {
+const CharacterBio = ({ image, name, house, patronus, id }) => {    
+
   return (
-    <li className="characters-bio" key={url}>
+    <li className="characters-bio" key={id}>
         <table className="characters-table">
             <tbody>
                 <tr className="characters-table-row">

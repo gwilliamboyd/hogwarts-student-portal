@@ -20,7 +20,6 @@ function App() {
   // Location listener for color change
   useEffect(() => {
     if(location.pathname === '/') {
-      // console.log('PATH: /')
       setHomeActive(true)
       setCharactersActive(false)
       setHouseActive(false)
@@ -52,28 +51,12 @@ function App() {
 
   const [characters, setCharacters] = useState([])
 
-  /* useEffect(() => {
-    axios.get(characterUrl)
-    .then(res => {
-      setCharacters(res.data.map(c => {
-        return (
-          {
-            image: c.image,
-            name: c.name,
-            house: c.house,
-            patronus: c.patronus
-          }
-        )
-      }))
-    })
-  }, []) */
   useEffect(() => {
     axios.get(characterUrl)
     .then(res => {
       setCharacters(res.data)
     })
   }, [])
-  // console.log(characters)
   
   return (
     <>

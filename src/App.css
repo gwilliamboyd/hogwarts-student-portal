@@ -233,6 +233,10 @@ to 100% of viewport */
   filter: brightness(70%);
 }
 
+.pagination-container, .pagination {
+  height: 300px;
+}
+
 /* HOME PAGE STYLES */
 
 .home-master {
