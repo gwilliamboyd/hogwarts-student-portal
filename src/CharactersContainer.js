@@ -1,14 +1,12 @@
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import CharacterBio from "./CharacterBio"
-import Pagination from "./Pagination"
+// import Pagination from "./Pagination"
 
 const CharactersContainer = ({ characters }) => {
   const [query, setQuery]  = useState('')
-  const [firstIndex, setFirstIndex] = useState(0)
-  const [lastIndex, setLastIndex] = useState(19)
-  // const [currentPage, setCurrentPage] = useState(1)
-  // const [hasMore, setHasMore] = useState(false)
-  //  Sets 20 characters per page
+  const [firstIndex, setFirstIndex] = useState()
+  const [lastIndex, setLastIndex] = useState()
+  const [currentCharacters, setCurrentCharacters] = useState([])
   
   // Handles search
   const filteredCharacters = useMemo(() => {
@@ -18,59 +16,48 @@ const CharactersContainer = ({ characters }) => {
         c.patronus.toLowerCase().includes(query.toLowerCase())
     ))
   }, [characters, query])
-
-  const charactersPerPage = 20
-  // let firstIndex
-  // let lastIndex
-  let currentCharacters
-
-  let getFirstIndex = (charactersPerPage) => {
-    if(filteredCharacters.length === 0) {
-      firstIndex = 0
-    }
-  }
-  // Set places where each page breaks
-  let lastCharacterIndex = currentPage * (charactersPerPage - 1)
-  // let firstCharacterIndex = lastCharacterIndex - (charactersPerPage - 1)
-  let firstCharacterIndex = filteredCharacters.filter((element, index) => {
-    return index % 20 === 0
-})
-/*   const currentCharacters = [...filteredCharacters, filteredCharacters.slice(firstCharacterIndex, (lastCharacterIndex + 1))]
-  let pageNumber = firstCharacterIndex + 1 */
-
   
+  const startingCharacters = filteredCharacters.slice(0, 20)
 
-  // Set which character is last of given page
-  /* for(let i = 1;i <= filteredCharacters.length; i+=20) {
-    filteredCharacters[i].pageNumber+=1
-  } */
-  // Add page number props to each object
-  filteredCharacters.forEach(c => {
-    c.pageNumber = pageNumber
-  })
-  console.log(filteredCharacters)
-  /* function paginateCharacters() {
-    filteredCharacters['pagenumber'] = charactersPerPage - lastCharacterIndex
-      console.log(filteredCharacters.pagenumber)
-    }
-      */
+  // Render initial 20 characters
+  useEffect(() => {
+    const startingCharacters = filteredCharacters.slice(0, 20)
+    setCurrentCharacters(startingCharacters)
+  }, [filteredCharacters])
 
+  //  Sets 20 characters per page
+  const charactersPerPage = 20
 
-/*   const pageNumber = []
-
-  for(let i = 1; i <= Math.ceil(filteredCharacters / charactersPerPage); i++) {
-    pageNumber.push(i)
+ /*  let getFirstIndex = (length) => {    
+      setFirstIndex(firstIndex + length)
+      // return firstIndex
   }
-  console.log(pageNumber)
- */
-  // const paginate = (pageNumbers) => setCurrentPage(pageNumbers)
+
+  let getLastIndex = (firstIndex) => {
+    setLastIndex(firstIndex + charactersPerPage)
+    // return lastIndex
+  } */
+
+  function buildCharacters(length) {
+    length = currentCharacters.length
+    console.log(length)
+    setFirstIndex(firstIndex + length)
+    // getFirstIndex(length)
+    setLastIndex(firstIndex + charactersPerPage)
+    // getLastIndex(firstIndex)
+    console.log(firstIndex, lastIndex)
+    let newCharacters = filteredCharacters.slice(firstIndex, lastIndex)
+    console.log(newCharacters)
+    setCurrentCharacters(currentCharacters.concat(newCharacters))
+    console.log(currentCharacters)    
+  }
 
   return (
     <>
       <div className="characters-master">
         {/* Character Heading/Search Bar */}
         <div className="characters-heading">
-          <div className="characters-title">
+          <div className="characters-title" onClick={buildCharacters}>
             Type any character's name or info here
           </div>
           <div className="characters-promise">
@@ -90,8 +77,7 @@ const CharactersContainer = ({ characters }) => {
               currentCharacters.map((c) => {
                 return (
                   <CharacterBio
-                  // pageNumber={pageNumber}
-                  key={c.id} 
+                  // pageNumber={pageNumber} 
                   image={c.image} 
                   name={c.name} 
                   house={c.house} 
