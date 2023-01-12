@@ -4,8 +4,8 @@ import CharacterBio from "./CharacterBio"
 
 const CharactersContainer = ({ characters }) => {
   const [query, setQuery]  = useState('')
-  const [firstIndex, setFirstIndex] = useState()
-  const [lastIndex, setLastIndex] = useState()
+  const [firstIndex, setFirstIndex] = useState(20)
+  const [lastIndex, setLastIndex] = useState(39)
   const [currentCharacters, setCurrentCharacters] = useState([])
   
   // Handles search
@@ -17,7 +17,7 @@ const CharactersContainer = ({ characters }) => {
     ))
   }, [characters, query])
   
-  const startingCharacters = filteredCharacters.slice(0, 20)
+  // const startingCharacters = filteredCharacters.slice(0, 20)
 
   // Render initial 20 characters
   useEffect(() => {

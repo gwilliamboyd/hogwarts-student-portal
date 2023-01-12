@@ -1,7 +1,7 @@
 const CharacterBio = ({ image, name, house, patronus, id }) => {    
 
   return (
-    <li className="characters-bio" key={id}>
+    <li className="characters-bio">
         <table className="characters-table">
             <tbody>
                 <tr className="characters-table-row">
