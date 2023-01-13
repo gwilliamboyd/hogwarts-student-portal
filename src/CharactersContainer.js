@@ -3,17 +3,15 @@ import axios from "axios"
 import CharacterBio from "./CharacterBio"
 
 const CharactersContainer = () => {
+  // Default state
   const [loading, setLoading] = useState(false)
   const [characters, setCharacters] = useState([])
-  // const [currentCharacters, setCurrentCharacters] = useState([])
-  const [page, setPage] = useState(1)  
-  //  Sets 20 characters per page
+  const [page, setPage] = useState(1)
+  // Vars
   let charactersPerPage
-  // Fetch character data from API
-  // URL's
   const characterUrl = 'https://hp-api.onrender.com/api/characters'
 
-
+  // Fetch character data from API
   useEffect(() => {
     const getCharacters = async () => {
       setLoading(true)
@@ -35,16 +33,17 @@ const CharactersContainer = () => {
     ))
   }, [characters, query])
 
-  // let lastIndex
+  // Sets first and last index of currently loaded character list
   let lastIndex = page * setCharactersPerPage(charactersPerPage)
-  // let firstIndex
   const firstIndex = lastIndex - charactersPerPage
   let currentCharacters = filteredCharacters.slice(firstIndex, lastIndex)
 
+  // Sets 20 characters per page initially
   useEffect(() => {
     setCharactersPerPage(charactersPerPage)
   }, [])
 
+  // Adds 20 more characters each pagination
   function setCharactersPerPage(charactersPerPage) {
     if(charactersPerPage === undefined) {
       charactersPerPage = 20
@@ -54,18 +53,14 @@ const CharactersContainer = () => {
     return charactersPerPage
   }
 
+  // Loads next 20 characters
   function paginate(charactersPerPage){
     setPage(page + 1)
-    charactersPerPage += 20    
-    // setCharactersPerPage(charactersPerPage)
-    // setLastIndex(page, charactersPerPage)
-    // charactersPerPage += 20
-    // setLastIndex(page, charactersPerPage)
-    // setFirstIndex(lastIndex, charactersPerPage)
+    charactersPerPage += 20
     console.log(charactersPerPage.value)
     return charactersPerPage
   }
-
+  // RETURN
   return (
     <>
       <div className="characters-master">
