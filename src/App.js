@@ -45,19 +45,6 @@ function App() {
     }
   })
   
-  // Fetch character data from API
-  // URL's
-  const characterUrl = 'https://hp-api.onrender.com/api/characters'
-
-  const [characters, setCharacters] = useState([])
-
-  useEffect(() => {
-    axios.get(characterUrl)
-    .then(res => {
-      setCharacters(res.data)
-    })
-  }, [])
-  
   return (
     <>
       <Navbar navClass={homeActive ? 'header-home' :
@@ -69,8 +56,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/characterscontainer' element={
-          <CharactersContainer 
-          characters={characters} />
+          <CharactersContainer />
           } />
           <Route path='/housecontainer' element={<HouseContainer />} />
           <Route path='/spellscontainer' element={<SpellsContainer />} />

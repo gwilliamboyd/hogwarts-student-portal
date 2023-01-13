@@ -1,15 +1,30 @@
 import { useState, useMemo, useEffect } from "react"
+import axios from "axios"
 import CharacterBio from "./CharacterBio"
 
-const CharactersContainer = ({ characters }) => {
-  //  Sets 20 characters per page
-  const charactersPerPage = 20
-  let firstIndex
-  let lastIndex
-  let currentCharacters
-  // State definitions
-  const [query, setQuery]  = useState('')
+const CharactersContainer = () => {
+  const [loading, setLoading] = useState(false)
+  const [characters, setCharacters] = useState([])
   // const [currentCharacters, setCurrentCharacters] = useState([])
+  const [page, setPage] = useState(1)  
+  //  Sets 20 characters per page
+  let charactersPerPage
+  // Fetch character data from API
+  // URL's
+  const characterUrl = 'https://hp-api.onrender.com/api/characters'
+
+
+  useEffect(() => {
+    const getCharacters = async () => {
+      setLoading(true)
+      const res = await axios.get(characterUrl)
+      setCharacters(res.data)
+      setLoading(false)
+    }
+    getCharacters()
+  }, [])
+
+  const [query, setQuery] = useState('')
 
   // Handles search
   const filteredCharacters = useMemo(() => {
@@ -19,41 +34,36 @@ const CharactersContainer = ({ characters }) => {
         c.patronus.toLowerCase().includes(query.toLowerCase())
     ))
   }, [characters, query])
-  // console.log(currentCharacters)
+
+  // let lastIndex
+  let lastIndex = page * setCharactersPerPage(charactersPerPage)
+  // let firstIndex
+  const firstIndex = lastIndex - charactersPerPage
+  let currentCharacters = filteredCharacters.slice(firstIndex, lastIndex)
 
   useEffect(() => {
-    currentCharacters = filteredCharacters.slice(0, 20)
-    return currentCharacters
+    setCharactersPerPage(charactersPerPage)
+  }, [])
 
-  }, [filteredCharacters])
-
-
-  function getFirstIndex(length) {    
-    if(currentCharacters.length === 0) {
-      firstIndex = 0
+  function setCharactersPerPage(charactersPerPage) {
+    if(charactersPerPage === undefined) {
+      charactersPerPage = 20
     } else {
-        firstIndex = length
+    charactersPerPage += 20    
     }
-    return firstIndex
-  }
-  function getLastIndex(firstIndex) {    
-    lastIndex = firstIndex + charactersPerPage
-    return lastIndex
+    return charactersPerPage
   }
 
-  function buildCharacters(length) {
-    length = currentCharacters.length
-    console.log(length)
-    // setFirstIndex(firstIndex + length)
-    getFirstIndex(length)
-    // setLastIndex(firstIndex + charactersPerPage)
-    getLastIndex(firstIndex)
-    console.log(firstIndex, lastIndex)
-    let newCharacters = filteredCharacters.slice(firstIndex, lastIndex)
-    console.log(newCharacters)
-    currentCharacters = currentCharacters.concat(newCharacters)
-    console.log(currentCharacters)
-    return currentCharacters    
+  function paginate(charactersPerPage){
+    setPage(page + 1)
+    charactersPerPage += 20    
+    // setCharactersPerPage(charactersPerPage)
+    // setLastIndex(page, charactersPerPage)
+    // charactersPerPage += 20
+    // setLastIndex(page, charactersPerPage)
+    // setFirstIndex(lastIndex, charactersPerPage)
+    console.log(charactersPerPage.value)
+    return charactersPerPage
   }
 
   return (
@@ -61,7 +71,7 @@ const CharactersContainer = ({ characters }) => {
       <div className="characters-master">
         {/* Character Heading/Search Bar */}
         <div className="characters-heading">
-          <div className="characters-title" onClick={buildCharacters}>
+          <div className="characters-title" onClick={paginate}>
             Type any character's name or info here
           </div>
           <div className="characters-promise">
