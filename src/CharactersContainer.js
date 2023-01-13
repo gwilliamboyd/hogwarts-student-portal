@@ -1,13 +1,16 @@
 import { useState, useMemo, useEffect } from "react"
 import CharacterBio from "./CharacterBio"
-// import Pagination from "./Pagination"
 
 const CharactersContainer = ({ characters }) => {
+  //  Sets 20 characters per page
+  const charactersPerPage = 20
+  let firstIndex
+  let lastIndex
+  let currentCharacters
+  // State definitions
   const [query, setQuery]  = useState('')
-  const [firstIndex, setFirstIndex] = useState(20)
-  const [lastIndex, setLastIndex] = useState(39)
-  const [currentCharacters, setCurrentCharacters] = useState([])
-  
+  // const [currentCharacters, setCurrentCharacters] = useState([])
+
   // Handles search
   const filteredCharacters = useMemo(() => {
     return characters.filter(c => (
@@ -16,40 +19,41 @@ const CharactersContainer = ({ characters }) => {
         c.patronus.toLowerCase().includes(query.toLowerCase())
     ))
   }, [characters, query])
-  
-  // const startingCharacters = filteredCharacters.slice(0, 20)
+  // console.log(currentCharacters)
 
-  // Render initial 20 characters
   useEffect(() => {
-    const startingCharacters = filteredCharacters.slice(0, 20)
-    setCurrentCharacters(startingCharacters)
+    currentCharacters = filteredCharacters.slice(0, 20)
+    return currentCharacters
+
   }, [filteredCharacters])
 
-  //  Sets 20 characters per page
-  const charactersPerPage = 20
 
- /*  let getFirstIndex = (length) => {    
-      setFirstIndex(firstIndex + length)
-      // return firstIndex
+  function getFirstIndex(length) {    
+    if(currentCharacters.length === 0) {
+      firstIndex = 0
+    } else {
+        firstIndex = length
+    }
+    return firstIndex
   }
-
-  let getLastIndex = (firstIndex) => {
-    setLastIndex(firstIndex + charactersPerPage)
-    // return lastIndex
-  } */
+  function getLastIndex(firstIndex) {    
+    lastIndex = firstIndex + charactersPerPage
+    return lastIndex
+  }
 
   function buildCharacters(length) {
     length = currentCharacters.length
     console.log(length)
-    setFirstIndex(firstIndex + length)
-    // getFirstIndex(length)
-    setLastIndex(firstIndex + charactersPerPage)
-    // getLastIndex(firstIndex)
+    // setFirstIndex(firstIndex + length)
+    getFirstIndex(length)
+    // setLastIndex(firstIndex + charactersPerPage)
+    getLastIndex(firstIndex)
     console.log(firstIndex, lastIndex)
     let newCharacters = filteredCharacters.slice(firstIndex, lastIndex)
     console.log(newCharacters)
-    setCurrentCharacters(currentCharacters.concat(newCharacters))
-    console.log(currentCharacters)    
+    currentCharacters = currentCharacters.concat(newCharacters)
+    console.log(currentCharacters)
+    return currentCharacters    
   }
 
   return (
