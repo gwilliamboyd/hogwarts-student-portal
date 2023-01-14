@@ -36,6 +36,16 @@ const CharactersContainer = () => {
         c.patronus.toLowerCase().includes(query.toLowerCase())
     ))
   }, [characters, query])
+  
+  function capitalize(str) {
+    // return str.charAt(0).toUpperCase() + str.slice(1)
+    return (
+      str.toLowerCase()
+      .split(' ')
+      .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+      .join(' ')
+    )    
+  }
 
   // Sets first and last index of currently loaded character list
   let lastIndex = page * setCharactersPerPage(charactersPerPage)
@@ -101,7 +111,7 @@ const CharactersContainer = () => {
                   image={c.image} 
                   name={c.name} 
                   house={c.house} 
-                  patronus={c.patronus} />
+                  patronus={capitalize(c.patronus)} />
                 )
               })
             }              

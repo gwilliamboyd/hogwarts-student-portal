@@ -199,14 +199,13 @@ to 100% of viewport */
   flex-direction: column;
   gap: 1rem;
 }
-
 .characters-bio img {
-  max-width: 100px;
+  max-width: 80px;
   display: block;
-  margin: 0 auto;
-  padding: 0;
-  border-radius: 5rem;
-  text-align: center;
+  margin: 0 7% 0 auto;
+  /* padding: 0 1rem 0 0; */
+  border-radius: 1rem;
+  text-align: right;
 }
 .characters-table {
   width: 100%;
@@ -214,8 +213,20 @@ to 100% of viewport */
 }
 .characters-table td {
   text-align: left;
+  /* width: 25%; */
+  vertical-align: middle;
+}
+.characters-image {
+  width: 16%;
+}
+.characters-name {
+  width: 34%;
+}
+.characters-house {
   width: 25%;
-  vertical-align: top;
+}
+.characters-patronus {
+  width: 25%;
 }
 
 /* Bio heading styles */
