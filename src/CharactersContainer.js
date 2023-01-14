@@ -39,6 +39,9 @@ const CharactersContainer = () => {
   
   function capitalize(str) {
     // return str.charAt(0).toUpperCase() + str.slice(1)
+    if(str === '') {
+      return 'Unknown'
+    }
     return (
       str.toLowerCase()
       .split(' ')
@@ -110,7 +113,7 @@ const CharactersContainer = () => {
                   // pageNumber={pageNumber} 
                   image={c.image} 
                   name={c.name} 
-                  house={c.house} 
+                  house={capitalize(c.house)} 
                   patronus={capitalize(c.patronus)} />
                 )
               })

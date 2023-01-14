@@ -175,7 +175,7 @@ to 100% of viewport */
 
 .characters-body {
   color: var(--main-font-color);
-  width: 70%;
+  width: 65%;
   height: 100vh;
   margin-top: 1rem;
   padding: 1rem 0;
