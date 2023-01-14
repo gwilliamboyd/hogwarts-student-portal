@@ -1,3 +1,4 @@
+/* COLOR VARIABLES */
 :root {
   --body-background-color: #0B1736;
   /* Font colors */
@@ -12,6 +13,8 @@
   --hufflepuff-darker-color: #c0c269;
   --ravenclaw-color: #272E82;
   --slytherin-color: #2A623D;
+  --spells-hufflepuff-color: #C29908;
+  --spells-font-darker-color: #222222;
 }
 /* 
 Imports Harry P font from fontsquirrel webkit
@@ -28,6 +31,10 @@ okay to use on this site
 /* Nunito Sans font import */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
+/* Tangerine cursive font import */
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+/* MASTER STYLES */
 * {
   box-sizing: border-box;
 }
@@ -81,8 +88,10 @@ to 100% of viewport */
   color: var(--slytherin-font-color);
 }
 .header-spells {
-  background-color: var(--hufflepuff-darker-color);
-  color: var(--spells-font-color);
+  background-color: var(--spells-hufflepuff-color);
+  color: var(--spells-font-darker-color);
+  font-family: 'Tangerine', cursive;
+  font-weight: 700;
 }
 /* NAVBAR STYLES */
 .nav-master {
@@ -379,7 +388,7 @@ to 100% of viewport */
   background-color: var(--gryffindor-color);
 }
 #hufflepuff-panel {
-  background-color: var(--hufflepuff-color);
+  background-color: var(--spells-hufflepuff-color);
 }
 #ravenclaw-panel {
   background-color: var(--ravenclaw-color);
@@ -510,17 +519,51 @@ and smaller font */
 
 /* SPELLS LOOKUP STYLES */
 .spells-master {
+    /* Background */
     background-image: url(./images/hogwarts-exterior-hufflepuff.jpg);
     background-size: cover;
     background-position: center;
+    /* Sizing */
     width: 100%;
     height: calc(100vh - 75px);
-    /* padding: 3rem 0 3rem; */
-    padding-bottom: 3rem;
+    /* padding: 3rem 0 3rem;
+    padding-bottom: 3rem; */
+    /* Flexbox */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    /* Font and colors */
     font-family: 'Nunito Sans', sans-serif;
-    color: var(--main-font-color);
+    color: var(--spells-font-darker-color);
+    font-family: 'Tangerine', cursive;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.spells-container {
+  width: 70%;
+  background-color: rgba(0, 255, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.spells-book {
+  width: 100%;
+  height: calc(100vh - 250px);
+  background-color: rgba(0, 0, 255, 0.2);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.spells-page-one {
+  width: max(45%, 300px);
+  height: 90%;
+  background-color: rgba(255, 0, 255, 0.2);
+}
+.spells-page-two {
+  width: max(45%, 300px);
+  height: 90%;
+  background-color: rgba(255, 0, 255, 0.2);
 }
