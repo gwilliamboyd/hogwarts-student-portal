@@ -118,29 +118,3 @@ const HouseContainer = () => {
 }
 
 export default HouseContainer
-
-/* 
-POSSIBLE SOLUTION FOR HOUSE INFO MENU
-
-On each house panel:
-onClick{determineHouse}
-
-Define this in the HouseContainer component:
-function determineHouse() {
-  switch (e) {
-    case (gryffindorRef.current.contains(e.target)):
-      component = <HouseInfoMenu id='house-info-gryffindor' />
-      break
-    case (hufflepuffRef.current.contains(e.target)):
-      component = <HouseInfoMenu id='house-info-hufflepuff' />
-      break
-    case (ravenclawRef.current.contains(e.target)):
-      component = <HouseInfoMenu id='house-info-ravenclaw' />
-      break
-    case (slytherinRef.current.contains(e.target)):
-      component = <HouseInfoMenu id='house-info-slytherin' />
-      break
-  }
-}
-
-*/

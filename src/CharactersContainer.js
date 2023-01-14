@@ -1,6 +1,7 @@
-import { useState, useMemo, useEffect } from "react"
+import { useState, useMemo, useEffect, useRef } from "react"
 import axios from "axios"
 import CharacterBio from "./CharacterBio"
+// import useScroll from "./hooks/useScroll"
 
 const CharactersContainer = () => {
   // Default state
@@ -10,6 +11,9 @@ const CharactersContainer = () => {
   // Vars
   let charactersPerPage
   const characterUrl = 'https://hp-api.onrender.com/api/characters'
+
+  // Set character body ref
+  let charactersBodyRef = useRef(null)
 
   // Fetch character data from API
   useEffect(() => {
@@ -54,11 +58,18 @@ const CharactersContainer = () => {
   }
 
   // Loads next 20 characters
-  function paginate(charactersPerPage){
+  function paginate(){
     setPage(page + 1)
-    charactersPerPage += 20
-    console.log(charactersPerPage.value)
-    return charactersPerPage
+  }
+  const handleScroll = (e) => {
+    const element = e.target
+    // console.log(element.offsetHeight)
+    // console.log(charactersBody)
+    // console.log(charactersBodyRef.innerHeight)
+    if(element.scrollTop + element.clientHeight >= element.scrollHeight) {
+      console.log('bottom of page')
+      paginate()
+    }
   }
   // RETURN
   return (
@@ -66,7 +77,7 @@ const CharactersContainer = () => {
       <div className="characters-master">
         {/* Character Heading/Search Bar */}
         <div className="characters-heading">
-          <div className="characters-title" onClick={paginate}>
+          <div className="characters-title">
             Type any character's name or info here
           </div>
           <div className="characters-promise">
@@ -80,7 +91,7 @@ const CharactersContainer = () => {
           placeholder="Make sure you're not using invisible ink!" />
         </div>       
         {/* Character bios */}
-        <div className="characters-body">
+        <div className="characters-body" ref={charactersBodyRef} onScroll={handleScroll}>
           <ul>
             { 
               currentCharacters.map((c) => {
