@@ -23,7 +23,7 @@ const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, 
                         <td>{animal}</td>
                     </tr>
                     <tr className="odd-row">
-                        <td>Head of House</td>
+                        <td className="head-of-house">Head of House</td>
                         <td>{headOfHouse}</td>
                     </tr>
                     <tr className="even-row">

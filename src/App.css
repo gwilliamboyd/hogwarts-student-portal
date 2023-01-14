@@ -3,11 +3,13 @@
   /* Font colors */
   --main-font-color: #CEB42E;
   --darker-font-color: #7f701f;
+  --spells-font-color: #3d4d59;
   --slytherin-font-color: #DCDCDC;
   /* Header/background colors */
   --home-header-color: #162D6A;
   --gryffindor-color: #6A1616;
   --hufflepuff-color: #D8DA78;
+  --hufflepuff-darker-color: #c0c269;
   --ravenclaw-color: #272E82;
   --slytherin-color: #2A623D;
 }
@@ -78,7 +80,10 @@ to 100% of viewport */
   background-color: var(--slytherin-color);
   color: var(--slytherin-font-color);
 }
-
+.header-spells {
+  background-color: var(--hufflepuff-darker-color);
+  color: var(--spells-font-color);
+}
 /* NAVBAR STYLES */
 .nav-master {
   display: flex;
@@ -394,7 +399,7 @@ to 100% of viewport */
 .house-info-container-flex {
   width: 60%;  
   position: absolute;
-  top: 16%;
+  top: 12%;
   z-index: 1000;
   padding: 2rem 4rem;
 }
@@ -417,12 +422,12 @@ to 100% of viewport */
 /* Cell-specific font-sizing and padding */
 
 .house-info-table img {
-  width: max(100px, 35%);
+  width: max(100px, 30%);
   display: block;
   margin: 0 auto;
 }
 .house-info-table td:not(.house-name) {
-  padding: 0.25em 0.5em 0.25em 0;
+  padding: 0.25em 0.5em;
 }
 .house-info-table ul {
   list-style: none;
@@ -434,6 +439,7 @@ to 100% of viewport */
   gap: 1rem;
   justify-content: space-around;
 }
+
 .odd-row {
   background-color:rgba(106, 22, 22, 0.85);
 }
@@ -445,18 +451,25 @@ to 100% of viewport */
 /* Sets right-column table cells to sans serif
 and smaller font */
 .house-info-table td:nth-child(2n) {
-  font-size: 2rem;
-  text-align: center;
+  font-size: 2.5rem;
+  text-align: left;
+  margin-left: 12%;
   font-family: 'Nunito Sans', sans-serif;
 }
-.house-info-table td:nth-child(2n-1):not(.house-name) {
-  font-size: 4rem;
+.house-info-table td:nth-child(2n-1):not(.house-name):not(.head-of-house) {
+  font-size: 5rem;
+  margin-right: 12%;
   text-align: right;
 }
 .house-name {
   font-size: 6rem;
   text-align: center;
   padding: 0;
+}
+.head-of-house {
+  font-size: 4rem;
+  margin-right: 12%;
+  text-align: right;
 }
 /* House traits font size */
 .house-info-table ul {
@@ -476,7 +489,7 @@ and smaller font */
   background-image: url(./images/helga-hufflepuff.jpg);
   background-position: center;
   background-size: cover;
-  color: #3d4d59;
+  color: var(--spells-font-color);
 }
 #house-info-ravenclaw {
   border: 3px solid #AAAAAA;
@@ -493,4 +506,21 @@ and smaller font */
   background-position: center;
   background-size: cover;
   color: #DCDCDC;
+}
+
+/* SPELLS LOOKUP STYLES */
+.spells-master {
+    background-image: url(./images/hogwarts-exterior-hufflepuff.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: calc(100vh - 75px);
+    /* padding: 3rem 0 3rem; */
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--main-font-color);
 }
