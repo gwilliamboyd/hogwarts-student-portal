@@ -1,8 +1,8 @@
 import { useEffect } from "react"
 
-const useScroll = () => {
+const useScroll = (e) => {
 
-  if((this.innerHeight + this.scrollY) >= document.body.offsetHeight) {
+  if((e.target.innerHeight + e.target.scrollY) >= document.body.offsetHeight) {
     console.log('bottom of page')
   }
 }

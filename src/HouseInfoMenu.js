@@ -9,24 +9,24 @@ const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, 
             <table className="house-info-table">
                 <tbody>
                     <tr>
-                        <th>{houseName}</th>
-                        <td>
+                        <td className="house-name">{houseName}</td>
+                        <td className="house-crest">
                             <img src={houseCrest} alt="" />
                         </td>
-                    </tr>
-                    <tr>
+                    </tr>                    
+                    <tr className="odd-row">
                         <td>Founder</td>
                         <td>{founder}</td>
                     </tr>
-                    <tr>
+                    <tr className="even-row">
                         <td>Animal</td>
                         <td>{animal}</td>
                     </tr>
-                    <tr>
+                    <tr className="odd-row">
                         <td>Head of House</td>
                         <td>{headOfHouse}</td>
                     </tr>
-                    <tr>
+                    <tr className="even-row">
                         <td>Traits</td>
                         <td>
                             <ul className="house-trait-list">
@@ -39,6 +39,8 @@ const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, 
                             </ul>
                         </td>
                     </tr>
+                                
+                        
                 </tbody>
             </table>
         </div>

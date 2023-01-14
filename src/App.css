@@ -1,19 +1,21 @@
+:root {
+  --body-background-color: #0B1736;
+  /* Font colors */
+  --main-font-color: #CEB42E;
+  --darker-font-color: #7f701f;
+  --slytherin-font-color: #DCDCDC;
+  /* Header/background colors */
+  --home-header-color: #162D6A;
+  --gryffindor-color: #6A1616;
+  --hufflepuff-color: #D8DA78;
+  --ravenclaw-color: #272E82;
+  --slytherin-color: #2A623D;
+}
 /* 
 Imports Harry P font from fontsquirrel webkit
 License said freeware, so I'm fairly sure it's 
 okay to use on this site 
 */
-
-:root {
-  --body-background-color: #0B1736;
-  /* Font colors */
-  --main-font-color: #CEB42E;
-  --slytherin-font-color: #DCDCDC;
-  /* Header/background colors */
-  --home-header-color: #162D6A;
-  --gryffindor-color: #6A1616;
-  --slytherin-color: #2A623D;
-}
 @font-face {
   font-family: 'harry_pregular';
   src: url('./fonts/harryp__-webfont.woff2') format('woff2'),
@@ -253,7 +255,7 @@ to 100% of viewport */
 }
 
 .home-container {
-  width: 90%;
+  width: 80%;
   height: 100%;
   display: flex;
   justify-content: space-around;
@@ -267,7 +269,6 @@ to 100% of viewport */
 .page-container {
   width: 30%;
   position: relative;
-
 }
 .page-container img {
   width: 100%;
@@ -315,7 +316,7 @@ to 100% of viewport */
 }
 .page-container-paragraph {
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 2rem;
+  font-size: 1.6rem;
   padding: 0 1rem; 
   line-height: 2.5rem; 
 }
@@ -339,11 +340,11 @@ to 100% of viewport */
   grid-template-rows: repeat(2, auto);
   justify-content: center;
   align-content: center;
-  gap: 0.5em;
+  gap: 1.5rem;
 }
 
 .house-panel {
-  padding: 3em 10em;
+  padding: 3rem 10rem;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -362,10 +363,10 @@ to 100% of viewport */
   background-color: var(--gryffindor-color);
 }
 #hufflepuff-panel {
-  background-color: #D8DA78;
+  background-color: var(--hufflepuff-color);
 }
 #ravenclaw-panel {
-  background-color: #272E82;
+  background-color: var(--ravenclaw-color);
 }
 #slytherin-panel {
   background-color: var(--slytherin-color);
@@ -374,19 +375,17 @@ to 100% of viewport */
 /* HOUSE INFO MENU STYLES */
 .house-info-master {
   width: 100%;
-  /* height: 100%; */
   display: flex;
   justify-content: center;
   align-items: center;  
 }
-
 .house-info-container-none,
 .house-info-container-flex {
   width: 60%;  
   position: absolute;
   top: 16%;
   z-index: 1000;
-  padding: 2em 5em;
+  padding: 2rem 4rem;
 }
 .house-info-container-none {
   /* Changes to flex onClick */
@@ -395,72 +394,92 @@ to 100% of viewport */
 .house-info-container-flex {
   display: flex;
 }
-
 .house-info-table {
-  font-size: 5rem;
-  width: 100%;
   border-collapse: collapse;
-  text-align: left;
-}
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 1rem;
+  vertical-align: middle;
 
-/* Cell-specific font-sizing and padding */
-.house-info-table th {
-  font-weight: normal;
-  font-size: 6rem;
 }
-.house-info-table td {
-  vertical-align: top;
-  padding: 0.125em 0.5em 0.125em 0;
-  font-size: 4rem;
+/* Cell-specific font-sizing and padding */
+
+.house-info-table img {
+  width: max(100px, 35%);
+  display: block;
+  margin: 0 auto;
+}
+.house-info-table td:not(.house-name) {
+  padding: 0.25em 0.5em 0.25em 0;
 }
 .house-info-table ul {
   list-style: none;
   font-size: 1.2rem;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-around;
 }
-.house-info-table img {
-  width: max(100px, 40%);
-  display: block;
-  margin: 0 auto;
+.odd-row {
+  background-color:rgba(106, 22, 22, 0.85);
+}
+.even-row {
+  background-color: rgba(127, 112, 31, 0.85);
 }
 
-.house-info-table tbody :nth-child(1) :nth-child(2) {
-  vertical-align: middle;
-}
-.house-info-table tbody :nth-child(4) :nth-child(1) {
-  font-size: 3.5rem;
-}
+
 /* Sets right-column table cells to sans serif
 and smaller font */
 .house-info-table td:nth-child(2n) {
   font-size: 2rem;
+  text-align: center;
   font-family: 'Nunito Sans', sans-serif;
 }
-/* Sets left-align text on title cells */
-/* .house-info-table th,
-.house-info-table td {
-  text-align: left;
-} */
-
+.house-info-table td:nth-child(2n-1):not(.house-name) {
+  font-size: 4rem;
+  text-align: right;
+}
+.house-name {
+  font-size: 6rem;
+  text-align: center;
+  padding: 0;
+}
+/* House traits font size */
+.house-info-table ul {
+  font-size: 1.5rem;
+}
 /* House-specific table styling */
 #house-info-gryffindor {
   border: 3px solid #AAAAAA;
-  background-color: rgba(106, 22, 22, 0.85);
+  /* background-color: rgba(106, 22, 22, 0.85); */
+  background-image: url(./images/godric-gryffindor.jpg);
+  background-position: center;
+  background-size: cover;
   color: #d0cb4c;
 }
 #house-info-hufflepuff {
   border: 3px solid #AAAAAA;
-  background-color: rgba(175, 177, 100, 0.85);
+  background-image: url(./images/helga-hufflepuff.jpg);
+  background-position: center;
+  background-size: cover;
   color: #3d4d59;
 }
 #house-info-ravenclaw {
   border: 3px solid #AAAAAA;
-  background-color: rgba(39, 46, 130, 0.85);
+  /* background-color: rgba(39, 46, 130, 0.85); */
+  background-image: url(./images/rowena-ravenclaw.jpg);
+  background-position: center;
+  background-size: cover;
   color: #a58b7e;
 }
 #house-info-slytherin {
   border: 3px solid #AAAAAA;
-  background-color: rgba(42, 98, 61, 0.85);
+  /* background-color: rgba(42, 98, 61, 0.85); */
+  background-image: url(./images/salazar-slytherin.jpg);
+  background-position: center;
+  background-size: cover;
   color: #DCDCDC;
 }
