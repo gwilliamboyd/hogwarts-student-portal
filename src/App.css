@@ -58,6 +58,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+ul {
+  list-style: none;
+}
 
 /* Set height of React root container div 
 to 100% of viewport */ 
@@ -204,7 +207,6 @@ to 100% of viewport */
 }
 
 .characters-body ul {
-  list-style: none;
   margin: 0;
   padding: 0;
   font-size: 2rem;
@@ -439,7 +441,6 @@ to 100% of viewport */
   padding: 0.25em 0.5em;
 }
 .house-info-table ul {
-  list-style: none;
   font-size: 1.2rem;
   margin: 0;
   padding: 0;
@@ -543,7 +544,7 @@ and smaller font */
 
 .spells-container {
   width: 70%;
-  background-color: rgba(0, 255, 0, 0.2);
+  /* background-color: rgba(0, 255, 0, 0.2); */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -552,18 +553,16 @@ and smaller font */
 .spells-book {
   width: 100%;
   height: calc(100vh - 250px);
-  background-color: rgba(0, 0, 255, 0.2);
+  /* background-color: rgba(0, 0, 255, 0.2); */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
-.spells-page-one {
-  width: max(45%, 300px);
-  height: 90%;
-  background-color: rgba(255, 0, 255, 0.2);
-}
+.spells-page-one,
 .spells-page-two {
   width: max(45%, 300px);
   height: 90%;
   background-color: rgba(255, 0, 255, 0.2);
+  font-size: 3rem;
+  color: var(--spells-font-darker-color);
 }
