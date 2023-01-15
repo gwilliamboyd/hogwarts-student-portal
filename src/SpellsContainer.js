@@ -54,10 +54,11 @@ const SpellsContainer = () => {
 
     const spellBooks = paginate()
 
+    // Creates first 2 pages
     function writeSpellPages() {
-        spellBooks.forEach(sB => {
-
-        })
+        let currentSpells = [spellBooks[page], spellBooks[page + 1]]
+        console.log(currentSpells)
+        return currentSpells
     }
     // Runs paginate on load
     useEffect(() => {
