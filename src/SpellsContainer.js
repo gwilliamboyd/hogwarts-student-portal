@@ -3,13 +3,14 @@ import axios from "axios"
 import SpellsBook from "./SpellsBook"
 
 const SpellsContainer = () => {
+    // Variables
     const spellsUrl = 'https://hp-api.onrender.com/api/spells'
     const spellsPerPage = 4
-
+    // State initialization
     const [loading, setLoading] = useState(false)
     const [spells, setSpells] = useState([])
-    const [page, setPage] = useState(1)
-
+    const [page, setPage] = useState(0)
+    // Gets spells from API
     useEffect(() => {
         const getSpells = async () => {
             setLoading(true)
@@ -19,11 +20,7 @@ const SpellsContainer = () => {
         }
         getSpells()
     }, [])
-
-    // let lastIndex = page * spellsPerPage
-    // const firstIndex = lastIndex - spellsPerPage
-    // let currentSpells = []
-    // let spellChunk = []
+    
   /*   const result = spells.reduce((spellPage, item, index) => { 
         const chunkIndex = Math.floor(index/spellsPerPage)
     
@@ -37,7 +34,7 @@ const SpellsContainer = () => {
         return spellPage
 
     }, []) */
-    // console.log(result)
+
     // Split up spells array into chunks of 4
     function paginate() {
         const result = spells.reduce((spellPage, item, index) => { 
@@ -64,6 +61,12 @@ const SpellsContainer = () => {
     useEffect(() => {
         writeSpellPages()
     }, [])
+
+    // Flips to next 2 pages
+    function nextPage() {
+        setPage(page + 2)
+        writeSpellPages()
+    }
     // let currentSpells = spells.slice(firstIndex, lastIndex)
     // console.log(currentSpells)
 /*     function paginate() {
@@ -96,7 +99,7 @@ const SpellsContainer = () => {
         <>
             <div className="spells-master">
                 <div className="spells-container">
-                    <h1 className="spells-header" /* onClick={writeSpellPages} */>
+                    <h1 className="spells-header" onClick={nextPage}>
                         Spells Reference - 1992 Edition
                     </h1>
                     <SpellsBook spells={spellBooks} /* pageNumber={pageNumber} *//>
