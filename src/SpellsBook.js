@@ -22,6 +22,9 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
     function nextPage() {
         // Catch error at end of spells
         // setCurrentSpells(writeSpellPages(spellBooks, (page + 2)))
+        if(page > 18) {
+            return
+        }
         setPage(page + 2)
         // writeSpellPages(spellBooks, page)
     }
