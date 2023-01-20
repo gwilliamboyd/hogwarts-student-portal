@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import SpellsEntry from "./SpellsEntry"
+import useKeypress from "react-use-keypress"
 
 // Creates first 2 pages
 function writeSpellPages(spellBooks, page) {
@@ -9,18 +10,25 @@ function writeSpellPages(spellBooks, page) {
 
 const SpellsBook = ({ page, setPage, spellBooks }) => {
 
+    // State initialization
     const [currentSpells, setCurrentSpells] = useState(writeSpellPages(spellBooks, page))
 
     // Runs paginate on load
-
     useEffect(() => {
         setCurrentSpells(writeSpellPages(spellBooks, page))
     }, [spellBooks, page])
 
-
+    // Flips to next 2 pages
+    function previousPage() {
+        // setCurrentSpells(writeSpellPages(spellBooks, (page + 2)))
+        if(page < 0) {
+            return
+        }
+        setPage(page - 2)
+        // writeSpellPages(spellBooks, page)
+    }
     // Flips to next 2 pages
     function nextPage() {
-        // Catch error at end of spells
         // setCurrentSpells(writeSpellPages(spellBooks, (page + 2)))
         if(page > 18) {
             return
@@ -29,13 +37,26 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
         // writeSpellPages(spellBooks, page)
     }
 
-    // Right arrow key functionality
+    useKeypress(['ArrowLeft', 'ArrowRight'], (e) => {
+        if(e.key === 'ArrowLeft') {
+            previousPage()
+        } else {
+            nextPage()
+        }
+    })
+
+    // Both of these funcitons freeze the page when pressed too quickly
     // Insert into useEffect:
+/*     window.addEventListener('keydown', (e) => {
+        if(e.keyCode === 37) {
+            previousPage()
+        }
+    })
     window.addEventListener('keydown', (e) => {
         if(e.keyCode === 39) {
             nextPage()
         }
-    })
+    }) */
 
   return (
     <>
