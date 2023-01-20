@@ -14,6 +14,7 @@ function App() {
   const [charactersActive, setCharactersActive] = useState(false);
   const [houseActive, setHouseActive] = useState(false);
   const [spellsActive, setSpellsActive] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false)
 
   const location = useLocation()
 
@@ -44,13 +45,15 @@ function App() {
       setSpellsActive(true)
     }
   })
-  
+
   return (
     <>
       <Navbar navClass={homeActive ? 'header-home' :
                         charactersActive ? 'header-characters' :
                         houseActive ? 'header-house' :
-                        spellsActive? 'header-spells' : null}/>
+                        spellsActive? 'header-spells' : null} 
+                        mobileMenu={mobileMenu}
+                        setMobileMenu={setMobileMenu} />
       <div className="container">
 
         <Routes>

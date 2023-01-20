@@ -64,6 +64,11 @@ ul {
   padding: 0;
 }
 
+/* Mobile menu icon - hidden except below 600px */
+.mobile-menu-icon {
+  display: none;
+}
+
 /* Set height of React root container div 
 to 100% of viewport */ 
 #root {
@@ -599,6 +604,9 @@ and smaller font */
 /* MEDIA QUERIES  */
 /* TABLET */
 @media (max-width: 1200px) {
+
+  /* NAV BAR */
+
   .header-home,
   .header-characters,
   .header-house,
@@ -620,5 +628,270 @@ and smaller font */
   .nav-links {
     font-size: 1.7rem;
     gap: 2.5rem;
+  }
+
+  /* HOME PAGE */
+
+  .home-master {
+    height: calc(100vh - 64px);
+    align-items: flex-start;
+    padding: 9rem 0 0;
+
+  }  
+  .home-container {
+    width: 95%;
+    align-items: flex-start;
+  }  
+  .page-container {
+    width: 32%;
+  }
+  .page-container-text {
+    padding: 0.8rem;
+  }
+  /* Set separate font sizes for title and paragraph */
+  .page-container-title {
+    font-size: 3.2rem;
+  }
+  .page-container-paragraph {
+    font-size: 1rem; 
+    line-height: 1.8rem; 
+  }
+
+  /* CHARACTERS SEARCH */
+
+  /* CHARACTERS SEARCH STYLES */
+  .characters-master {
+    width: 100%;
+    height: calc(100vh - 75px);
+    padding-bottom: 3rem;
+  }
+  .characters-heading {
+    width: 60%;
+    line-height: 1.5rem;
+    padding-top: 2.7rem;
+    gap: 1.5rem;
+  }
+  .characters-title {
+    font-size: 2.2rem;
+  }
+  .characters-promise {
+    font-size: 1.2rem;
+  }
+  .characters-search-input {
+    width: 95%;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+  }
+  .characters-body {
+    width: 80%;  
+    padding: 0.9rem 0;
+  }
+  .characters-body ul {
+    font-size: 2rem;
+    gap: 0.4rem;
+  }
+  .characters-bio img {
+    max-width: 75px;
+  }
+
+}
+
+/* TABLET - SMALL (900px) */
+
+@media (max-width: 900px) {
+
+  /* NAV BAR */
+
+  .header-home,
+  .header-characters,
+  .header-house,
+  .header-spells {
+    padding: 0.5rem 1.2rem;
+  }
+  .nav-route {
+    gap: 0.5rem;
+  }  
+  /* Logo */
+  .nav-logo {
+    font-size: 1.8rem;
+    transition: filter 0.5s ease;
+  }  
+  .nav-logo img {
+    width: 30px;
+  }  
+  /* Link items */
+  .nav-links {
+    font-size: 1.5rem;
+    gap: 2rem;
+  }
+
+  /* HOME PAGE */
+
+  .home-master {
+    height: calc(100vh - 52px);
+    align-items: flex-start;
+    padding: 1.6rem 0 0;
+    overflow: scroll;
+    scrollbar-width: none;  /* Firefox */
+  }  
+  .home-container {
+    width: 95%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.2rem;
+  }  
+  .page-container {
+    width: 42%;
+  }
+  .page-container-text {
+    padding: 0.6rem;
+  }
+  /* Set separate font sizes for title and paragraph */
+  .page-container-title {
+    font-size: 2.8rem;
+  }
+  .page-container-paragraph {
+    font-size: 1rem; 
+    line-height: 1.3rem; 
+  }
+
+  /* CHARACTERS SEARCH STYLES */
+
+  .characters-heading {
+    width: 60%;
+    line-height: 1rem;
+    padding-top: 2rem;
+    gap: 1.2rem;
+  }
+  .characters-title {
+    font-size: 1.6rem;
+  }
+  .characters-promise {
+    font-size: 0.9rem;
+  }
+  .characters-search-input {
+    padding: 0.6rem 1.2rem;
+  }
+  .characters-body { 
+    padding: 0.9rem 0;
+  }
+  .characters-body ul {
+    font-size: 1.5rem;
+    gap: 0.25rem;
+  }
+  .characters-bio img {
+    max-width: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  /* NAV BAR */
+
+  .header-home,
+  .header-characters,
+  .header-house,
+  .header-spells {
+    padding: 0.3rem 0.7rem;
+  }
+  .nav-route {
+    gap: 0.5rem;
+  }  
+  /* Logo */
+  .nav-logo {
+    font-size: 1.8rem;
+    transition: filter 0.5s ease;
+  }  
+  .nav-logo img {
+    width: 40px;
+  }  
+  /* Mobile menu incoming */
+  /* Link items */
+  .nav-links {
+    display: none;
+  }
+  .mobile-menu-icon {
+    display: block;
+    font-size: 1.5rem;
+  }
+  .mobile-menu-list {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    flex-direction: column;  
+    top: 55px;
+    right: 0;
+    background-color: var(--home-header-color)
+  }
+  .mobile-menu-list a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3rem 0;   
+    font-size: 4.5rem;
+  }
+  .mobile-menu-list .nav-route {
+    gap: 2.5rem;
+  }
+
+  /* HOME PAGE */
+
+  .home-master {
+    height: calc(100vh - 48px);
+    align-items: flex-start;
+    padding: 1.6rem 0 0;
+    overflow: scroll;
+    scrollbar-width: none;  /* Firefox */
+  }  
+  .home-container {
+    width: 95%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+  }  
+  .page-container {
+    width: 85%;
+  }
+  .page-container-text {
+    padding: 0.6rem;
+  }
+  /* Set separate font sizes for title and paragraph */
+  .page-container-title {
+    font-size: 3.6rem;
+  }
+  .page-container-paragraph {
+    font-size: 1.2rem; 
+    line-height: 1.7rem; 
+  }
+
+  /* CHARACTERS SEARCH STYLES */
+
+  .characters-heading {
+    width: 60%;
+    line-height: 1rem;
+    padding-top: 2rem;
+    gap: 1.2rem;
+  }
+  .characters-title {
+    font-size: 1.6rem;
+  }
+  .characters-promise {
+    font-size: 0.9rem;
+  }
+  .characters-search-input {
+    padding: 0.6rem 1.2rem;
+  }
+  .characters-body { 
+    padding: 0.9rem 0;
+  }
+  .characters-body ul {
+    font-size: 1.5rem;
+    gap: 0.25rem;
+  }
+  .characters-bio img {
+    max-width: 100px;
   }
 }
