@@ -222,7 +222,7 @@ to 100% of viewport */
   gap: 0.5rem;
 }
 .characters-image img {
-  max-width: 80px;
+  max-width: 150px;
   display: block;
   margin: 0 auto;
   border-radius: 1rem;
@@ -231,18 +231,31 @@ to 100% of viewport */
 .characters-table {
   width: 100%;
   text-align: left;
-  display: grid;
 }
 
 .characters-table-row {
   display: grid;
-  grid-template-columns: repeat(4, 13% 34% 21% 32%);
+  grid-template-columns: repeat(2, auto);
+  /* gap: 1rem; */
+}
+
+.characters-text {
+  padding: 0 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 40% 30% 30%);
+  justify-content: flex-start;
+  /* flex-direction: column; */
+  font-size: 2rem;
+  /* gap: 2rem; */
 }
 
 .characters-table-cell {
-  text-align: left;
-  vertical-align: middle;
+  display: grid;
+  grid-template-columns: repeat(2, 25% 75%);
+  gap: 1rem;
+  align-items: baseline;
 }
+
 /* Bio heading styles */
 .characters-name-heading {
   font-weight: bold;
@@ -345,9 +358,9 @@ to 100% of viewport */
 /* HOUSE PANEL STYLES */
 
 .house-panel-master {
-  display: flex;
   width: 100%;
   height: calc(100vh - 75px);
+  display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(./images/hogwarts-exterior-slytherin.png);
@@ -357,21 +370,28 @@ to 100% of viewport */
 
 .house-panel-container {
   display: grid;
+  width: 75%;
+  height: 90%;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
-  justify-content: center;
-  align-content: center;
+  justify-items: center;
+  align-items: center;
   gap: 1.5rem;
 }
 
 .house-panel {
-  padding: 3rem 10rem;
+  /* padding: 3rem 10rem; */
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   filter: brightness(85%);
   transition: filter 0.3s ease;
+}
+
+.house-panel img {
+  width: min(190px, 40%);
 }
 /* House panel hover effect */
 .house-panel:hover {
@@ -401,12 +421,10 @@ to 100% of viewport */
   align-items: center;  
 }
 .house-info-container-none,
-.house-info-container-flex {
-  width: 60%;  
+.house-info-container-flex { 
   position: absolute;
   top: 12%;
   z-index: 1000;
-  padding: 2rem 4rem;
 }
 .house-info-container-none {
   /* Changes to flex onClick */
@@ -414,71 +432,80 @@ to 100% of viewport */
 }
 .house-info-container-flex {
   display: flex;
-}
-.house-info-table {
-  border-collapse: collapse;
-  display: table;
-  table-layout: fixed;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  /* row-gap: 1rem; */
+  padding: 1rem 3rem;
+  width: 65%;
+  height: 85%;
   font-size: 1rem;
-  vertical-align: middle;
+  overflow-y: scroll;
+  scrollbar-width: none;  /* Firefox */
+}
 
+.house-info-table {
+  font-size: 3rem;
+  width: 80%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(5, 25% 10% 10% 10% 45%);
+  row-gap: 2.5rem;
+}
+
+.house-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  /* padding: 0.75rem 0; */
+  text-align: right;
+}
+
+.house-name {
+  font-size: 5.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.house-name-row {
+  grid-template-columns: 75% 25%;
+}
+
+.house-crest {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.house-crest img {
+  display: block;
+  width: min(190px, 40%);
+  height: 100%;
+}
+
+.info-heading {
+  font-size: 4rem;
+  display: flex;
+  text-align: left;
+}
+.info-body {
+  font-size: 2.2rem;  
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Nunito Sans', 'sans-serif';
+}
+.head-of-house {
+  font-size: 3.2rem;
 }
 /* Cell-specific font-sizing and padding */
 
-.house-info-table img {
-  width: max(100px, 30%);
-  display: block;
-  margin: 0 auto;
-}
-.house-info-table td:not(.house-name) {
-  padding: 0.25em 0.5em;
-}
-.house-info-table ul {
-  font-size: 1.2rem;
-  margin: 0;
-  padding: 0;
+.house-trait-list ul {
+  font-size: 1.8rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-around;
-}
-
-/* .odd-row {
-  background-color:rgba(106, 22, 22, 0.85);
-}
-.even-row {
-  background-color: rgba(127, 112, 31, 0.85);
-} */
-
-
-/* Sets right-column table cells to sans serif
-and smaller font */
-.house-info-table td:nth-child(2n) {
-  font-size: 2.5rem;
-  text-align: left;
-  margin-left: 12%;
-  font-family: 'Nunito Sans', sans-serif;
-}
-.house-info-table td:nth-child(2n-1):not(.house-name):not(.head-of-house) {
-  font-size: 5rem;
-  margin-right: 12%;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: flex-start; */
   text-align: right;
 }
-.house-name {
-  font-size: 6rem;
-  text-align: center;
-  padding: 0;
-}
-.head-of-house {
-  font-size: 4rem;
-  margin-right: 12%;
-  text-align: right;
-}
-/* House traits font size */
-.house-info-table ul {
-  font-size: 1.5rem;
-}
+
 /* House-specific table styling */
 #house-info-gryffindor {
   border: 3px solid #AAAAAA;
@@ -683,6 +710,55 @@ and smaller font */
     margin: auto;
   }
 
+  /* HOUSE INFO */
+
+  .house-info-container-flex {
+    padding: 1rem 2rem;
+  }
+
+  .house-name {
+    font-size: 4.5rem;
+  }
+  
+  .house-crest img {
+    display: block;
+    width: min(190px, 80%);
+    height: max-content;
+  }
+
+  .house-row {
+    grid-template-columns: 30% 70%;
+  }
+
+  .house-name-row {
+    grid-template-columns: 65% 35%;
+  }
+  
+  .info-heading {
+    font-size: 4rem;
+    display: flex;
+    text-align: left;
+  }
+  .info-body {
+    font-size: 2.2rem;  
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Nunito Sans', 'sans-serif';
+  }
+  .head-of-house {
+    font-size: 3.2rem;
+  }
+  /* Cell-specific font-sizing and padding */
+  
+  .house-trait-list ul {
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: flex-start; */
+    text-align: right;
+  }
+
 }
 
 /* TABLET - SMALL (900px) */
@@ -793,6 +869,63 @@ and smaller font */
     gap: 1rem;
     align-items: baseline;
   }
+
+  /* HOUSE INFO */
+
+  .house-panel-container {
+    width: 95%;
+    height: 65%;
+    gap: 1rem;
+  }
+
+  .house-info-container-flex {
+    padding: 1rem 2rem;
+  }
+
+  .house-info-table {
+    width: 100%;
+    row-gap: 1.2rem;
+    overflow: hidden;
+  }
+
+  .house-name {
+    font-size: 3.8rem;
+  }
+  
+  .house-crest img {
+    display: block;
+    width: min(190px, 80%);
+    height: 100%;
+    height: max-content;
+  }
+
+  .house-row {
+    grid-template-columns: 40% 60%;
+  }
+
+  .house-name-row {
+    grid-template-columns: 60% 40%;
+  }
+  
+  .info-heading {
+    font-size: 3rem;
+    display: flex;
+    text-align: left;
+  }
+  .info-body {
+    font-size: 1.4rem;  
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Nunito Sans', 'sans-serif';
+  }
+  .head-of-house {
+    font-size: 2.4rem;
+  }
+  
+  .house-trait-list ul {
+    font-size: 1.2rem;
+  }
+  
 }
 
 @media (max-width: 600px) {
@@ -962,5 +1095,74 @@ and smaller font */
   .characters-patronus-heading {
     font-size: 1rem;
   }
-   
+
+  /* HOUSE INFO */
+  
+  .house-panel-master {
+    height: fit-content;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .house-panel-container {
+    margin-top: 2rem;
+    width: 90%;
+    /* height: fit-content; */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: scroll;
+  }
+  
+  .house-panel {
+    /* padding: 3rem 10rem; */
+    width: 100%;
+    height: 400px;
+  }
+  /* HOUSE INFO */
+
+  .house-panel-container {
+    width: 95%;
+    height: 65%;
+    gap: 1rem;
+  }
+
+  /* House Info Menus */
+
+  .house-info-container-flex {
+    top: 8%;
+    width: 92%;
+    padding: 1rem 2rem;
+    overflow: hidden;
+  }
+  .house-info-table {
+    row-gap: 1rem;
+  }
+  .house-name {
+    font-size: 3.8rem;
+  }  
+  .house-crest img {
+    display: block;
+    width: 120px;
+    height: max-content;
+  }
+  .house-row {
+    grid-template-columns: 40% 60%;
+  }
+  .house-name-row {
+    grid-template-columns: 50% 50%;
+  }  
+  .info-heading {
+    font-size: 3rem;
+  }
+  .info-body {
+    font-size: 1.6rem;
+  }
+  .head-of-house {
+    font-size: 2.4rem;
+  }  
+  .house-trait-list ul {
+    font-size: 1.3rem;
+    gap: 0.5rem;
+  }
 }

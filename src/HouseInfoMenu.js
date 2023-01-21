@@ -6,43 +6,39 @@ const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, 
     <div className="house-info-master" ref={ref}>
         <div 
         className="house-info-container-flex" id={id}>
-            <table className="house-info-table">
-                <tbody>
-                    <tr>
-                        <td className="house-name">{houseName}</td>
-                        <td className="house-crest">
-                            <img src={houseCrest} alt="" />
-                        </td>
-                    </tr>                    
-                    <tr className="odd-row">
-                        <td>Founder</td>
-                        <td>{founder}</td>
-                    </tr>
-                    <tr className="even-row">
-                        <td>Animal</td>
-                        <td>{animal}</td>
-                    </tr>
-                    <tr className="odd-row">
-                        <td className="head-of-house">Head of House</td>
-                        <td>{headOfHouse}</td>
-                    </tr>
-                    <tr className="even-row">
-                        <td>Traits</td>
-                        <td>
-                            <ul className="house-trait-list">
-                                <li>Resourcefulness</li>
-                                <li>Determination</li>
-                                <li>Pride</li>
-                                <li>Cunning</li>
-                                <li>Ambition</li>
-                                <li>Self-preservation</li>
-                            </ul>
-                        </td>
-                    </tr>
-                                
-                        
-                </tbody>
-            </table>
+            <div className="house-info-table">
+                <div className="house-row house-name-row">
+                    <div className="house-name">{houseName}</div>
+                    <div className="house-crest">
+                        <img src={houseCrest} alt="" />
+                    </div>
+                </div>                    
+                <div className="house-row">
+                    <div className="founder info-heading">Founder</div>
+                    <div className="info-body">{founder}</div>
+                </div>
+                <div className="house-row">
+                    <div className="animal info-heading">Animal</div>
+                    <div className="info-body">{animal}</div>
+                </div>
+                <div className="house-row">
+                    <div className="head-of-house info-heading">Head of House</div>
+                    <div className="info-body">{headOfHouse}</div>
+                </div>
+                <div className="house-row">
+                    <div className="traits info-heading">Traits</div>
+                    <div className="info-body house-trait-list">
+                        <ul>
+                            <li>Resourcefulness</li>
+                            <li>Determination</li>
+                            <li>Pride</li>
+                            <li>Cunning</li>
+                            <li>Ambition</li>
+                            <li>Self-preservation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
   )
