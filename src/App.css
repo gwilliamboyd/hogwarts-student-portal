@@ -754,7 +754,9 @@ to 100% of viewport */
   }
 
     /* SPELLS LOOKUP STYLES */
-    
+    .spells-master {
+      height: 100vh;
+    }  
   .spells-container {
     width: 90%;
     display: flex;
@@ -1228,9 +1230,13 @@ to 100% of viewport */
   /* SPELLS LOOKUP STYLES */
 
   .spells-master {
-    height: fit-content;
+    height: 100vh;
     overflow-y: scroll;
     scrollbar-width: none;
+  }
+
+  .spells-header {
+    font-size: 2.7rem;
   }
 
   .spells-book {
@@ -1244,10 +1250,9 @@ to 100% of viewport */
     height: min-content;
     padding: 2rem 2.2rem;
   }
-  .spells-page-one ul,
-  .spells-page-two ul
+  .spells-page-one ul
   {
-    gap: 0.9rem;
+    gap: 2.5rem;
   }
 
   .spell-entry {
@@ -1259,8 +1264,8 @@ to 100% of viewport */
   }
 
   .spell-desc {
-    font-size: 0.85rem;
-    line-height: 1.3rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
   }
   
 }
