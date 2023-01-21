@@ -1,8 +1,40 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useLayoutEffect } from "react"
 import axios from "axios"
 import SpellsBook from "./SpellsBook"
+import SpellsBookMobile from "./SpellsBookMobile"
+import RenderedSpells from "./RenderedSpells"
+
+
 
 const SpellsContainer = () => {
+
+    const [mobileActive, setMobileActive] = useState(false)
+    const [desktopActive, setDesktopActive] = useState(true)
+    const [screenMode, setScreenMode] = useState(window.innerWidth)
+
+    let screenWidth = window.innerWidth
+
+
+/*     function getScreenWidth() {
+        setMobileActive(window.innerWidth < 600 ? true : false)
+        setDesktopActive(window.innerWidth > 600 ? true : false)
+        console.log('resize')
+        if(mobileActive) {
+            console.log('mobile activated')
+        } else if(desktopActive){
+            console.log('desktop activated')
+        }
+    } */
+    useEffect(() => {
+        const mobileComponent = window.matchMedia('(max-width: 600px)')
+        setMobileActive(mobileComponent.matches)
+
+        function updateMobileActive(e) {
+
+        }
+        // window.addEventListener('resize', getScreenWidth())
+        console.log('window resize')
+    }, [])
 
     const spellsPerPage = 4
 
@@ -37,6 +69,33 @@ const SpellsContainer = () => {
     
     const spellBooks = paginate()
 
+    const mobileContent = (
+        <SpellsBookMobile page={page} 
+        setPage={setPage} 
+        spells={spells}/>)
+    const desktopContent = (
+        <SpellsBook page={page} 
+        setPage={setPage} 
+        spellBooks={spellBooks} />
+    )
+
+    
+    /*function RenderedSpells() {
+         if(mobileActive = true) {
+        return (
+            <SpellsBookMobile page={page} 
+                setPage={setPage} 
+                spells={spells}/>
+        )
+        } else if(mobileActive = false) {
+            return (
+                <SpellsBook page={page} 
+                    setPage={setPage} 
+                    spellBooks={spellBooks} />
+            )
+        } 
+    }*/
+
     return (
         <>
             <div className="spells-master">
@@ -44,9 +103,8 @@ const SpellsContainer = () => {
                     <h1 className="spells-header">
                         Spells Reference - 1992 Edition
                     </h1>
-                    <SpellsBook page={page} 
-                    setPage={setPage} 
-                    spellBooks={spellBooks} />
+                    <RenderedSpells mobileContent={mobileContent} 
+                                    desktopContent={desktopContent} />
                 </div>
             </div>
         </>
