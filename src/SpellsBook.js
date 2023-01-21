@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import SpellsEntry from "./SpellsEntry"
 import useKeypress from "react-use-keypress"
+import { useSwipeable } from "react-swipeable"
 
 // Creates first 2 pages
 function writeSpellPages(spellBooks, page) {
@@ -45,6 +46,15 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
         }
     })
 
+    const previousPageSwipe = useSwipeable({
+        preventScrollOnSwipe: true,
+        onSwipedRight: () => previousPage()
+    })
+    const nextPageSwipe = useSwipeable({
+        preventScrollOnSwipe: true,
+        onSwipedLeft: () => nextPage()
+    })
+
     // Both of these funcitons freeze the page when pressed too quickly
     // Insert into useEffect:
 /*     window.addEventListener('keydown', (e) => {
@@ -61,7 +71,7 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
   return (
     <>
         <div className="spells-book">
-            <div className="spells-page-one">
+            <div className="spells-page-one" {...previousPageSwipe} {...nextPageSwipe} >
                 <ul>
                 {currentSpells?.[0]?.map((s) => {
                         return (
@@ -73,7 +83,7 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
                     })}
                 </ul>
             </div>
-            <div className="spells-page-two">
+            <div className="spells-page-two" {...previousPageSwipe} {...nextPageSwipe} >
                 <ul>
                     {currentSpells?.[1]?.map((s) => {
                         return (

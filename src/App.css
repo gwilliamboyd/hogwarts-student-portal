@@ -73,9 +73,14 @@ ul {
 to 100% of viewport */ 
 #root {
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .container {
-  height: calc(100% - 118.667px);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+  /* height: calc(100% - 118.667px); */
 }
 
 .header-home,
@@ -130,7 +135,7 @@ to 100% of viewport */
 .nav-logo img {
   display: inline-block;
   width: 50px;
-  height: fit-content;
+  height: auto;
 }
 
 /* Link items */
@@ -151,7 +156,7 @@ to 100% of viewport */
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: calc(100vh - 75px);
+  flex: 1 0 auto;
   /* padding: 3rem 0 3rem; */
   padding-bottom: 3rem;
   display: flex;
@@ -200,10 +205,11 @@ to 100% of viewport */
 .characters-body {
   color: var(--main-font-color);
   width: 54%;
-  height: 100vh;
+  height: 62vh;
   margin-top: 1rem;
   padding: 1rem 0;
   display: grid;
+  /* overflow-x: hidden; */
   overflow-y: scroll;
   scrollbar-width: none;  /* Firefox */
   border: 2px solid var(--main-font-color);
@@ -358,7 +364,7 @@ to 100% of viewport */
 
 .house-panel-master {
   width: 100%;
-  height: calc(100vh - 75px);
+  flex: 1 1 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -546,9 +552,10 @@ to 100% of viewport */
     background-position: center;
     /* Sizing */
     width: 100%;
-    height: calc(100vh - 75px);
+    /* height: calc(100vh - 75px); */
     /* Flexbox */
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -563,6 +570,7 @@ to 100% of viewport */
   width: 70%;
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
   justify-content: flex-start;
   align-items: center;
 }
@@ -667,7 +675,7 @@ to 100% of viewport */
 
   .characters-master {
     width: 100%;
-    height: calc(100vh - 75px);
+    /* height: calc(100vh - 75px); */
     padding-bottom: 3rem;
   }
   .characters-heading {
@@ -751,7 +759,7 @@ to 100% of viewport */
 
     /* SPELLS LOOKUP STYLES */
     .spells-master {
-      height: 100vh;
+      /* height: 100vh; */
     }  
   .spells-container {
     width: 90%;
