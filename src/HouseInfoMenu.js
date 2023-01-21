@@ -29,12 +29,9 @@ const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, 
                     <div className="traits info-heading">Traits</div>
                     <div className="info-body house-trait-list">
                         <ul>
-                            <li>Resourcefulness</li>
-                            <li>Determination</li>
-                            <li>Pride</li>
-                            <li>Cunning</li>
-                            <li>Ambition</li>
-                            <li>Self-preservation</li>
+                            {traits.map(trait => {
+                                return <li>{trait}</li>
+                            })}
                         </ul>
                     </div>
                 </div>

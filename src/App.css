@@ -600,10 +600,6 @@ to 100% of viewport */
   line-height: 3.2rem;
 }
 
-.spell-title {
-
-}
-
 .spell-desc {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1rem;
@@ -1230,7 +1226,6 @@ to 100% of viewport */
   /* SPELLS LOOKUP STYLES */
 
   .spells-master {
-    height: 100vh;
     overflow-y: scroll;
     scrollbar-width: none;
   }

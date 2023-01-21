@@ -79,7 +79,13 @@ const HouseContainer = () => {
         houseCrest={require("./images/house-gryffindor.png")}
         founder='Godric Gryffindor' 
         animal='Lion'
-        headOfHouse = 'Minerva McGonagall' 
+        headOfHouse = 'Minerva McGonagall'
+        traits={['Courage',
+                  'Bravery',
+                  'Determination',
+                  'Darking',
+                  'Nerve',
+                  'Chivalry']} 
         ref={menuRef} />}
 
         {/* Hufflepuff Info Menu */}
@@ -89,7 +95,13 @@ const HouseContainer = () => {
         houseCrest={require("./images/house-hufflepuff.png")} 
         founder='Helga Hufflepuff' 
         animal='Badger'
-        headOfHouse = 'Pomona Sprout' 
+        headOfHouse = 'Pomona Sprout'
+        traits={['Hard-working',
+                  'Patience',
+                  'Fairness',
+                  'Just',
+                  'Loyalty',
+                  'Modesty']} 
         ref={menuRef} />}
         
         {/* Ravenclaw Info Menu */}
@@ -99,7 +111,13 @@ const HouseContainer = () => {
         houseCrest={require("./images/house-ravenclaw.png")} 
         founder='Rowena Ravenclaw' 
         animal='Eagle'
-        headOfHouse = 'Filius Flitwick' 
+        headOfHouse = 'Filius Flitwick'
+        traits={['Wit',
+                  'Learning',
+                  'Wisdom',
+                  'Acceptance',
+                  'Intelligence',
+                  'Creativity']} 
         ref={menuRef} />}
         
         {/* Slytherin Info Menu */}
@@ -109,7 +127,13 @@ const HouseContainer = () => {
         houseCrest={require("./images/house-slytherin.png")} 
         founder='Salazar Slytherin' 
         animal='Snake'
-        headOfHouse = 'Horace Slughorn' 
+        headOfHouse = 'Horace Slughorn'
+        traits={['Resourcefulness',
+                  'Determination',
+                  'Pride',
+                  'Cunning',
+                  'Ambition',
+                  'Self-preservation']} 
         ref={menuRef} />}
         
         
