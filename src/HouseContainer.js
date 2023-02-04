@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import HousePanel from "./HousePanel"
 import HouseInfoMenu from "./HouseInfoMenu"
+import { motion } from "framer-motion"
 
 const HouseContainer = () => {
     // const [menuOpen, setMenuOpen] = useState(false);

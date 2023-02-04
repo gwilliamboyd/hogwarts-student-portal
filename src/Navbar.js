@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faHatWizard, faWandSparkles, faBars } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom' 
+import { motion } from 'framer-motion'
 
 const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
 
@@ -33,7 +34,11 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
 
   return (
     <header className={navClass}>
-        <nav className="nav-master">
+        <motion.nav 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{duration: 1}} 
+        className="nav-master">
             <div className="nav-logo">
                 <Link to='/' className='nav-route' onClick={() => setMobileMenu(false)}>
                     <img 
@@ -66,7 +71,7 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
                     </Link>
                 </div>                
             </div>
-        </nav>
+        </motion.nav>
         {mobileMenu && <div className="mobile-menu-list" ref={mobileMenuRef}>
                     <Link to='/characterscontainer' className='nav-route' onClick={handleClick}>
                         <div className="nav-icon"><FontAwesomeIcon icon={faUser} /></div>

@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect, useRef } from "react"
 import axios from "axios"
 import CharacterBio from "./CharacterBio"
+import { motion } from "framer-motion"
 // import useScroll from "./hooks/useScroll"
 
 const CharactersContainer = () => {
@@ -89,22 +90,35 @@ const CharactersContainer = () => {
     <>
       <div className="characters-master">
         {/* Character Heading/Search Bar */}
-        <div className="characters-heading">
-          <div className="characters-title">
+        <motion.div className="characters-heading">
+          <motion.div className="characters-title"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{duration: 1}}>
             Type any character's name or info here
-          </div>
-          <div className="characters-promise">
+          </motion.div>
+          <motion.div className="characters-promise"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{delay: 0.25, duration: 1}}>
             <i>(But first, you must solemnly swear you are <b>not</b> up to no good...)</i>
-          </div>
-          <input
+          </motion.div>
+          <motion.input
           value={query} 
           onChange={e => setQuery(e.target.value)}
           type="text" 
           className="characters-search-input" 
-          placeholder="Make sure you're not using invisible ink!" />
-        </div>       
+          placeholder="Make sure you're not using invisible ink!"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{delay: 0.5, duration: 1}} />
+        </motion.div>       
         {/* Character bios */}
-        <div className="characters-body" ref={charactersBodyRef} onScroll={handleScroll}>
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{delay: 0.75, duration: 1.2}}
+        className="characters-body" ref={charactersBodyRef} onScroll={handleScroll}>
           <ul>
             { 
               currentCharacters.map((c) => {
@@ -119,7 +133,7 @@ const CharactersContainer = () => {
               })
             }              
           </ul>
-        </div>
+        </motion.div>
       </div>
     </>
   )
