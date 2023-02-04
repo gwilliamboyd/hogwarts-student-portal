@@ -22,20 +22,23 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
     // Flips to next 2 pages
     function previousPage() {
         // setCurrentSpells(writeSpellPages(spellBooks, (page + 2)))
-        if(page < 0) {
-            return
+        if(page < 2) {
+            return null
+        } else {
+            setPage(page - 2)
         }
-        setPage(page - 2)
+        console.log(page)
         // writeSpellPages(spellBooks, page)
     }
     // Flips to next 2 pages
     function nextPage() {
         // setCurrentSpells(writeSpellPages(spellBooks, (page + 2)))
-        if(page > 18) {
-            return
+        if(page > 16) {
+            return null
         }
         setPage(page + 2)
         // writeSpellPages(spellBooks, page)
+        console.log(page)
     }
 
     useKeypress(['ArrowLeft', 'ArrowRight'], (e) => {

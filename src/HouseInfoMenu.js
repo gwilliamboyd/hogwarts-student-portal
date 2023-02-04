@@ -1,9 +1,14 @@
 import { forwardRef } from "react"
+import { motion } from "framer-motion"
 
 const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, headOfHouse, traits }, ref) => {
 
   return (
-    <div className="house-info-master" ref={ref}>
+    <motion.div 
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{duration: 0.3}}
+    className="house-info-master" ref={ref}>
         <div 
         className="house-info-container-flex" id={id}>
             <div className="house-info-table">
@@ -37,7 +42,7 @@ const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, 
                 </div>
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 })
 
