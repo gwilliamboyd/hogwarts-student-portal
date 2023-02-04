@@ -15,17 +15,27 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
       document.addEventListener('mousedown', (e) => {
         if(!mobileMenuRef.current.contains(e.target)) {
             console.log('click')
-          setMobileMenu(false)
+            // setMobileMenu(false)
+            handleClick()
         }
       })
     }, [])
+
+    const handleClick = () => {
+        if(mobileMenu) {
+            setMobileMenu(false)
+            console.log('click handled')
+        } else {
+            setMobileMenu(true)
+        }
+    }
     
 
   return (
     <header className={navClass}>
         <nav className="nav-master">
             <div className="nav-logo">
-                <Link to='/' className='nav-route'>
+                <Link to='/' className='nav-route' onClick={handleClick}>
                     <img 
                     src={require("./images/hogwarts-logo.png")} 
                     alt="Hogwarts Crest" />
@@ -33,7 +43,7 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
                 </Link>
             </div>
             <div className="mobile-menu">
-                <FontAwesomeIcon icon={faBars} className='mobile-menu-icon' onClick={toggleMobileMenu} />                
+                <FontAwesomeIcon icon={faBars} className='mobile-menu-icon' onClick={handleClick} />                
             </div>
             
             <div className="nav-links"> 
@@ -58,15 +68,15 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
             </div>
         </nav>
         {mobileMenu && <div className="mobile-menu-list" ref={mobileMenuRef}>
-                    <Link to='/characterscontainer' className='nav-route'>
+                    <Link to='/characterscontainer' className='nav-route' onClick={handleClick}>
                         <div className="nav-icon"><FontAwesomeIcon icon={faUser} /></div>
                         <div className="nav-name">Characters</div>
                     </Link>
-                    <Link to='/housecontainer' className='nav-route'>
+                    <Link to='/housecontainer' className='nav-route' onClick={handleClick}>
                         <div className="nav-icon"><FontAwesomeIcon icon={faHatWizard} /></div>
                         <div className="nav-name">Houses</div>
                     </Link>
-                    <Link to='/spellscontainer' className='nav-route'>
+                    <Link to='/spellscontainer' className='nav-route' onClick={handleClick}>
                         <div className="nav-icon"><FontAwesomeIcon icon={faWandSparkles} /></div>
                         <div className="nav-name">Spells</div>
                     </Link>
