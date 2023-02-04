@@ -757,10 +757,10 @@ to 100% of viewport */
     text-align: right;
   }
 
-    /* SPELLS LOOKUP STYLES */
-    .spells-master {
-      /* height: 100vh; */
-    }  
+    /* SPELLS LOOKUP STYLES */ 
+    /* .spells-master {
+      height: 100vh;
+    }  */
   .spells-container {
     width: 90%;
     display: flex;

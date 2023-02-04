@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 
 const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
 
-    function toggleMobileMenu() {
+/*     function toggleMobileMenu() {
         setMobileMenu(!mobileMenu)
-    }
+    } */
 
     // Closes mobile menu when clicked away from
     let mobileMenuRef = useRef(null)  
@@ -15,11 +15,11 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
       document.addEventListener('mousedown', (e) => {
         if(!mobileMenuRef.current.contains(e.target)) {
             console.log('click')
-            // setMobileMenu(false)
-            handleClick()
+            setMobileMenu(false)
+            // handleClick()
         }
       })
-    }, [])
+    }, [setMobileMenu])
 
     const handleClick = () => {
         if(mobileMenu) {
@@ -35,7 +35,7 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
     <header className={navClass}>
         <nav className="nav-master">
             <div className="nav-logo">
-                <Link to='/' className='nav-route' onClick={handleClick}>
+                <Link to='/' className='nav-route' onClick={() => setMobileMenu(false)}>
                     <img 
                     src={require("./images/hogwarts-logo.png")} 
                     alt="Hogwarts Crest" />
