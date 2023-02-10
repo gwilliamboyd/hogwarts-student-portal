@@ -30,7 +30,7 @@ const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, 
                     <div className="head-of-house info-heading">Head of House</div>
                     <div className="info-body">{headOfHouse}</div>
                 </div>
-                <div className="house-row">
+                <div className="traits-row house-row">
                     <div className="traits info-heading">Traits</div>
                     <div className="info-body house-trait-list">
                         <ul>
