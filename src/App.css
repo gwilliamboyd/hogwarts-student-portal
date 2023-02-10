@@ -1,20 +1,20 @@
 /* COLOR VARIABLES */
 :root {
-  --body-background-color: #0B1736;
-  /* Font colors */
-  --main-font-color: #CEB42E;
-  --darker-font-color: #7f701f;
-  --spells-font-color: #3d4d59;
-  --slytherin-font-color: #DCDCDC;
-  /* Header/background colors */
-  --home-header-color: #162D6A;
-  --gryffindor-color: #6A1616;
-  --hufflepuff-color: #D8DA78;
-  --hufflepuff-darker-color: #c0c269;
-  --ravenclaw-color: #272E82;
-  --slytherin-color: #2A623D;
-  --spells-hufflepuff-color: #C29908;
-  --spells-font-darker-color: #222222;
+	--body-background-color: #0b1736;
+	/* Font colors */
+	--main-font-color: #ceb42e;
+	--darker-font-color: #7f701f;
+	--spells-font-color: #3d4d59;
+	--slytherin-font-color: #dcdcdc;
+	/* Header/background colors */
+	--home-header-color: #162d6a;
+	--gryffindor-color: #6a1616;
+	--hufflepuff-color: #d8da78;
+	--hufflepuff-darker-color: #c0c269;
+	--ravenclaw-color: #272e82;
+	--slytherin-color: #2a623d;
+	--spells-hufflepuff-color: #c29908;
+	--spells-font-darker-color: #222222;
 }
 /* 
 Imports Harry P font from fontsquirrel webkit
@@ -22,11 +22,11 @@ License said freeware, so I'm fairly sure it's
 okay to use on this site 
 */
 @font-face {
-  font-family: 'harry_pregular';
-  src: url('./fonts/harryp__-webfont.woff2') format('woff2'),
-       url('./fonts/harryp__-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'harry_pregular';
+	src: url('./fonts/harryp__-webfont.woff2') format('woff2'),
+		url('./fonts/harryp__-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 /* Nunito Sans font import */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
@@ -36,1332 +36,1321 @@ okay to use on this site
 
 /* MASTER STYLES */
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  overflow-y: clip;
-  font-family: 'harry_pregular';  
-  background-color: var(--body-background-color);
-  color: var(--main-font-color)
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	overflow-y: clip;
+	font-family: 'harry_pregular';
+	background-color: var(--body-background-color);
+	color: var(--main-font-color);
 }
 
 p {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 /* Mobile menu icon - hidden except below 600px */
 .mobile-menu-icon {
-  display: none;
+	display: none;
 }
 
 /* Set height of React root container div 
-to 100% of viewport */ 
+to 100% of viewport */
 #root {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
 .container {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 100%;
-  /* height: calc(100% - 118.667px); */
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 100%;
+	/* height: calc(100% - 118.667px); */
 }
 
 .header-home,
 .header-characters,
 .header-house,
 .header-spells {
-  padding: 0.5rem 5rem;
+	padding: 0.5rem 5rem;
 }
 
 .header-home {
-  background-color: var(--home-header-color);
-  color: var(--main-font-color);
+	background-color: var(--home-header-color);
+	color: var(--main-font-color);
 }
 .header-characters {
-  background-color: var(--gryffindor-color);
-  color: var(--main-font-color);
+	background-color: var(--gryffindor-color);
+	color: var(--main-font-color);
 }
 .header-house {
-  background-color: var(--slytherin-color);
-  color: var(--slytherin-font-color);
+	background-color: var(--slytherin-color);
+	color: var(--slytherin-font-color);
 }
 .header-spells {
-  background-color: var(--spells-hufflepuff-color);
-  color: var(--spells-font-darker-color);
-  font-family: 'Tangerine', cursive;
-  font-weight: 700;
+	background-color: var(--spells-hufflepuff-color);
+	color: var(--spells-font-darker-color);
+	font-family: 'Tangerine', cursive;
+	font-weight: 700;
 }
 /* NAVBAR STYLES */
 .nav-master {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 /* Space between text and icon of nav items */
 .nav-route {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
 }
 
 /* Logo */
 .nav-logo {
-  font-size: 2.5rem;
-  transition: filter 0.5s ease;
+	font-size: 2.5rem;
+	transition: filter 0.5s ease;
 }
 .nav-logo:hover {
-  filter: brightness(120%);
-  cursor: pointer;
+	filter: brightness(120%);
+	cursor: pointer;
 }
 
 .nav-logo img {
-  display: inline-block;
-  width: 50px;
-  height: auto;
+	display: inline-block;
+	width: 50px;
+	height: auto;
 }
 
 /* Link items */
 .nav-links {
-  font-size: 2rem;
-  display: flex;
-  gap: 4rem;
-  transition: filter 0.3s ease;
+	font-size: 2rem;
+	display: flex;
+	gap: 4rem;
+	transition: filter 0.3s ease;
 }
 .nav-links:hover {
-  filter: brightness(120%);
-  cursor: pointer;
+	filter: brightness(120%);
+	cursor: pointer;
 }
 
 /* CHARACTERS SEARCH STYLES */
 .characters-master {
-  background-image: url(./images/hogwarts-exterior-gryffindor.png);
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  flex: 1 0 auto;
-  /* padding: 3rem 0 3rem; */
-  padding-bottom: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  font-family: 'Nunito Sans', sans-serif;
-  color: var(--main-font-color);
+	background-image: url(./images/hogwarts-exterior-gryffindor.png);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	flex: 1 0 auto;
+	/* padding: 3rem 0 3rem; */
+	padding-bottom: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	font-family: 'Nunito Sans', sans-serif;
+	color: var(--main-font-color);
 }
 
 .characters-heading {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 2rem;
-  padding-top: 3rem;
-  gap: 1.5rem;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	line-height: 2rem;
+	padding-top: 3rem;
+	gap: 1.5rem;
 }
 .characters-title {
-  font-size: 2.5rem;
+	font-size: 2.5rem;
 }
 .characters-promise {
-  font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 .characters-search-input {
-  width: 90%;
-  border: 0;
-  border-radius: 0.5rem;
-  padding: 1rem 2rem;
-  background-color: var(--gryffindor-color);
-  color: var(--main-font-color);
-  font-weight: 500;
-  font-family: inherit;
-  font-size: 1.5rem;
+	width: 90%;
+	border: 0;
+	border-radius: 0.5rem;
+	padding: 1rem 2rem;
+	background-color: var(--gryffindor-color);
+	color: var(--main-font-color);
+	font-weight: 500;
+	font-family: inherit;
+	font-size: 1.5rem;
 }
 .characters-search-input:focus {
-  outline: 2px solid var(--main-font-color); 
-  background-color: #420d0d;
+	outline: 2px solid var(--main-font-color);
+	background-color: #420d0d;
 }
 /* Changes placeholder text to gold */
 .characters-search-input::placeholder {
-  color: var(--main-font-color);
+	color: var(--main-font-color);
 }
 
 .characters-body {
-  color: var(--main-font-color);
-  width: 54%;
-  height: 62vh;
-  margin-top: 1rem;
-  padding: 1rem 0;
-  display: grid;
-  /* overflow-x: hidden; */
-  overflow-y: scroll;
-  scrollbar-width: none;  /* Firefox */
-  border: 2px solid var(--main-font-color);
-  border-radius: 1rem;
+	color: var(--main-font-color);
+	width: 54%;
+	height: 62vh;
+	margin-top: 1rem;
+	padding: 1rem 0;
+	display: grid;
+	/* overflow-x: hidden; */
+	overflow-y: scroll;
+	scrollbar-width: none; /* Firefox */
+	border: 2px solid var(--main-font-color);
+	border-radius: 1rem;
 }
 /* Hides scrollbar in Chrome and Safari */
 ::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 .characters-body ul {
-  font-size: 2rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+	font-size: 2rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 .characters-image img {
-  max-width: 100px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 1rem;
-  text-align: right;
+	max-width: 100px;
+	display: block;
+	margin: 0 auto;
+	border-radius: 1rem;
+	text-align: right;
 }
 .characters-table {
-  width: 100%;
-  text-align: left;
+	width: 100%;
+	text-align: left;
 }
 
 .characters-table-row {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  /* gap: 1rem; */
+	display: grid;
+	grid-template-columns: 20% 80%;
+	/* gap: 1rem; */
 }
 
 .characters-text {
-  padding: 0 0.8rem;
-  display: grid;
-  grid-template-columns: 40% 30% 30%;
-  justify-content: flex-start;
-  /* flex-direction: column; */
-  font-size: 2rem;
-  /* gap: 2rem; */
+	padding: 0 0.8rem;
+	display: grid;
+	grid-template-columns: 40% 30% 30%;
+	justify-content: flex-start;
+	/* flex-direction: column; */
+	font-size: 2rem;
+	/* gap: 2rem; */
 }
 
 .characters-table-cell {
-  display: grid;
-  gap: 0.3rem;
-  align-items: baseline;
+	display: grid;
+	gap: 0.3rem;
+	align-items: baseline;
 }
 
 /* Bio heading styles */
 .characters-name-heading {
-  font-weight: bold;
-  font-size: 1.3rem;
-  filter: brightness(70%);
+	font-weight: bold;
+	font-size: 1.3rem;
+	filter: brightness(70%);
 }
 .characters-house-heading {
-  font-weight: bold;
-  font-size: 1.3rem;
-  filter: brightness(70%);
+	font-weight: bold;
+	font-size: 1.3rem;
+	filter: brightness(70%);
 }
 .characters-patronus-heading {
-  font-weight: bold;
-  font-size: 1.3rem;
-  filter: brightness(70%);
+	font-weight: bold;
+	font-size: 1.3rem;
+	filter: brightness(70%);
 }
 
 /* HOME PAGE STYLES */
 
 .home-master {
-  width: 100%;
-  height: calc(100vh - 75px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(./images/hogwarts-exterior.png);
-  background-position: center;
-  background-size: cover;
-  /* padding: 3rem 0 3rem; */
-  padding-bottom: 3rem;
+	width: 100%;
+	height: calc(100vh - 75px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url(./images/hogwarts-exterior.png);
+	background-position: center;
+	background-size: cover;
+	/* padding: 3rem 0 3rem; */
+	padding-bottom: 3rem;
 }
 
 .home-container {
-  width: 80%;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+	width: 80%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .page-container-link {
-  display: flex;
+	display: flex;
 }
 
 .page-container {
-  width: 30%;
-  position: relative;
+	width: 30%;
+	position: relative;
 }
 .page-container img {
-  width: 100%;
+	width: 100%;
 }
 .page-container-text {
-  padding: 1rem;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(22, 45, 106, 0.85);
-  transition: all 1s ease;
+	padding: 1rem;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(22, 45, 106, 0.85);
+	transition: all 1s ease;
 }
 .page-container-text-flex {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 }
 
 /* Remove blue background color on :hover */
 .page-container-text:hover {
-  background-color: rgba(22, 45, 106, 0);
-  cursor: pointer;
+	background-color: rgba(22, 45, 106, 0);
+	cursor: pointer;
 }
 /* Increase font-size on :hover */
 .page-container-text p {
-  transition: all 1s ease;
-  /* Found these properties as a suggestion
+	transition: all 1s ease;
+	/* Found these properties as a suggestion
   to smooth out the aliasing present on the 
   Harry P font when zooming in */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 .page-container-text:hover p {
-  transform: scale(110%);
-  filter: brightness(120%);
+	transform: scale(110%);
+	filter: brightness(120%);
 }
 /* Set separate font sizes for title and paragraph */
 .page-container-title {
-  font-size: 5rem;
+	font-size: 5rem;
 }
 .page-container-paragraph {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 1.6rem;
-  padding: 0 1rem; 
-  line-height: 2.5rem; 
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 1.6rem;
+	padding: 0 1rem;
+	line-height: 2.5rem;
 }
 
 /* HOUSE PANEL STYLES */
 
 .house-panel-master {
-  width: 100%;
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url(./images/hogwarts-exterior-slytherin.png);
-  background-position: center;
-  background-size: cover;
+	width: 100%;
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url(./images/hogwarts-exterior-slytherin.png);
+	background-position: center;
+	background-size: cover;
 }
 
 .house-panel-container {
-  display: grid;
-  width: 75%;
-  height: 90%;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: repeat(2, auto);
-  justify-items: center;
-  align-items: center;
-  gap: 1.5rem;
+	display: grid;
+	width: 75%;
+	height: 90%;
+	grid-template-columns: repeat(2, auto);
+	grid-template-rows: repeat(2, auto);
+	justify-items: center;
+	align-items: center;
+	gap: 1.5rem;
 }
 
 .house-panel {
-  /* padding: 3rem 10rem; */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  filter: brightness(85%);
-  transition: filter 0.3s ease;
+	/* padding: 3rem 10rem; */
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	filter: brightness(85%);
+	transition: filter 0.3s ease;
 }
 
 .house-panel img {
-  width: min(190px, 40%);
+	width: min(190px, 40%);
 }
 /* House panel hover effect */
 .house-panel:hover {
-  filter: brightness(110%);
-  cursor: pointer;
+	filter: brightness(110%);
+	cursor: pointer;
 }
 
 /* House background colors */
 #gryffindor-panel {
-  background-color: var(--gryffindor-color);
+	background-color: var(--gryffindor-color);
 }
 #hufflepuff-panel {
-  background-color: var(--spells-hufflepuff-color);
+	background-color: var(--spells-hufflepuff-color);
 }
 #ravenclaw-panel {
-  background-color: var(--ravenclaw-color);
+	background-color: var(--ravenclaw-color);
 }
 #slytherin-panel {
-  background-color: var(--slytherin-color);
+	background-color: var(--slytherin-color);
 }
 
 /* HOUSE INFO MENU STYLES */
 .house-info-master {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;  
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .house-info-container-none,
-.house-info-container-flex { 
-  position: absolute;
-  top: 12%;
-  z-index: 1000;
+.house-info-container-flex {
+	position: absolute;
+	top: 12%;
+	z-index: 1000;
 }
 .house-info-container-none {
-  /* Changes to flex onClick */
-  display: none;
+	/* Changes to flex onClick */
+	display: none;
 }
 .house-info-container-flex {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: repeat(2, auto);
-  justify-items: center;
-  align-items: center;
-  width: 65%;
-  height: 85%;
-  font-size: 1.5rem;
-  overflow-y: scroll;
-  scrollbar-width: none;  /* Firefox */
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: repeat(2, auto);
+	justify-items: center;
+	align-items: center;
+	width: 65%;
+	height: 85%;
+	font-size: 1.5rem;
+	overflow-y: scroll;
+	scrollbar-width: none; /* Firefox */
 }
 
 .house-info-table {
-  font-size: 3rem;
-  width: 80%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: 25% 10% 10% 10% 45%;
-  row-gap: 2.5rem;
+	font-size: 3rem;
+	width: 80%;
+	height: 100%;
+	display: grid;
+	grid-template-rows: 25% 10% 10% 10% 45%;
+	row-gap: 2.5rem;
 }
 
 /* X icon only displays on mobile */
 .x-icon {
-  display: none;
+	display: none;
 }
 
 .house-row {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 40% 60%;
-  /* padding: 0.75rem 0; */
-  text-align: right;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 40% 60%;
+	/* padding: 0.75rem 0; */
+	text-align: right;
 }
 
 .house-name {
-  font-size: 5.5rem;
-  display: flex;
-  align-items: center;
+	font-size: 5.5rem;
+	display: flex;
+	align-items: center;
 }
 
 .house-name-row {
-  grid-template-columns: 75% 25%;
+	grid-template-columns: 75% 25%;
 }
 
 .house-crest {
-  display: flex;
-  justify-content: flex-end;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .house-crest img {
-  display: block;
-  width: 150px;
-  height: 100%;
-  object-fit: contain;
+	display: block;
+	width: 150px;
+	height: 100%;
+	object-fit: contain;
 }
 
 .info-heading {
-  font-size: 4rem;
-  display: flex;
-  text-align: left;
+	font-size: 4rem;
+	display: flex;
+	text-align: left;
 }
 .info-body {
-  font-size: 2rem;  
-  display: flex;
-  justify-content: flex-end;
-  font-family: 'Nunito Sans', 'sans-serif';
+	font-size: 2rem;
+	display: flex;
+	justify-content: flex-end;
+	font-family: 'Nunito Sans', 'sans-serif';
 }
 .head-of-house {
-  font-size: 3.2rem;
+	font-size: 3.2rem;
 }
 /* Cell-specific font-sizing and padding */
 
 .house-trait-list ul {
-  font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  /* align-items: flex-start; */
-  text-align: right;
+	font-size: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	/* align-items: flex-start; */
+	text-align: right;
 }
 
 /* House-specific table styling */
 #house-info-gryffindor {
-  border: 3px solid #AAAAAA;
-  /* background-color: rgba(106, 22, 22, 0.85); */
-  background-image: url(./images/godric-gryffindor.jpg);
-  background-position: center;
-  background-size: cover;
-  color: #d0cb4c;
+	border: 3px solid #aaaaaa;
+	/* background-color: rgba(106, 22, 22, 0.85); */
+	background-image: url(./images/godric-gryffindor.jpg);
+	background-position: center;
+	background-size: cover;
+	color: #d0cb4c;
 }
 #house-info-hufflepuff {
-  border: 3px solid #AAAAAA;
-  background-image: url(./images/helga-hufflepuff.jpg);
-  background-position: center;
-  background-size: cover;
-  color: var(--spells-font-color);
+	border: 3px solid #aaaaaa;
+	background-image: url(./images/helga-hufflepuff.jpg);
+	background-position: center;
+	background-size: cover;
+	color: var(--spells-font-color);
 }
 #house-info-ravenclaw {
-  border: 3px solid #AAAAAA;
-  /* background-color: rgba(39, 46, 130, 0.85); */
-  background-image: url(./images/rowena-ravenclaw.jpg);
-  background-position: center;
-  background-size: cover;
-  color: #ceaf9f;
+	border: 3px solid #aaaaaa;
+	/* background-color: rgba(39, 46, 130, 0.85); */
+	background-image: url(./images/rowena-ravenclaw.jpg);
+	background-position: center;
+	background-size: cover;
+	color: #ceaf9f;
 }
 #house-info-slytherin {
-  border: 3px solid #AAAAAA;
-  /* background-color: rgba(42, 98, 61, 0.85); */
-  background-image: url(./images/salazar-slytherin.jpg);
-  background-position: center;
-  background-size: cover;
-  color: #DCDCDC;
+	border: 3px solid #aaaaaa;
+	/* background-color: rgba(42, 98, 61, 0.85); */
+	background-image: url(./images/salazar-slytherin.jpg);
+	background-position: center;
+	background-size: cover;
+	color: #dcdcdc;
 }
 
 /* SPELLS LOOKUP STYLES */
 .spells-master {
-    /* Background */
-    background-image: url(./images/hogwarts-exterior-hufflepuff.jpg);
-    background-size: cover;
-    background-position: center;
-    /* Sizing */
-    width: 100%;
-    /* height: calc(100vh - 75px); */
-    /* Flexbox */
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    /* Font and colors */
-    color: var(--spells-font-darker-color);
-    font-family: 'Tangerine', cursive;
-    font-weight: 700;
-    font-size: 2rem;
+	/* Background */
+	background-image: url(./images/hogwarts-exterior-hufflepuff.jpg);
+	background-size: cover;
+	background-position: center;
+	/* Sizing */
+	width: 100%;
+	/* height: calc(100vh - 75px); */
+	/* Flexbox */
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	/* Font and colors */
+	color: var(--spells-font-darker-color);
+	font-family: 'Tangerine', cursive;
+	font-weight: 700;
+	font-size: 2rem;
 }
 
 .spells-container {
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  justify-content: flex-start;
-  align-items: center;
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	justify-content: flex-start;
+	align-items: center;
 }
 .spells-book {
-  width: 100%;
-  height: calc(100vh - 250px);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+	width: 100%;
+	height: calc(100vh - 250px);
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
 }
 .spells-page-one,
 .spells-page-two {
-  width: max(45%, 300px);
-  height: 90%;
-  background-color: #f4f0d5;
-  font-size: 3rem;
-  color: var(--spells-font-darker-color);
-  padding: 3rem 2.5rem 2rem;
-  display: flex;
-  /* justify-content: center; */
-  align-items: flex-start;
-  overflow-y: scroll;
-  scrollbar-width: none;  /* Firefox */
+	width: max(45%, 300px);
+	height: 90%;
+	background-color: #f4f0d5;
+	font-size: 3rem;
+	color: var(--spells-font-darker-color);
+	padding: 3rem 2.5rem 2rem;
+	display: flex;
+	/* justify-content: center; */
+	align-items: flex-start;
+	overflow-y: scroll;
+	scrollbar-width: none; /* Firefox */
 }
 .spells-page-one ul,
-.spells-page-two ul
-{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2.2rem;
+.spells-page-two ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2.2rem;
 }
 
 .spell-entry {
-  line-height: 3.2rem;
+	line-height: 3.2rem;
 }
 
 .spell-desc {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: 1rem;
-  filter: brightness(110%);
-  line-height: 1.4rem;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 1rem;
+	filter: brightness(110%);
+	line-height: 1.4rem;
 }
 
 /* MEDIA QUERIES  */
 /* TABLET */
 @media (max-width: 1200px) {
+	/* NAV BAR */
 
-  /* NAV BAR */
+	.header-home,
+	.header-characters,
+	.header-house,
+	.header-spells {
+		padding: 0.5rem 2rem;
+	}
+	.nav-route {
+		gap: 0.8rem;
+	}
+	/* Logo */
+	.nav-logo {
+		font-size: 2.2rem;
+		transition: filter 0.5s ease;
+	}
+	.nav-logo img {
+		width: 40px;
+	}
+	/* Link items */
+	.nav-links {
+		font-size: 1.7rem;
+		gap: 2.5rem;
+	}
 
-  .header-home,
-  .header-characters,
-  .header-house,
-  .header-spells {
-    padding: 0.5rem 2rem;
-  }
-  .nav-route {
-    gap: 0.8rem;
-  }  
-  /* Logo */
-  .nav-logo {
-    font-size: 2.2rem;
-    transition: filter 0.5s ease;
-  }  
-  .nav-logo img {
-    width: 40px;
-  }  
-  /* Link items */
-  .nav-links {
-    font-size: 1.7rem;
-    gap: 2.5rem;
-  }
+	/* HOME PAGE */
 
-  /* HOME PAGE */
+	.home-master {
+		height: calc(100vh - 64px);
+		align-items: flex-start;
+		padding: 9rem 0 0;
+	}
+	.home-container {
+		width: 95%;
+		align-items: flex-start;
+	}
+	.page-container {
+		width: 32%;
+	}
+	.page-container-text {
+		padding: 0.8rem;
+	}
+	/* Set separate font sizes for title and paragraph */
+	.page-container-title {
+		font-size: 3.2rem;
+	}
+	.page-container-paragraph {
+		font-size: 1rem;
+		line-height: 1.8rem;
+	}
 
-  .home-master {
-    height: calc(100vh - 64px);
-    align-items: flex-start;
-    padding: 9rem 0 0;
+	/* CHARACTERS SEARCH */
 
-  }  
-  .home-container {
-    width: 95%;
-    align-items: flex-start;
-  }  
-  .page-container {
-    width: 32%;
-  }
-  .page-container-text {
-    padding: 0.8rem;
-  }
-  /* Set separate font sizes for title and paragraph */
-  .page-container-title {
-    font-size: 3.2rem;
-  }
-  .page-container-paragraph {
-    font-size: 1rem; 
-    line-height: 1.8rem; 
-  }
+	.characters-master {
+		width: 100%;
+		/* height: calc(100vh - 75px); */
+		padding-bottom: 3rem;
+	}
+	.characters-heading {
+		width: 60%;
+		line-height: 1.5rem;
+		padding-top: 2.7rem;
+		gap: 1.5rem;
+	}
+	.characters-title {
+		font-size: 2.2rem;
+	}
+	.characters-promise {
+		font-size: 1.2rem;
+	}
+	.characters-search-input {
+		width: 95%;
+		padding: 0.75rem 1.5rem;
+		font-size: 1.2rem;
+	}
+	.characters-body {
+		width: 80%;
+		padding: 0.9rem 0;
+	}
+	.characters-body ul {
+		font-size: 1.8rem;
+		gap: 0.4rem;
+	}
+	.characters-image img {
+		max-width: 75px;
+		margin: auto;
+	}
 
-  /* CHARACTERS SEARCH */
+	/* HOUSE INFO */
 
-  .characters-master {
-    width: 100%;
-    /* height: calc(100vh - 75px); */
-    padding-bottom: 3rem;
-  }
-  .characters-heading {
-    width: 60%;
-    line-height: 1.5rem;
-    padding-top: 2.7rem;
-    gap: 1.5rem;
-  }
-  .characters-title {
-    font-size: 2.2rem;
-  }
-  .characters-promise {
-    font-size: 1.2rem;
-  }
-  .characters-search-input {
-    width: 95%;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.2rem;
-  }
-  .characters-body {
-    width: 80%;  
-    padding: 0.9rem 0;
-  }
-  .characters-body ul {
-    font-size: 1.8rem;
-    gap: 0.4rem;
-  }
-  .characters-image img {
-    max-width: 75px;
-    margin: auto;
-  }
+	.house-info-container-flex {
+		padding: 1rem 2rem;
+	}
 
-  /* HOUSE INFO */
+	.house-name {
+		font-size: 4.5rem;
+	}
 
-  .house-info-container-flex {
-    padding: 1rem 2rem;
-  }
+	.house-crest {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
-  .house-name {
-    font-size: 4.5rem;
-  }
+	.house-crest img {
+		display: block;
+		width: min(190px, 80%);
+		height: max-content;
+	}
 
-  .house-crest {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .house-crest img {
-    display: block;
-    width: min(190px, 80%);
-    height: max-content;
-  }
+	.house-row {
+		grid-template-columns: 30% 70%;
+	}
 
-  .house-row {
-    grid-template-columns: 30% 70%;
-  }
+	.house-name-row {
+		grid-template-columns: 65% 35%;
+	}
 
-  .house-name-row {
-    grid-template-columns: 65% 35%;
-  }
-  
-  .info-heading {
-    font-size: 3rem;
-    display: flex;
-    text-align: left;
-  }
-  .info-body {
-    font-size: 1.6rem;  
-    display: flex;
-    justify-content: flex-end;
-    font-family: 'Nunito Sans', 'sans-serif';
-  }
-  .head-of-house {
-    font-size: 2.2rem;
-  }
-  /* Cell-specific font-sizing and padding */
-  
-  .house-trait-list ul {
-    font-size: 1.4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: right;
-  }
+	.info-heading {
+		font-size: 3rem;
+		display: flex;
+		text-align: left;
+	}
+	.info-body {
+		font-size: 1.6rem;
+		display: flex;
+		justify-content: flex-end;
+		font-family: 'Nunito Sans', 'sans-serif';
+	}
+	.head-of-house {
+		font-size: 2.2rem;
+	}
+	/* Cell-specific font-sizing and padding */
 
-    /* SPELLS LOOKUP STYLES */ 
-    /* .spells-master {
+	.house-trait-list ul {
+		font-size: 1.4rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		text-align: right;
+	}
+
+	/* SPELLS LOOKUP STYLES */
+	/* .spells-master {
       height: 100vh;
     }  */
-  .spells-container {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  .spells-book {
-    height: calc(100vh - 225px);
-    align-items: flex-start;
-  }
-  .spells-page-one,
-  .spells-page-two {
-    font-size: 2.7rem;
-    padding: 1.5rem 2.2rem;
-  }
-  .spells-page-one ul,
-  .spells-page-two ul
-  {
-    gap: 1.6rem;
-  }
+	.spells-container {
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.spells-book {
+		height: calc(100vh - 225px);
+		align-items: flex-start;
+	}
+	.spells-page-one,
+	.spells-page-two {
+		font-size: 2.7rem;
+		padding: 1.5rem 2.2rem;
+	}
+	.spells-page-one ul,
+	.spells-page-two ul {
+		gap: 1.6rem;
+	}
 
-  .spell-entry {
-    line-height: 3.2rem;
-  }
+	.spell-entry {
+		line-height: 3.2rem;
+	}
 
-  .spell-desc {
-    font-size: 0.95rem;
-    line-height: 1.4rem;
-  }
-
+	.spell-desc {
+		font-size: 0.95rem;
+		line-height: 1.4rem;
+	}
 }
 
 /* TABLET - SMALL (900px) */
 
 @media (max-width: 900px) {
+	/* NAV BAR */
 
-  /* NAV BAR */
+	.header-home,
+	.header-characters,
+	.header-house,
+	.header-spells {
+		padding: 0.5rem 1.2rem;
+	}
+	.nav-route {
+		gap: 0.5rem;
+	}
+	/* Logo */
+	.nav-logo {
+		font-size: 1.8rem;
+		transition: filter 0.5s ease;
+	}
+	.nav-logo img {
+		width: 30px;
+	}
+	/* Link items */
+	.nav-links {
+		font-size: 1.5rem;
+		gap: 2rem;
+	}
 
-  .header-home,
-  .header-characters,
-  .header-house,
-  .header-spells {
-    padding: 0.5rem 1.2rem;
-  }
-  .nav-route {
-    gap: 0.5rem;
-  }  
-  /* Logo */
-  .nav-logo {
-    font-size: 1.8rem;
-    transition: filter 0.5s ease;
-  }  
-  .nav-logo img {
-    width: 30px;
-  }  
-  /* Link items */
-  .nav-links {
-    font-size: 1.5rem;
-    gap: 2rem;
-  }
+	/* HOME PAGE */
 
-  /* HOME PAGE */
+	.home-master {
+		height: calc(100vh - 52px);
+		align-items: flex-start;
+		padding: 1.6rem 0 0;
+		overflow: scroll;
+		scrollbar-width: none; /* Firefox */
+	}
+	.home-container {
+		width: 95%;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 1.2rem;
+	}
+	.page-container {
+		width: 42%;
+	}
+	.page-container-text {
+		padding: 0.6rem;
+	}
+	/* Set separate font sizes for title and paragraph */
+	.page-container-title {
+		font-size: 2.8rem;
+	}
+	.page-container-paragraph {
+		font-size: 1rem;
+		line-height: 1.3rem;
+	}
 
-  .home-master {
-    height: calc(100vh - 52px);
-    align-items: flex-start;
-    padding: 1.6rem 0 0;
-    overflow: scroll;
-    scrollbar-width: none;  /* Firefox */
-  }  
-  .home-container {
-    width: 95%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1.2rem;
-  }  
-  .page-container {
-    width: 42%;
-  }
-  .page-container-text {
-    padding: 0.6rem;
-  }
-  /* Set separate font sizes for title and paragraph */
-  .page-container-title {
-    font-size: 2.8rem;
-  }
-  .page-container-paragraph {
-    font-size: 1rem; 
-    line-height: 1.3rem; 
-  }
+	/* CHARACTERS SEARCH STYLES */
 
-  /* CHARACTERS SEARCH STYLES */
+	.characters-heading {
+		width: 60%;
+		line-height: 1rem;
+		padding-top: 2rem;
+		gap: 1.2rem;
+	}
+	.characters-title {
+		font-size: 1.6rem;
+	}
+	.characters-promise {
+		font-size: 0.9rem;
+	}
+	.characters-search-input {
+		padding: 0.6rem 1.2rem;
+	}
+	.characters-body {
+		padding: 0.9rem 0;
+	}
+	.characters-body ul {
+		font-size: 1.5rem;
+		gap: 0.8rem;
+	}
+	.characters-image img {
+		max-width: 140px;
+	}
+	.characters-table-row {
+		display: grid;
+		grid-template-columns: repeat(2, 30% 70%);
+	}
+	.characters-image {
+		display: grid;
+		justify-items: center;
+	}
+	.characters-text {
+		padding: 0 0.8rem;
+		display: flex;
+		flex-direction: column;
+		font-size: 2rem;
+		gap: 1.2rem;
+	}
+	.characters-table-cell {
+		display: grid;
+		grid-template-columns: repeat(2, 25% 75%);
+		gap: 1rem;
+		align-items: baseline;
+	}
 
-  .characters-heading {
-    width: 60%;
-    line-height: 1rem;
-    padding-top: 2rem;
-    gap: 1.2rem;
-  }
-  .characters-title {
-    font-size: 1.6rem;
-  }
-  .characters-promise {
-    font-size: 0.9rem;
-  }
-  .characters-search-input {
-    padding: 0.6rem 1.2rem;
-  }
-  .characters-body { 
-    padding: 0.9rem 0;
-  }
-  .characters-body ul {
-    font-size: 1.5rem;
-    gap: 0.8rem;
-  }
-  .characters-image img {
-    max-width: 140px;
-  }
-  .characters-table-row {
-    display: grid;
-    grid-template-columns: repeat(2, 30% 70%);
-  }
-  .characters-image {
-    display: grid;
-    justify-items: center;
-  }
-  .characters-text {
-    padding: 0 0.8rem;
-    display: flex;
-    flex-direction: column;
-    font-size: 2rem;
-    gap: 1.2rem;
-  }
-  .characters-table-cell {
-    display: grid;
-    grid-template-columns: repeat(2, 25% 75%);
-    gap: 1rem;
-    align-items: baseline;
-  }
+	/* HOUSE INFO */
 
-  /* HOUSE INFO */
+	.house-panel-container {
+		width: 95%;
+		height: 65%;
+		gap: 1rem;
+	}
 
-  .house-panel-container {
-    width: 95%;
-    height: 65%;
-    gap: 1rem;
-  }
+	.house-info-container-flex {
+		padding: 1rem 2rem;
+	}
 
-  .house-info-container-flex {
-    padding: 1rem 2rem;
-  }
+	.house-info-table {
+		width: 100%;
+		row-gap: 1.2rem;
+		overflow: hidden;
+	}
 
-  .house-info-table {
-    width: 100%;
-    row-gap: 1.2rem;
-    overflow: hidden;
-  }
+	.house-name {
+		font-size: 3.8rem;
+	}
 
-  .house-name {
-    font-size: 3.8rem;
-  }
-  
-  .house-crest img {
-    display: block;
-    width: min(190px, 80%);
-    height: 100%;
-    height: max-content;
-  }
+	.house-crest img {
+		display: block;
+		width: min(190px, 80%);
+		height: 100%;
+		height: max-content;
+	}
 
-  .house-row {
-    grid-template-columns: 40% 60%;
-  }
+	.house-row {
+		grid-template-columns: 40% 60%;
+	}
 
-  .house-name-row {
-    grid-template-columns: 60% 40%;
-  }
-  
-  .info-heading {
-    font-size: 3rem;
-    display: flex;
-    text-align: left;
-  }
-  .info-body {
-    font-size: 1.4rem;  
-    display: flex;
-    justify-content: flex-end;
-    font-family: 'Nunito Sans', 'sans-serif';
-  }
-  .head-of-house {
-    font-size: 2.4rem;
-  }
-  
-  .house-trait-list ul {
-    font-size: 1.2rem;
-  }
+	.house-name-row {
+		grid-template-columns: 60% 40%;
+	}
 
-  /* SPELLS LOOKUP STYLES */
-  
-  .spells-container {
-    width: 100%;
-  }
-  .spells-book {
-    height: calc(100vh - 225px);
-  }
-  .spells-page-one,
-  .spells-page-two {
-    font-size: 2.7rem;
-    padding: 2rem 2.2rem;
-  }
-  .spells-page-one ul,
-  .spells-page-two ul
-  {
-    gap: 0.9rem;
-  }
+	.info-heading {
+		font-size: 3rem;
+		display: flex;
+		text-align: left;
+	}
+	.info-body {
+		font-size: 1.4rem;
+		display: flex;
+		justify-content: flex-end;
+		font-family: 'Nunito Sans', 'sans-serif';
+	}
+	.head-of-house {
+		font-size: 2.4rem;
+	}
 
-  .spell-entry {
-    line-height: 3.2rem;
-  }
+	.house-trait-list ul {
+		font-size: 1.2rem;
+	}
 
-  .spell-title {
-    font-size: 2.3rem;
-  }
+	/* SPELLS LOOKUP STYLES */
 
-  .spell-desc {
-    font-size: 0.85rem;
-    line-height: 1.3rem;
-  }
-  
+	.spells-container {
+		width: 100%;
+	}
+	.spells-book {
+		height: calc(100vh - 225px);
+	}
+	.spells-page-one,
+	.spells-page-two {
+		font-size: 2.7rem;
+		padding: 2rem 2.2rem;
+	}
+	.spells-page-one ul,
+	.spells-page-two ul {
+		gap: 0.9rem;
+	}
+
+	.spell-entry {
+		line-height: 3.2rem;
+	}
+
+	.spell-title {
+		font-size: 2.3rem;
+	}
+
+	.spell-desc {
+		font-size: 0.85rem;
+		line-height: 1.3rem;
+	}
 }
 
 @media (max-width: 600px) {
+	/* NAV BAR */
 
-  /* NAV BAR */
+	.header-home,
+	.header-characters,
+	.header-house,
+	.header-spells {
+		padding: 0.3rem 0.7rem;
+	}
+	.nav-route {
+		gap: 0.5rem;
+	}
+	/* Logo */
+	.nav-logo {
+		font-size: 1.8rem;
+		transition: filter 0.5s ease;
+	}
+	.nav-logo img {
+		width: 40px;
+	}
+	/* Mobile menu incoming */
+	/* Link items */
+	.nav-links {
+		display: none;
+	}
+	.mobile-menu-icon {
+		display: block;
+		font-size: 1.5rem;
+	}
+	.mobile-menu-list {
+		background-color: inherit;
+		position: absolute;
+		z-index: 100;
+		/* width: 60%; */
+		font-size: 2.4rem;
+		display: flex;
+		flex-direction: column;
+		top: 55px;
+		right: 0;
+		background-color: var(--home-header-color);
+	}
 
-  .header-home,
-  .header-characters,
-  .header-house,
-  .header-spells {
-    padding: 0.3rem 0.7rem;
-  }
-  .nav-route {
-    gap: 0.5rem;
-  }  
-  /* Logo */
-  .nav-logo {
-    font-size: 1.8rem;
-    transition: filter 0.5s ease;
-  }  
-  .nav-logo img {
-    width: 40px;
-  }  
-  /* Mobile menu incoming */
-  /* Link items */
-  .nav-links {
-    display: none;
-  }
-  .mobile-menu-icon {
-    display: block;
-    font-size: 1.5rem;
-  }
-  .mobile-menu-list {
-    background-color: inherit;
-    position: absolute;
-    z-index: 100;
-    /* width: 60%; */
-    font-size: 2.4rem;
-    display: flex;
-    flex-direction: column;  
-    top: 55px;
-    right: 0;
-    background-color: var(--home-header-color)
-  }
+	.mobile-menu-list .header-characters {
+		background-color: var(--gryffindor-color);
+	}
+	.mobile-menu-list .header-house {
+		background-color: var(--slytherin-color);
+	}
+	.mobile-menu-list .header-spells {
+		background-color: var(--hufflepuff-darker-color);
+	}
+	.mobile-menu-list a {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		padding: 3rem 0;
+		/* font-size: 4.5rem; */
+	}
+	.mobile-menu-list .nav-route {
+		gap: 1.4rem;
+	}
 
-  .mobile-menu-list .header-characters {
-    background-color: var(--gryffindor-color);
-  }
-  .mobile-menu-list .header-house {
-    background-color: var(--slytherin-color);
-  }
-  .mobile-menu-list .header-spells {
-    background-color: var(--hufflepuff-darker-color);
-  }
-  .mobile-menu-list a {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 3rem 0;   
-    /* font-size: 4.5rem; */
-  }
-  .mobile-menu-list .nav-route {
-    gap: 1.4rem;
-  }
+	/* HOME PAGE */
 
-  /* HOME PAGE */
+	.home-master {
+		height: calc(100vh - 48px);
+		align-items: flex-start;
+		padding: 1.6rem 0 0;
+		overflow: scroll;
+		scrollbar-width: none; /* Firefox */
+	}
+	.home-container {
+		width: 95%;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 3rem;
+	}
+	.page-container {
+		width: 85%;
+	}
+	.page-container-text {
+		padding: 0.6rem;
+	}
+	/* Set separate font sizes for title and paragraph */
+	.page-container-title {
+		font-size: 3.6rem;
+	}
+	.page-container-paragraph {
+		font-size: 1.2rem;
+		line-height: 1.7rem;
+	}
 
-  .home-master {
-    height: calc(100vh - 48px);
-    align-items: flex-start;
-    padding: 1.6rem 0 0;
-    overflow: scroll;
-    scrollbar-width: none;  /* Firefox */
-  }  
-  .home-container {
-    width: 95%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 3rem;
-  }  
-  .page-container {
-    width: 85%;
-  }
-  .page-container-text {
-    padding: 0.6rem;
-  }
-  /* Set separate font sizes for title and paragraph */
-  .page-container-title {
-    font-size: 3.6rem;
-  }
-  .page-container-paragraph {
-    font-size: 1.2rem; 
-    line-height: 1.7rem; 
-  }
+	/* CHARACTERS SEARCH STYLES */
 
-  /* CHARACTERS SEARCH STYLES */
+	.characters-heading {
+		width: 85%;
+		line-height: 2.4rem;
+		padding-top: 1rem;
+		gap: 0.8rem;
+	}
+	.characters-title {
+		font-size: 1.6rem;
+		line-height: 1.7rem;
+	}
+	.characters-promise {
+		font-size: 0.9rem;
+		line-height: 1.4rem;
+	}
+	.characters-search-input {
+		padding: 0.6rem 1.2rem;
+		width: 100%;
+	}
+	.characters-body {
+		padding: 0.6rem 0;
+		width: 92%;
+		height: 55vh;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.characters-body ul {
+		font-size: 1rem;
+		gap: 1.5rem;
+		width: 92%;
+	}
+	.characters-image img {
+		max-width: 100px;
+	}
 
-  .characters-heading {
-    width: 85%;
-    line-height: 2.4rem;
-    padding-top: 1rem;
-    gap: 0.8rem;
-  }
-  .characters-title {
-    font-size: 1.6rem;
-    line-height: 1.7rem;
-  }
-  .characters-promise {
-    font-size: 0.9rem;
-    line-height: 1.4rem;
-  }
-  .characters-search-input {
-    padding: 0.6rem 1.2rem;
-    width: 100%;
-  }
-  .characters-body { 
-    padding: 0.6rem 0;
-    width: 92%;
-    height: 55vh;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .characters-body ul {
-    font-size: 1rem;
-    gap: 1.5rem;
-    width: 92%;
-  }
-  .characters-image img {
-    max-width: 100px;
-  }
-
-/*   .characters-body ul {
+	/*   .characters-body ul {
     font-size: 1rem;
     gap: 0.8rem;
   } */
-  .characters-image img {
-    max-width: 80px;
-  }
-  .characters-table-row {
-    display: grid;
-    grid-template-columns: repeat(2, 20% 80%);
-    gap: 0.75rem;
-  }
-  .characters-image {
-    display: grid;
-    justify-items: center;
-  }
-  .characters-text {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: space-around;
-    font-size: 1.2rem;
-    gap: 1rem;
-  }
-  .characters-table-cell {
-    display: grid;
-    grid-template-columns: repeat(2, 25% 75%);
-    gap: 1.4rem;
-    align-items: baseline;
-  }
-  .characters-name-heading,
-  .characters-house-heading,
-  .characters-patronus-heading {
-    font-size: 1rem;
-  }
+	.characters-image img {
+		max-width: 80px;
+	}
+	.characters-table-row {
+		display: grid;
+		grid-template-columns: repeat(2, 20% 80%);
+		gap: 0.75rem;
+	}
+	.characters-image {
+		display: grid;
+		justify-items: center;
+	}
+	.characters-text {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: space-around;
+		font-size: 1.2rem;
+		gap: 1rem;
+	}
+	.characters-table-cell {
+		display: grid;
+		grid-template-columns: repeat(2, 25% 75%);
+		gap: 1.4rem;
+		align-items: baseline;
+	}
+	.characters-name-heading,
+	.characters-house-heading,
+	.characters-patronus-heading {
+		font-size: 1rem;
+	}
 
-  /* HOUSE INFO */
-  
-  .house-panel-master {
-    align-items: flex-start;
-    height: fit-content;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
+	/* HOUSE INFO */
 
-  .house-panel-container {
-    margin: 1rem 0 2rem;
-    width: 90%;
-    /* height: fit-content; */
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    overflow: scroll;
-  }
-  
-  .house-panel {
-    width: 300px;
-    height: 280px;
-    padding: 0;
-    margin: 0;
-  }
-  .house-panel img {
-    width: 40%;
-  }
-  /* HOUSE INFO */
+	.house-panel-master {
+		align-items: flex-start;
+		height: fit-content;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
 
-/*   .house-panel-container {
+	.house-panel-container {
+		margin: 1rem 0 2rem;
+		width: 90%;
+		/* height: fit-content; */
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		overflow: scroll;
+	}
+
+	.house-panel {
+		width: 300px;
+		height: 280px;
+		padding: 0;
+		margin: 0;
+	}
+	.house-panel img {
+		width: 40%;
+	}
+	/* HOUSE INFO */
+
+	/*   .house-panel-container {
     width: 95%;
     height: 65%;
     gap: 1rem;
   } */
 
-  /* House Info Menus */
+	/* House Info Menus */
 
-  .house-info-container-flex {    
-    top: 8%;
-    width: 80%;
-    padding: 0.25rem 0.5rem;
-    grid-template-rows: 35px 1fr;
-    align-items: flex-start;
-    overflow: hidden;
-  }
-  .x-icon {
-    width: 30px;
-    display: grid;
-    justify-self: flex-end;
-    justify-items: center;
-    align-self: center;
-    /* margin: 0.25rem 0.5rem 0 0; */
-  }
-  .house-info-table {
-    grid-template-rows: 20% 12.5% 2% 12.5% 2% 12.5% 2% 36.5%;
-    row-gap: 0;
-    /* height: 900px; */
-    /* align-self: flex-start; */
-    align-items: flex-start;
-  }
-  .house-name {
-    font-size: 3rem;
-    display: grid;
-    justify-self: center;
-    align-items: center;
-    grid-area: 1 / 1 / span 2 / span 1;
-  }
-  .house-crest {
-    display: grid;
-    justify-self: center;
-    align-items: center;
-    grid-area: 1 / 2 / span 2 / span 2;
-  }  
-  .house-crest img {
-    display: block;
-    width: 100px;
-    height: max-content;
-    /* Helps prevent stretching on iOS */
-  }
-  .house-row {
-    height: fit-content;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(2, auto);
-    /* row-gap: 1rem; */
-  }
-  .house-name-row {
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(2, 50%);
-    max-height: 140px;
-    align-items: center;
-    justify-items: center;
-  }
-  .founder-row {
-    grid-row: 2;
-  }
-  .animal-row {
-    grid-row: 4;
-  }
-  .head-of-house-row {
-    grid-row: 6;
-  }
-  .traits-row {
-    height: fit-content;
-    grid-row: 8;
-  }  
-  .info-heading {
-    font-size: 3rem;
-    display: grid;
-    align-items: flex-start;
-    justify-self: center;
-    grid-area: 1 / 1 / span 1 / span 2;
-    /* line-height: auto; */
-  }
-  .info-body {
-    font-size: 1.6rem;
-    display: grid;
-    align-items: flex-start;
-    justify-self: center;
-    grid-area: 2 / 1 / span 1 / span 2;
-  }
-  .head-of-house {
-    font-size: 2.4rem;
-  }  
-  .house-trait-list {
-    width: 100%;
-    display: flex;
-  }
-  .house-trait-list ul {
-    width: 100%;
-    padding: 0;
-    font-size: 1.3rem;
-    gap: 0.5rem;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(3 auto);
-    align-items: flex-start;
-    justify-self: center;
-  }
-  .house-trait-list ul > * {
-    display: grid;
-    justify-content: flex-start;
-    align-items: flex-start;
-    /* flex: 1 1 50px; */
-  }
-  .traits {
-    font-size: 3rem;
-    display: grid;
-    align-items: flex-start;
-    justify-self: center;
-    grid-area: 1 / 1 / span 1 / span 2;
-  }
-  
-  /* SPELLS LOOKUP STYLES */
+	.house-info-container-flex {
+		top: 8%;
+		width: 80%;
+		padding: 0.25rem 0.5rem;
+		grid-template-rows: 35px 1fr;
+		align-items: flex-start;
+		overflow: hidden;
+	}
+	.x-icon {
+		width: 30px;
+		display: grid;
+		justify-self: flex-end;
+		justify-items: center;
+		align-self: center;
+		/* margin: 0.25rem 0.5rem 0 0; */
+	}
+	.house-info-table {
+		grid-template-rows: 20% 12.5% 2% 12.5% 2% 12.5% 2% 36.5%;
+		row-gap: 0;
+		/* height: 900px; */
+		/* align-self: flex-start; */
+		align-items: flex-start;
+	}
+	.house-name {
+		font-size: 3rem;
+		display: grid;
+		justify-self: center;
+		align-items: center;
+		grid-area: 1 / 1 / span 2 / span 1;
+	}
+	.house-crest {
+		display: grid;
+		justify-self: center;
+		align-items: center;
+		grid-area: 1 / 2 / span 2 / span 2;
+	}
+	.house-crest img {
+		display: block;
+		width: 100px;
+		height: max-content;
+		/* Helps prevent stretching on iOS */
+	}
+	.house-row {
+		height: fit-content;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: repeat(2, auto);
+		/* row-gap: 1rem; */
+	}
+	.house-name-row {
+		grid-template-columns: 50% 50%;
+		grid-template-rows: repeat(2, 50%);
+		max-height: 140px;
+		align-items: center;
+		justify-items: center;
+	}
+	.founder-row {
+		grid-row: 2;
+	}
+	.animal-row {
+		grid-row: 4;
+	}
+	.head-of-house-row {
+		grid-row: 6;
+	}
+	.traits-row {
+		height: fit-content;
+		grid-row: 8;
+	}
+	.info-heading {
+		font-size: 3rem;
+		display: grid;
+		align-items: flex-start;
+		justify-self: center;
+		grid-area: 1 / 1 / span 1 / span 2;
+		/* line-height: auto; */
+	}
+	.info-body {
+		font-size: 1.6rem;
+		display: grid;
+		align-items: flex-start;
+		justify-self: center;
+		grid-area: 2 / 1 / span 1 / span 2;
+	}
+	.head-of-house {
+		font-size: 2.4rem;
+	}
+	.house-trait-list {
+		width: 100%;
+		display: flex;
+	}
+	.house-trait-list ul {
+		width: 100%;
+		padding: 0;
+		font-size: 1.3rem;
+		gap: 0.5rem;
+		display: grid;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: repeat(3 auto);
+		align-items: flex-start;
+		justify-self: center;
+	}
+	.house-trait-list ul > * {
+		display: grid;
+		justify-content: flex-start;
+		align-items: flex-start;
+		/* flex: 1 1 50px; */
+	}
+	.traits {
+		font-size: 3rem;
+		display: grid;
+		align-items: flex-start;
+		justify-self: center;
+		grid-area: 1 / 1 / span 1 / span 2;
+	}
 
-  .spells-master {
-    overflow-y: scroll;
-    scrollbar-width: none;
-  }
+	/* SPELLS LOOKUP STYLES */
 
-  .spells-header {
-    font-size: 2.2rem;
-  }
+	.spells-master {
+		overflow-y: scroll;
+		scrollbar-width: none;
+	}
 
-  .spells-book {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .spells-page-one,
-  .spells-page-two {
-    width: 80%;
-    height: min-content;
-    padding: 2rem 2.2rem;
-  }
-  .spells-page-one ul
-  {
-    gap: 2.5rem;
-  }
+	.spells-header {
+		font-size: 2.2rem;
+	}
 
-  .spell-entry {
-    line-height: 3.2rem;
-  }
+	.spells-book {
+		flex-direction: column;
+		align-items: center;
+	}
 
-  .spell-title {
-    font-size: 3rem;
-  }
+	.spells-page-one,
+	.spells-page-two {
+		width: 80%;
+		height: min-content;
+		padding: 2rem 2.2rem;
+	}
+	.spells-page-one ul {
+		gap: 2.5rem;
+	}
 
-  .spell-desc {
-    font-size: 1.2rem;
-    line-height: 3rem;
-  }
-  
+	.spell-entry {
+		line-height: 3.2rem;
+	}
+
+	.spell-title {
+		font-size: 3rem;
+	}
+
+	.spell-desc {
+		font-size: 1.2rem;
+		line-height: 3rem;
+	}
 }
