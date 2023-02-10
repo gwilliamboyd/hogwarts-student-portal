@@ -75,25 +75,25 @@ const HouseContainer = () => {
             {/* Gryffindor Panel */}
             <HousePanel 
               houseId='gryffindor-panel'
-              src={require("./images/house-gryffindor.png")}
+              src={require("../../images/house-gryffindor.png")}
               ref={gryffindorRef}
               onClick={() => setGryffindorOpen(true)} />
             {/* Hufflepuff Panel */}
             <HousePanel 
               houseId='hufflepuff-panel'
-              src={require("./images/house-hufflepuff.png")}
+              src={require("../../images/house-hufflepuff.png")}
               ref={hufflepuffRef}
               onClick={() => setHufflepuffOpen(true)} />
             {/* Ravenclaw Panel */}
             <HousePanel 
               houseId='ravenclaw-panel'
-              src={require("./images/house-ravenclaw.png")}
+              src={require("../../images/house-ravenclaw.png")}
               ref={ravenclawRef}
               onClick={() => setRavenclawOpen(true)}/>
             {/* Slytherin Panel */}
             <HousePanel 
               houseId='slytherin-panel'
-              src={require("./images/house-slytherin.png")}
+              src={require("../../images/house-slytherin.png")}
               ref={slytherinRef}
               onClick={() => setSlytherinOpen(true)}/>
           </div>        
@@ -104,7 +104,7 @@ const HouseContainer = () => {
         {gryffindorOpen && <HouseInfoMenu 
         id='house-info-gryffindor' 
         houseName='Gryffindor' 
-        houseCrest={require("./images/house-gryffindor.png")}
+        houseCrest={require("../../images/house-gryffindor.png")}
         founder='Godric Gryffindor' 
         animal='Lion'
         headOfHouse = 'Minerva McGonagall'
@@ -121,7 +121,7 @@ const HouseContainer = () => {
         {hufflepuffOpen && <HouseInfoMenu 
         id='house-info-hufflepuff' 
         houseName='Hufflepuff' 
-        houseCrest={require("./images/house-hufflepuff.png")} 
+        houseCrest={require("../../images/house-hufflepuff.png")} 
         founder='Helga Hufflepuff' 
         animal='Badger'
         headOfHouse = 'Pomona Sprout'
@@ -138,7 +138,7 @@ const HouseContainer = () => {
         {ravenclawOpen && <HouseInfoMenu 
         id='house-info-ravenclaw' 
         houseName='Ravenclaw' 
-        houseCrest={require("./images/house-ravenclaw.png")} 
+        houseCrest={require("../../images/house-ravenclaw.png")} 
         founder='Rowena Ravenclaw' 
         animal='Eagle'
         headOfHouse = 'Filius Flitwick'
@@ -155,7 +155,7 @@ const HouseContainer = () => {
         {slytherinOpen && <HouseInfoMenu 
         id='house-info-slytherin' 
         houseName='Slytherin' 
-        houseCrest={require("./images/house-slytherin.png")} 
+        houseCrest={require("../../images/house-slytherin.png")} 
         founder='Salazar Slytherin' 
         animal='Snake'
         headOfHouse = 'Horace Slughorn'

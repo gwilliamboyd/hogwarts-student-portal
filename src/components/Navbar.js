@@ -52,7 +52,7 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
             <div className="nav-logo">
                 <Link to='/' className='nav-route' onClick={() => setMobileMenu(false)}>
                     <img 
-                    src={require("./images/hogwarts-logo.png")} 
+                    src={require("../images/hogwarts-logo.png")} 
                     alt="Hogwarts Crest" />
                     Hogwarts Student Portal
                 </Link>

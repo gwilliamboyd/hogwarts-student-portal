@@ -1,10 +1,10 @@
 import './App.css';
 import axios from 'axios';
-import Navbar from './Navbar';
-import Home from './Home';
-import CharactersContainer from './CharactersContainer';
-import HouseContainer from './HouseContainer';
-import SpellsContainer from './SpellsContainer';
+import Navbar from './components/Navbar';
+import Home from './components/home/Home';
+import CharactersContainer from './components/characters/CharactersContainer';
+import HouseContainer from './components/houses/HouseContainer';
+import SpellsContainer from './components/spells/SpellsContainer';
 import { useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom'
 
