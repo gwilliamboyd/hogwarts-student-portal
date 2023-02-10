@@ -1036,7 +1036,8 @@ to 100% of viewport */
   .mobile-menu-list {
     position: absolute;
     z-index: 100;
-    width: 100%;
+    width: 60%;
+    font-size: 2.4rem;
     display: flex;
     flex-direction: column;  
     top: 55px;
@@ -1048,10 +1049,10 @@ to 100% of viewport */
     flex-direction: row;
     justify-content: center;
     padding: 3rem 0;   
-    font-size: 4.5rem;
+    /* font-size: 4.5rem; */
   }
   .mobile-menu-list .nav-route {
-    gap: 2.5rem;
+    gap: 1.4rem;
   }
 
   /* HOME PAGE */

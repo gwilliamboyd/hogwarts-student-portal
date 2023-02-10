@@ -74,7 +74,17 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
                 </div>                
             </div>
         </motion.nav>
-        {mobileMenu && <div className="mobile-menu-list" ref={mobileMenuRef}>
+        {mobileMenu && 
+        <motion.div
+        initial={{ height: 0, width: 0 }}
+        animate={{ height: "fit-content", width: "70%" }}
+        transition={{duration: 0.4}}
+        className="mobile-menu-list" 
+        ref={mobileMenuRef}>
+            <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{delay: 0.5, duration: 1.1}}>
                     <Link to='/characterscontainer' className='nav-route' onClick={handleClick}>
                         <div className="nav-icon"><FontAwesomeIcon icon={faUser} /></div>
                         <div className="nav-name">Characters</div>
@@ -87,7 +97,8 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
                         <div className="nav-icon"><FontAwesomeIcon icon={faWandSparkles} /></div>
                         <div className="nav-name">Spells</div>
                     </Link>
-                </div>}
+            </motion.div>
+        </motion.div>}
     </header>
   )
 }
