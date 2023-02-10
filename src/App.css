@@ -499,7 +499,7 @@ to 100% of viewport */
   text-align: left;
 }
 .info-body {
-  font-size: 2.2rem;  
+  font-size: 2rem;  
   display: flex;
   justify-content: flex-end;
   font-family: 'Nunito Sans', 'sans-serif';
@@ -510,7 +510,7 @@ to 100% of viewport */
 /* Cell-specific font-sizing and padding */
 
 .house-trait-list ul {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -746,27 +746,26 @@ to 100% of viewport */
   }
   
   .info-heading {
-    font-size: 4rem;
+    font-size: 3rem;
     display: flex;
     text-align: left;
   }
   .info-body {
-    font-size: 2.2rem;  
+    font-size: 1.6rem;  
     display: flex;
     justify-content: flex-end;
     font-family: 'Nunito Sans', 'sans-serif';
   }
   .head-of-house {
-    font-size: 3.2rem;
+    font-size: 2.2rem;
   }
   /* Cell-specific font-sizing and padding */
   
   .house-trait-list ul {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* align-items: flex-start; */
     text-align: right;
   }
 
