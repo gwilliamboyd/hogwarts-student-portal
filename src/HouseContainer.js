@@ -102,7 +102,8 @@ const HouseContainer = () => {
                   'Darking',
                   'Nerve',
                   'Chivalry']} 
-        ref={menuRef} />}
+        ref={menuRef}
+        closeMenus={closeMenus} />}
 
         {/* Hufflepuff Info Menu */}
         {hufflepuffOpen && <HouseInfoMenu 
@@ -118,7 +119,8 @@ const HouseContainer = () => {
                   'Just',
                   'Loyalty',
                   'Modesty']} 
-        ref={menuRef} />}
+        ref={menuRef}
+        closeMenus={closeMenus} />}
         
         {/* Ravenclaw Info Menu */}
         {ravenclawOpen && <HouseInfoMenu 
@@ -134,7 +136,8 @@ const HouseContainer = () => {
                   'Acceptance',
                   'Intelligence',
                   'Creativity']} 
-        ref={menuRef} />}
+        ref={menuRef}
+        closeMenus={closeMenus} />}
         
         {/* Slytherin Info Menu */}
         {slytherinOpen && <HouseInfoMenu 
@@ -150,7 +153,8 @@ const HouseContainer = () => {
                   'Cunning',
                   'Ambition',
                   'Self-preservation']} 
-        ref={menuRef} />}
+        ref={menuRef}
+        closeMenus={closeMenus} />}
         
         
     </>

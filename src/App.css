@@ -436,14 +436,14 @@ to 100% of viewport */
   display: none;
 }
 .house-info-container-flex {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, auto);
+  justify-items: center;
   align-items: center;
-  /* row-gap: 1rem; */
-  padding: 1rem 3rem;
   width: 65%;
   height: 85%;
-  font-size: 1rem;
+  font-size: 1.5rem;
   overflow-y: scroll;
   scrollbar-width: none;  /* Firefox */
 }
@@ -453,15 +453,15 @@ to 100% of viewport */
   width: 80%;
   height: 100%;
   display: grid;
-  grid-template-rows: 6% 25% 10% 8% 8% 45%;
+  grid-template-rows: 25% 10% 10% 10% 45%;
   row-gap: 2.5rem;
 }
 
 .x-icon {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  height: max-content;
+  /* width: 100%; */
+  display: none;
+  justify-self: flex-end;
+  margin: 0.25rem 0.5rem 0 0;
 }
 
 .house-row {
@@ -540,7 +540,7 @@ to 100% of viewport */
   background-image: url(./images/rowena-ravenclaw.jpg);
   background-position: center;
   background-size: cover;
-  color: #a58b7e;
+  color: #ceaf9f;
 }
 #house-info-slytherin {
   border: 3px solid #AAAAAA;
@@ -1219,10 +1219,22 @@ to 100% of viewport */
     top: 8%;
     width: 80%;
     padding: 0.25rem 0.5rem;
+    grid-template-rows: 15px 1fr;
+    align-items: flex-start;
     overflow: hidden;
   }
+  .x-icon {
+    /* width: 100%; */
+    display: grid;
+    justify-self: flex-end;
+    margin: 0.25rem 0.5rem 0 0;
+  }
   .house-info-table {
-    row-gap: 2rem;
+    grid-template-rows: 20% 12.5% 2% 12.5% 2% 12.5% 2% 36.5%;
+    row-gap: 0;
+    /* height: 900px; */
+    /* align-self: flex-start; */
+    align-items: flex-start;
   }
   .house-name {
     font-size: 3rem;
@@ -1243,14 +1255,30 @@ to 100% of viewport */
     height: max-content;
   }
   .house-row {
+    height: fit-content;
     grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(2, 50%);
-    row-gap: 1rem;
+    grid-template-rows: repeat(2, auto);
+    /* row-gap: 1rem; */
   }
   .house-name-row {
     grid-template-columns: 50% 50%;
     grid-template-rows: repeat(2, 50%);
-    max-height: 140px
+    max-height: 140px;
+    align-items: center;
+    justify-items: center;
+  }
+  .founder-row {
+    grid-row: 2;
+  }
+  .animal-row {
+    grid-row: 4;
+  }
+  .head-of-house-row {
+    grid-row: 6;
+  }
+  .traits-row {
+    height: fit-content;
+    grid-row: 8;
   }  
   .info-heading {
     font-size: 3rem;
@@ -1258,6 +1286,7 @@ to 100% of viewport */
     align-items: flex-start;
     justify-self: center;
     grid-area: 1 / 1 / span 1 / span 2;
+    /* line-height: auto; */
   }
   .info-body {
     font-size: 1.6rem;
@@ -1296,9 +1325,6 @@ to 100% of viewport */
     align-items: flex-start;
     justify-self: center;
     grid-area: 1 / 1 / span 1 / span 2;
-  }
-  .traits-row {
-    height: fit-content;
   }
   
   /* SPELLS LOOKUP STYLES */
