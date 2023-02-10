@@ -95,7 +95,7 @@ const CharactersContainer = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{duration: 1}}>
-            Type any character's name or info here
+            See character names or info
           </motion.div>
           <motion.div className="characters-promise"
           initial={{ opacity: 0 }}

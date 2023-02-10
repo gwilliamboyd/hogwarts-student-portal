@@ -75,6 +75,7 @@ to 100% of viewport */
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .container {
   display: flex;
@@ -1101,43 +1102,14 @@ to 100% of viewport */
   /* CHARACTERS SEARCH STYLES */
 
   .characters-heading {
-    width: 60%;
-    line-height: 1rem;
-    padding-top: 2rem;
-    gap: 1.2rem;
-  }
-  .characters-title {
-    font-size: 1.6rem;
-  }
-  .characters-promise {
-    font-size: 0.9rem;
-  }
-  .characters-search-input {
-    padding: 0.6rem 1.2rem;
-  }
-  .characters-body { 
-    padding: 0.9rem 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .characters-body ul {
-    font-size: 1rem;
-    gap: 1.5rem;
-    width: 92%;
-  }
-  .characters-image img {
-    max-width: 100px;
-  }
-  /* CHARACTERS SEARCH STYLES */
-
-  .characters-heading {
     width: 85%;
     line-height: 2.4rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
     gap: 0.8rem;
   }
   .characters-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    line-height: 1.7rem;
   }
   .characters-promise {
     font-size: 0.9rem;
@@ -1150,7 +1122,19 @@ to 100% of viewport */
   .characters-body { 
     padding: 0.6rem 0;
     width: 92%;
+    height: 55vh;
+    display: flex;
+    flex-wrap: wrap;
   }
+  .characters-body ul {
+    font-size: 1rem;
+    gap: 1.5rem;
+    width: 92%;
+  }
+  .characters-image img {
+    max-width: 100px;
+  }
+
 /*   .characters-body ul {
     font-size: 1rem;
     gap: 0.8rem;
