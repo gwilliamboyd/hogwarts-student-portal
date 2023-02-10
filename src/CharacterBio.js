@@ -1,7 +1,7 @@
-const CharacterBio = ({ image, name, house, patronus, id }) => {    
+const CharacterBio = ({ image, name, house, patronus, charId }) => {    
 
   return (
-    <li className="characters-bio">
+    <li className="characters-bio" key={charId}>
         <div className="characters-table">
             <div>
                 <div className="characters-table-row">

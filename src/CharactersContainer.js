@@ -124,7 +124,7 @@ const CharactersContainer = () => {
               currentCharacters.map((c) => {
                 return (
                   <CharacterBio
-                  // pageNumber={pageNumber} 
+                  charId={c.id}
                   image={c.image} 
                   name={c.name} 
                   house={capitalize(c.house)} 

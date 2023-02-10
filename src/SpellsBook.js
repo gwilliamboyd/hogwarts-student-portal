@@ -27,7 +27,7 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
         } else {
             setPage(page - 2)
         }
-        console.log(page)
+        console.log('prev page')
         // writeSpellPages(spellBooks, page)
     }
     // Flips to next 2 pages
@@ -38,7 +38,7 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
         }
         setPage(page + 2)
         // writeSpellPages(spellBooks, page)
-        console.log(page)
+        console.log('next page')
     }
 
     useKeypress(['ArrowLeft', 'ArrowRight'], (e) => {
@@ -49,13 +49,15 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
         }
     })
 
-    const previousPageSwipe = useSwipeable({
+    const leftPageSwipe = useSwipeable({
         preventScrollOnSwipe: true,
-        onSwipedRight: () => previousPage()
+        onSwipedLeft: () => nextPage(),
+        onSwipedRight: () => previousPage(),
     })
-    const nextPageSwipe = useSwipeable({
+    const rightPageSwipe = useSwipeable({
         preventScrollOnSwipe: true,
-        onSwipedLeft: () => nextPage()
+        onSwipedLeft: () => nextPage(),
+        onSwipedRight: () => previousPage(),
     })
 
     // Both of these funcitons freeze the page when pressed too quickly
@@ -74,7 +76,7 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
   return (
     <>
         <div className="spells-book">
-            <div className="spells-page-one" {...previousPageSwipe} {...nextPageSwipe} >
+            <div className="spells-page-one" {...leftPageSwipe} >
                 <ul>
                 {currentSpells?.[0]?.map((s) => {
                         return (
@@ -86,7 +88,7 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
                     })}
                 </ul>
             </div>
-            <div className="spells-page-two" {...previousPageSwipe} {...nextPageSwipe} >
+            <div className="spells-page-two" {...rightPageSwipe} >
                 <ul>
                     {currentSpells?.[1]?.map((s) => {
                         return (
