@@ -14,8 +14,10 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
     let mobileMenuRef = useRef(null)  
     useEffect(() => {
       document.addEventListener('mousedown', (e) => {
+        if(mobileMenuRef.current == null) {
+            return
+        }
         if(!mobileMenuRef.current.contains(e.target)) {
-            console.log('click')
             setMobileMenu(false)
             // handleClick()
         }

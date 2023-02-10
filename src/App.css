@@ -1252,6 +1252,8 @@ to 100% of viewport */
     display: block;
     width: 100px;
     height: max-content;
+    /* Helps prevent stretching on iOS */
+    object-fit: contain;
   }
   .house-row {
     height: fit-content;

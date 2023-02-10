@@ -19,16 +19,28 @@ const HouseContainer = () => {
     // Close menus when click outside
     function closeMenus() {
           document.addEventListener("mousedown", (e) => {
+            if(menuRef.current == null) {
+              return
+            }
             if(!menuRef.current.contains(e.target)) {
-            setGryffindorOpen(false)
-            setHufflepuffOpen(false)
-            setRavenclawOpen(false)
-            setSlytherinOpen(false)
-          } else if(menuRef.current.contains(e.target)) {
+            // setGryffindorOpen(false)
+            // setHufflepuffOpen(false)
+            // setRavenclawOpen(false)
+            // setSlytherinOpen(false)
+            setMenusClosed()
+            console.log('x icon clicked')
+          } /* else if(menuRef.current.contains(e.target)) {
             return
-          }
+          } */
         }
       )    
+    }
+    function setMenusClosed() {
+      console.log('the x icon was clicked')
+      setGryffindorOpen(false)
+      setHufflepuffOpen(false)
+      setRavenclawOpen(false)
+      setSlytherinOpen(false)
     }
 
     useEffect(() => {
@@ -103,7 +115,7 @@ const HouseContainer = () => {
                   'Nerve',
                   'Chivalry']} 
         ref={menuRef}
-        closeMenus={closeMenus} />}
+        closeMenus={setMenusClosed} />}
 
         {/* Hufflepuff Info Menu */}
         {hufflepuffOpen && <HouseInfoMenu 
@@ -120,7 +132,7 @@ const HouseContainer = () => {
                   'Loyalty',
                   'Modesty']} 
         ref={menuRef}
-        closeMenus={closeMenus} />}
+        closeMenus={setMenusClosed} />}
         
         {/* Ravenclaw Info Menu */}
         {ravenclawOpen && <HouseInfoMenu 
@@ -137,7 +149,7 @@ const HouseContainer = () => {
                   'Intelligence',
                   'Creativity']} 
         ref={menuRef}
-        closeMenus={closeMenus} />}
+        closeMenus={setMenusClosed} />}
         
         {/* Slytherin Info Menu */}
         {slytherinOpen && <HouseInfoMenu 
@@ -154,9 +166,7 @@ const HouseContainer = () => {
                   'Ambition',
                   'Self-preservation']} 
         ref={menuRef}
-        closeMenus={closeMenus} />}
-        
-        
+        closeMenus={setMenusClosed} />} 
     </>
   )
 }

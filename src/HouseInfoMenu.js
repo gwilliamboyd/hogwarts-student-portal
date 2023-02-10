@@ -3,14 +3,15 @@ import { motion } from "framer-motion"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
-const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, headOfHouse, traits }, ref, closeMenus) => {
+const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, headOfHouse, traits, closeMenus }, ref) => {
 
   return (
     <motion.div 
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{duration: 0.3}}
-    className="house-info-master" ref={ref}>
+    className="house-info-master" 
+    ref={ref}>
         <div 
         className="house-info-container-flex" id={id}>            
             <div className="x-icon">
