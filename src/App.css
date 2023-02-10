@@ -453,8 +453,15 @@ to 100% of viewport */
   width: 80%;
   height: 100%;
   display: grid;
-  grid-template-rows: repeat(5, 25% 10% 10% 10% 45%);
+  grid-template-rows: 6% 25% 10% 8% 8% 45%;
   row-gap: 2.5rem;
+}
+
+.x-icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: max-content;
 }
 
 .house-row {

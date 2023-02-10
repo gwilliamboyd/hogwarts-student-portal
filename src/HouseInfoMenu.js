@@ -1,5 +1,7 @@
 import { forwardRef } from "react"
 import { motion } from "framer-motion"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, headOfHouse, traits }, ref) => {
 
@@ -12,6 +14,9 @@ const HouseInfoMenu = forwardRef(({ id, houseName, houseCrest, founder, animal, 
         <div 
         className="house-info-container-flex" id={id}>
             <div className="house-info-table">
+                <div className="x-icon">
+                    <FontAwesomeIcon icon={faXmark} />
+                </div>
                 <div className="house-row house-name-row">
                     <div className="house-name">{houseName}</div>
                     <div className="house-crest">

@@ -9,25 +9,41 @@ const HouseContainer = () => {
     const [ravenclawOpen, setRavenclawOpen] = useState(false)
     const [slytherinOpen, setSlytherinOpen] = useState(false)
 
+    // REFS
     let menuRef = useRef(null)
     let gryffindorRef = useRef(null)
     let hufflepuffRef = useRef(null)
     let ravenclawRef = useRef(null)
     let slytherinRef = useRef(null)
 
+    // Close menus when click outside
+    function closeMenus() {
+          document.addEventListener("mousedown", (e) => {
+            if(!menuRef.current.contains(e.target)) {
+            setGryffindorOpen(false)
+            setHufflepuffOpen(false)
+            setRavenclawOpen(false)
+            setSlytherinOpen(false)
+          } else if(menuRef.current.contains(e.target)) {
+            return
+          }
+        }
+      )    
+    }
 
     useEffect(() => {
-      document.addEventListener("mousedown", (e) => {
+      /* document.addEventListener("mousedown", (e) => {
         if(!menuRef.current.contains(e.target))
         setGryffindorOpen(false)
         setHufflepuffOpen(false)
         setRavenclawOpen(false)
         setSlytherinOpen(false)
-      });        
+      });       */ 
+      closeMenus() 
     }, []);
 
-    // OPEN HOUSE MENUS
-    function openGryffindor() {
+    // OPEN HOUSE MENUS - **probably redundant, can set state in onClick prop
+/*     function openGryffindor() {
       setGryffindorOpen(true)
     }
     function openHufflepuff() {
@@ -38,7 +54,7 @@ const HouseContainer = () => {
     }
     function openSlytherin() {
       setSlytherinOpen(true)
-    }
+    } */
 
   return (
     <>
@@ -49,25 +65,25 @@ const HouseContainer = () => {
               houseId='gryffindor-panel'
               src={require("./images/house-gryffindor.png")}
               ref={gryffindorRef}
-              onClick={openGryffindor} />
+              onClick={() => setGryffindorOpen(true)} />
             {/* Hufflepuff Panel */}
             <HousePanel 
               houseId='hufflepuff-panel'
               src={require("./images/house-hufflepuff.png")}
               ref={hufflepuffRef}
-              onClick={openHufflepuff} />
+              onClick={() => setHufflepuffOpen(true)} />
             {/* Ravenclaw Panel */}
             <HousePanel 
               houseId='ravenclaw-panel'
               src={require("./images/house-ravenclaw.png")}
               ref={ravenclawRef}
-              onClick={openRavenclaw}/>
+              onClick={() => setRavenclawOpen(true)}/>
             {/* Slytherin Panel */}
             <HousePanel 
               houseId='slytherin-panel'
               src={require("./images/house-slytherin.png")}
               ref={slytherinRef}
-              onClick={openSlytherin}/>
+              onClick={() => setSlytherinOpen(true)}/>
           </div>        
       </div>
       {/* HOUSE INFO MENUS */}
