@@ -5,10 +5,20 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
+    console.log(navClass)
 
-/*     function toggleMobileMenu() {
-        setMobileMenu(!mobileMenu)
-    } */
+    function mobileMenuBackground() {
+        if(navClass === 'header-home') {
+            return '#162D6A'
+        } else if(navClass === 'header-characters') {
+            return '#6A1616'
+        } else if(navClass === 'header-house') {
+            return '#2A623D'
+        } else if(navClass === 'header-spells') {
+            return '#c0c269'
+        }
+    }
+    console.log(mobileMenuBackground())
 
     // Closes mobile menu when clicked away from
     let mobileMenuRef = useRef(null)  
@@ -27,11 +37,12 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
     const handleClick = () => {
         if(mobileMenu) {
             setMobileMenu(false)
-            console.log('click handled')
+            // console.log('click handled')
         } else {
             setMobileMenu(true)
         }
     }
+    
     
 
   return (
@@ -79,7 +90,8 @@ const Navbar = ({ navClass, mobileMenu, setMobileMenu, ref }) => {
         initial={{ height: 0, width: 0 }}
         animate={{ height: "fit-content", width: "70%" }}
         transition={{duration: 0.4}}
-        className="mobile-menu-list" 
+        className={["mobile-menu-list"]}
+        style={{backgroundColor: mobileMenuBackground()}} 
         ref={mobileMenuRef}>
             <motion.div
             initial={{ opacity: 0 }}

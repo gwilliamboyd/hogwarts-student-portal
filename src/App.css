@@ -1034,15 +1034,26 @@ to 100% of viewport */
     font-size: 1.5rem;
   }
   .mobile-menu-list {
+    background-color: inherit;
     position: absolute;
     z-index: 100;
-    width: 60%;
+    /* width: 60%; */
     font-size: 2.4rem;
     display: flex;
     flex-direction: column;  
     top: 55px;
     right: 0;
     background-color: var(--home-header-color)
+  }
+
+  .mobile-menu-list .header-characters {
+    background-color: var(--gryffindor-color);
+  }
+  .mobile-menu-list .header-house {
+    background-color: var(--slytherin-color);
+  }
+  .mobile-menu-list .header-spells {
+    background-color: var(--hufflepuff-darker-color);
   }
   .mobile-menu-list a {
     display: flex;
