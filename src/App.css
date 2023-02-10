@@ -457,11 +457,9 @@ to 100% of viewport */
   row-gap: 2.5rem;
 }
 
+/* X icon only displays on mobile */
 .x-icon {
-  /* width: 100%; */
   display: none;
-  justify-self: flex-end;
-  margin: 0.25rem 0.5rem 0 0;
 }
 
 .house-row {
@@ -1218,15 +1216,17 @@ to 100% of viewport */
     top: 8%;
     width: 80%;
     padding: 0.25rem 0.5rem;
-    grid-template-rows: 15px 1fr;
+    grid-template-rows: 35px 1fr;
     align-items: flex-start;
     overflow: hidden;
   }
   .x-icon {
-    /* width: 100%; */
+    width: 30px;
     display: grid;
     justify-self: flex-end;
-    margin: 0.25rem 0.5rem 0 0;
+    justify-items: center;
+    align-self: center;
+    /* margin: 0.25rem 0.5rem 0 0; */
   }
   .house-info-table {
     grid-template-rows: 20% 12.5% 2% 12.5% 2% 12.5% 2% 36.5%;
