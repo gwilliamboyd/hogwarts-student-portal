@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hogwarts-student-portal/static/css/main.5bb1abed.css",
-    "main.js": "/hogwarts-student-portal/static/js/main.9f0892da.js",
+    "main.js": "/hogwarts-student-portal/static/js/main.6c9779f2.js",
     "static/media/hogwarts-exterior.png": "/hogwarts-student-portal/static/media/hogwarts-exterior.de29597bde14851f0bd1.png",
     "static/media/hogwarts-exterior-gryffindor.png": "/hogwarts-student-portal/static/media/hogwarts-exterior-gryffindor.c68f8e5a9962379f6175.png",
     "static/media/hogwarts-exterior-slytherin.png": "/hogwarts-student-portal/static/media/hogwarts-exterior-slytherin.0355ead1602e6f87faa5.png",
@@ -22,10 +22,10 @@
     "static/media/harryp__-webfont.woff2": "/hogwarts-student-portal/static/media/harryp__-webfont.957778a64f5ca7fc0c41.woff2",
     "index.html": "/hogwarts-student-portal/index.html",
     "main.5bb1abed.css.map": "/hogwarts-student-portal/static/css/main.5bb1abed.css.map",
-    "main.9f0892da.js.map": "/hogwarts-student-portal/static/js/main.9f0892da.js.map"
+    "main.6c9779f2.js.map": "/hogwarts-student-portal/static/js/main.6c9779f2.js.map"
   },
   "entrypoints": [
     "static/css/main.5bb1abed.css",
-    "static/js/main.9f0892da.js"
+    "static/js/main.6c9779f2.js"
   ]
 }
