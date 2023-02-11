@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.51eddefc.css",
-    "main.js": "./static/js/main.b9106ad7.js",
+    "main.js": "./static/js/main.e9e7b563.js",
     "static/media/hogwarts-exterior.png": "./static/media/hogwarts-exterior.de29597bde14851f0bd1.png",
     "static/media/hogwarts-exterior-gryffindor.png": "./static/media/hogwarts-exterior-gryffindor.c68f8e5a9962379f6175.png",
     "static/media/hogwarts-exterior-slytherin.png": "./static/media/hogwarts-exterior-slytherin.0355ead1602e6f87faa5.png",
@@ -22,10 +22,10 @@
     "static/media/harryp__-webfont.woff2": "./static/media/harryp__-webfont.957778a64f5ca7fc0c41.woff2",
     "index.html": "./index.html",
     "main.51eddefc.css.map": "./static/css/main.51eddefc.css.map",
-    "main.b9106ad7.js.map": "./static/js/main.b9106ad7.js.map"
+    "main.e9e7b563.js.map": "./static/js/main.e9e7b563.js.map"
   },
   "entrypoints": [
     "static/css/main.51eddefc.css",
-    "static/js/main.b9106ad7.js"
+    "static/js/main.e9e7b563.js"
   ]
 }
