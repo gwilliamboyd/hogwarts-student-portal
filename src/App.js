@@ -20,7 +20,7 @@ function App() {
 
 	// Location listener for color change
 	useEffect(() => {
-		if (location.pathname === '/') {
+		if (location.pathname === '/hogwarts-student-portal') {
 			setHomeActive(true)
 			setCharactersActive(false)
 			setHouseActive(false)
