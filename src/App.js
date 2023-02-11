@@ -63,7 +63,7 @@ function App() {
 			<div className='container'>
 				<Routes>
 					<Route
-						path='/hogwarts-student-portal'
+						path='/'
 						element={<Home />}
 					/>
 					<Route
