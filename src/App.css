@@ -84,7 +84,7 @@ to 100% of viewport */
 	display: flex;
 	flex-direction: column;
 	flex: 1 1 100%;
-	overflow-y: scroll;
+	/* overflow-y: scroll; */
 	/* min-height: 700px; */
 	/* height: calc(100% - 118.667px); */
 }
@@ -382,7 +382,7 @@ to 100% of viewport */
 
 .house-panel-container {
 	display: grid;
-	width: 75%;
+	width: 70%;
 	height: fit-content;
 	grid-template-columns: repeat(2, auto);
 	grid-template-rows: repeat(2, auto);
@@ -393,8 +393,8 @@ to 100% of viewport */
 
 .house-panel {
 	/* padding: 3rem 10rem; */
-	width: 100%;
-	height: 100%;
+	width: 90%;
+	height: 320px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -729,6 +729,13 @@ to 100% of viewport */
 	}
 
 	/* HOUSE INFO */
+	.house-panel-master {
+		align-items: flex-start;
+	}
+
+	.house-panel-container {
+		margin-top: 1rem;
+	}
 
 	.house-info-container-flex {
 		padding: 1rem 2rem;
@@ -930,10 +937,14 @@ to 100% of viewport */
 
 	/* HOUSE INFO */
 
+	.house-panel-master {
+		align-items: flex-start;
+	}
+
 	.house-panel-container {
 		width: 95%;
 		height: 65%;
-		gap: 1rem;
+		gap: 0.7rem;
 	}
 
 	.house-info-container-flex {
@@ -944,6 +955,10 @@ to 100% of viewport */
 		width: 100%;
 		row-gap: 1.2rem;
 		overflow: hidden;
+	}
+
+	.house-panel {
+		height: 290px;
 	}
 
 	.house-name {
