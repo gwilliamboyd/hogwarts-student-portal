@@ -451,7 +451,7 @@ to 100% of viewport */
 	width: 65%;
 	height: 85%;
 	font-size: 1.5rem;
-	/* overflow-y: scroll; */
+	overflow-y: scroll;
 	scrollbar-width: none; /* Firefox */
 }
 
@@ -1407,7 +1407,32 @@ to 100% of viewport */
 	}
 }
 
+/* IPHONE LANDSCAPE MEDIA QUERIES */
+
 @media screen and (max-width: 900px) and (orientation: landscape) {
+	/* HOUSE INFO */
+	.house-info-container-flex {
+		top: 3%;
+		height: 95%;
+		padding: 0.25rem 0.5rem;
+	}
+	.house-info-table {
+		overflow-y: scroll;
+	}
+	.house-name-row,
+	.house-crest {
+		align-items: flex-start;
+	}
+	.house-crest {
+		align-items: center;
+		justify-content: flex-end;
+	}
+	.house-crest img {
+		max-width: 70px;
+		height: auto;
+	}
+
+	/* SPELLS LOOKUP */
 	.spells-header {
 		font-size: 2rem;
 	}

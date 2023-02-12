@@ -99,6 +99,12 @@ const SpellsContainer = () => {
 			<div className='spells-master'>
 				<div className='spells-container'>
 					<h1 className='spells-header'>Spells Reference - 1992 Edition</h1>
+					<p className='spells-instruction'>
+						<i>
+							Use arrow keys to turn to page (preferrably to page three hundred
+							and ninety four...)
+						</i>
+					</p>
 					<RenderedSpells
 						mobileContent={mobileContent}
 						desktopContent={desktopContent}
