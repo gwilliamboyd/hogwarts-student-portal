@@ -451,7 +451,7 @@ to 100% of viewport */
 	width: 65%;
 	height: 85%;
 	font-size: 1.5rem;
-	overflow-y: scroll;
+	/* overflow-y: scroll; */
 	scrollbar-width: none; /* Firefox */
 }
 
