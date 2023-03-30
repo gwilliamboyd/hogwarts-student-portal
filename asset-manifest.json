@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/hogwarts-student-portal/static/css/main.50139930.css",
-    "main.js": "/hogwarts-student-portal/static/js/main.b13be0c8.js",
-    "static/media/spell-book-blank.png": "/hogwarts-student-portal/static/media/spell-book-blank.bdc2dcb783d87831f89c.png",
+    "main.css": "/hogwarts-student-portal/static/css/main.7b13ca51.css",
+    "main.js": "/hogwarts-student-portal/static/js/main.13d6b8a2.js",
     "static/media/hogwarts-exterior.png": "/hogwarts-student-portal/static/media/hogwarts-exterior.de29597bde14851f0bd1.png",
     "static/media/hogwarts-exterior-gryffindor.png": "/hogwarts-student-portal/static/media/hogwarts-exterior-gryffindor.c68f8e5a9962379f6175.png",
     "static/media/hogwarts-exterior-slytherin.png": "/hogwarts-student-portal/static/media/hogwarts-exterior-slytherin.0355ead1602e6f87faa5.png",
     "static/media/hogwarts-logo.png": "/hogwarts-student-portal/static/media/hogwarts-logo.0357f2d1babb1c77b98a.png",
     "static/media/spells-homepage.png": "/hogwarts-student-portal/static/media/spells-homepage.12ce2fb46353217f68ea.png",
     "static/media/hogwarts-exterior-hufflepuff.jpg": "/hogwarts-student-portal/static/media/hogwarts-exterior-hufflepuff.3e55b57879bf78c67a7e.jpg",
-    "static/media/scroll-blank-orig.png": "/hogwarts-student-portal/static/media/scroll-blank-orig.77f504828c35d8a1410c.png",
     "static/media/characters-homepage.png": "/hogwarts-student-portal/static/media/characters-homepage.9bde3070c7faf2c1bca9.png",
-    "static/media/helga-hufflepuff.jpg": "/hogwarts-student-portal/static/media/helga-hufflepuff.f59730ad31ec426fe5c0.jpg",
-    "static/media/rowena-ravenclaw.jpg": "/hogwarts-student-portal/static/media/rowena-ravenclaw.4e38050ae236155e515e.jpg",
     "static/media/houses-homepage.png": "/hogwarts-student-portal/static/media/houses-homepage.a5749708c7fe9a5ebb3d.png",
-    "static/media/godric-gryffindor.jpg": "/hogwarts-student-portal/static/media/godric-gryffindor.775414f9a6281928629c.jpg",
-    "static/media/salazar-slytherin.jpg": "/hogwarts-student-portal/static/media/salazar-slytherin.205f9bd583fe88b38c71.jpg",
+    "static/media/helga-hufflepuff-dark.jpg": "/hogwarts-student-portal/static/media/helga-hufflepuff-dark.69a47904cb26a51213a7.jpg",
+    "static/media/rowena-ravenclaw-dark.jpg": "/hogwarts-student-portal/static/media/rowena-ravenclaw-dark.c19e58cf195866e5f4b6.jpg",
+    "static/media/godric-gryffindor-dark.jpg": "/hogwarts-student-portal/static/media/godric-gryffindor-dark.5bbf8d99eafd98fbe498.jpg",
+    "static/media/salazar-slytherin-dark.jpg": "/hogwarts-student-portal/static/media/salazar-slytherin-dark.0b1c172d6a4599a41cf3.jpg",
+    "static/media/spell-book-illus.png": "/hogwarts-student-portal/static/media/spell-book-illus.08c48a890e40253ff475.png",
+    "static/media/scroll-blank-illus.png": "/hogwarts-student-portal/static/media/scroll-blank-illus.a2dd88930aba1a933c25.png",
     "static/media/house-gryffindor.png": "/hogwarts-student-portal/static/media/house-gryffindor.9f4785971209258a77e8.png",
     "static/media/house-slytherin.png": "/hogwarts-student-portal/static/media/house-slytherin.3bdd1eaebf74dc38382e.png",
     "static/media/house-hufflepuff.png": "/hogwarts-student-portal/static/media/house-hufflepuff.13db30067aab83308ce2.png",
@@ -23,11 +23,11 @@
     "static/media/harryp__-webfont.woff": "/hogwarts-student-portal/static/media/harryp__-webfont.002d817232193f9814c3.woff",
     "static/media/harryp__-webfont.woff2": "/hogwarts-student-portal/static/media/harryp__-webfont.957778a64f5ca7fc0c41.woff2",
     "index.html": "/hogwarts-student-portal/index.html",
-    "main.50139930.css.map": "/hogwarts-student-portal/static/css/main.50139930.css.map",
-    "main.b13be0c8.js.map": "/hogwarts-student-portal/static/js/main.b13be0c8.js.map"
+    "main.7b13ca51.css.map": "/hogwarts-student-portal/static/css/main.7b13ca51.css.map",
+    "main.13d6b8a2.js.map": "/hogwarts-student-portal/static/js/main.13d6b8a2.js.map"
   },
   "entrypoints": [
-    "static/css/main.50139930.css",
-    "static/js/main.b13be0c8.js"
+    "static/css/main.7b13ca51.css",
+    "static/js/main.13d6b8a2.js"
   ]
 }
