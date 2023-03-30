@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react'
 import SpellsEntry from './SpellsEntry'
-// import useKeypress from "react-use-keypress"
 const SpellsBook = ({ spells }) => {
 	return (
 		<>

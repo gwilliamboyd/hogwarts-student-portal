@@ -4,7 +4,7 @@ const RenderedSpells = ({ mobileContent, desktopContent }) => {
 	const [isMobile, setIsMobile] = useState(false)
 
 	useEffect(() => {
-		const contentWatcher = window.matchMedia('(max-width: 600px)')
+		const contentWatcher = window.matchMedia('(max-width: 900px)')
 		setIsMobile(contentWatcher.matches)
 
 		function updateIsMobile(e) {

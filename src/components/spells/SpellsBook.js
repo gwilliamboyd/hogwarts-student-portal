@@ -2,6 +2,11 @@ import { useEffect, useState } from 'react'
 import SpellsEntry from './SpellsEntry'
 import useKeypress from 'react-use-keypress'
 import { useSwipeable } from 'react-swipeable'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+	faChevronLeft,
+	faChevronRight,
+} from '@fortawesome/free-solid-svg-icons'
 
 // Creates first 2 pages
 function writeSpellPages(spellBooks, page) {
@@ -63,37 +68,49 @@ const SpellsBook = ({ page, setPage, spellBooks }) => {
 
 	return (
 		<>
-			<div className='spells-book'>
-				<div
-					className='spells-page-one'
-					{...leftPageSwipe}>
-					<ul>
-						{currentSpells?.[0]?.map(s => {
-							return (
-								<SpellsEntry
-									id={s.id}
-									name={s.name}
-									desc={s.description}
-								/>
-							)
-						})}
-					</ul>
+			<div className='spells-book-container'>
+				<span
+					className='spells-book-left-arrow'
+					onClick={previousPage}>
+					<FontAwesomeIcon icon={faChevronLeft} />
+				</span>
+				<div className='spells-book'>
+					<div
+						className='spells-page-one'
+						{...leftPageSwipe}>
+						<ul>
+							{currentSpells?.[0]?.map(s => {
+								return (
+									<SpellsEntry
+										id={s.id}
+										name={s.name}
+										desc={s.description}
+									/>
+								)
+							})}
+						</ul>
+					</div>
+					<div
+						className='spells-page-two'
+						{...rightPageSwipe}>
+						<ul>
+							{currentSpells?.[1]?.map(s => {
+								return (
+									<SpellsEntry
+										id={s.id}
+										name={s.name}
+										desc={s.description}
+									/>
+								)
+							})}
+						</ul>
+					</div>
 				</div>
-				<div
-					className='spells-page-two'
-					{...rightPageSwipe}>
-					<ul>
-						{currentSpells?.[1]?.map(s => {
-							return (
-								<SpellsEntry
-									id={s.id}
-									name={s.name}
-									desc={s.description}
-								/>
-							)
-						})}
-					</ul>
-				</div>
+				<span
+					className='spells-book-right-arrow'
+					onClick={nextPage}>
+					<FontAwesomeIcon icon={faChevronRight} />
+				</span>
 			</div>
 		</>
 	)

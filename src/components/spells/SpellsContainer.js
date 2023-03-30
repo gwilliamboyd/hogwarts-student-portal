@@ -11,16 +11,6 @@ const SpellsContainer = () => {
 
 	let screenWidth = window.innerWidth
 
-	/*     function getScreenWidth() {
-        setMobileActive(window.innerWidth < 600 ? true : false)
-        setDesktopActive(window.innerWidth > 600 ? true : false)
-        console.log('resize')
-        if(mobileActive) {
-            console.log('mobile activated')
-        } else if(desktopActive){
-            console.log('desktop activated')
-        }
-    } */
 	useEffect(() => {
 		const mobileComponent = window.matchMedia('(max-width: 600px)')
 		setMobileActive(mobileComponent.matches)
@@ -78,33 +68,11 @@ const SpellsContainer = () => {
 		/>
 	)
 
-	/*function RenderedSpells() {
-         if(mobileActive = true) {
-        return (
-            <SpellsBookMobile page={page} 
-                setPage={setPage} 
-                spells={spells}/>
-        )
-        } else if(mobileActive = false) {
-            return (
-                <SpellsBook page={page} 
-                    setPage={setPage} 
-                    spellBooks={spellBooks} />
-            )
-        } 
-    }*/
-
 	return (
 		<>
 			<div className='spells-master'>
 				<div className='spells-container'>
 					<h1 className='spells-header'>Spells Reference - 1992 Edition</h1>
-					<p className='spells-instruction'>
-						<i>
-							Use arrow keys to turn to page (preferrably to page three hundred
-							and ninety four...)
-						</i>
-					</p>
 					<RenderedSpells
 						mobileContent={mobileContent}
 						desktopContent={desktopContent}
